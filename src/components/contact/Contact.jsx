@@ -2,7 +2,9 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <seciton id='contact' className='mt-32 h-screen'>
+      Contact
+    </seciton>
   )
 }
 

@@ -2,7 +2,9 @@ import React from 'react'
 
 const Portfolio = () => {
   return (
-    <div>Portfolio</div>
+    <section id='portfolio' className='mt-32 h-screen'>
+      Portfolio
+    </section>
   )
 }
 

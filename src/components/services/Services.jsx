@@ -2,7 +2,9 @@ import React from 'react'
 
 const Services = () => {
   return (
-    <div>Services</div>
+    <section id='services' className='mt-32 h-screen'>
+      Services
+    </section>
   )
 }
 
