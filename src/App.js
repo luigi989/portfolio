@@ -14,7 +14,6 @@ function App() {
     <div className="relative">
       <>
         <Header />
-        <Nav />
         <About />
         <Experience />
         <Services />
@@ -22,6 +21,7 @@ function App() {
         <Testimonials />
         <Contact />
         <Footer />
+        <Nav />
       </>
     </div>
   );
