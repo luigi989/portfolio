@@ -6,12 +6,12 @@ import ME from '../../assets/me-about.jpg'
 
 const About = () => {
   return (
-    <section id='about' className='mt-32 h-screen p-4'>      
+    <section id='about' className='mt-32 h-fit lg:h-screen pt-4 lg:pt-8'>      
       <h5 className='text-light font-medium'>Get to know</h5>
       <h2 className='text-primaryAlt font-medium text-3xl mb-16 lg:mb-32'>About Me</h2>
 
       <div className='w-3/4 m-auto grid grid-cols-1 lg:grid-cols-2 gap-[10%] lg:gap-[15%] place-items-center'>
-        <div className='w-3/4 aspect-square rounded-[2rem] bg-gradient-to-tr from-transparent via-primaryAlt to-transparent
+        <div className='w-3/4 md:w-1/2 lg:w-3/4 aspect-square rounded-[2rem] bg-gradient-to-tr from-transparent via-primaryAlt to-transparent
                         grid place-items-center'>
           <div className='rounded-[2rem] overflow-hidden rotate-12 hover:rotate-0 transition ease-linear duration-300'>
             <img src={ME} alt={'About me'} className='block w-full object-cover' />
@@ -19,7 +19,7 @@ const About = () => {
         </div>
 
         <div className='flex flex-col justify-center items-center'>
-          <div className='grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6'>
+          <div className='grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-6'>
             <article className='bg-bgAlt border-solid border-[1px] border-transparent rounded-2xl p-5 lg:p-8 text-center
                                 hover:bg-transparent hover:border-primary hover:cursor-default transition ease-linear duration-300'>
               <FaAward className='m-auto text-primaryAlt text-2xl mb-4' />
