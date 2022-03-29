@@ -1,102 +1,40 @@
 import React from 'react'
-import { BsPatchCheckFill } from 'react-icons/bs';
+import ExperienceItem from './ExperienceItem';
 
 const Experience = () => {
-  return (
-    <section id='experience' className='mt-32 h-screen'>
-      <h5 className='text-light font-medium'>What Skills I have</h5>
-      <h2 className='text-primaryAlt font-medium text-3xl mb-16 lg:mb-32'></h2>
+  const Intermediate = 'Intermediate';
+  const experienced = 'Experienced';
 
-      <div className='w-3/4 m-auto grid grid-cols-2 gap-8 experience_container'>
-        <div className='bg-bgAlt py-10 px-20 rounded-[2rem] border-solid border-[1px] border-transparent 
+  return (
+    <section id='experience' className='mt-32 h-fit lg:h-screen pt-4 lg:pt-8'>
+      <h5 className='text-light font-medium'>What Skills I have</h5>
+      <h2 className='text-primaryAlt font-medium text-3xl mb-10 lg:mb-32'>My Experience</h2>
+
+      <div className='w-11/12 lg:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8'>
+        <div className='bg-bgAlt py-5 px-5 lg:py-10 lg:px-20 rounded-[2rem] border-solid border-[1px] border-transparent 
                         hover:bg-transparent hover:border-primary cursor-default 
-                        transition ease-linear duration-300 experience_frontend'>
+                        transition ease-linear duration-300'>
           <h3 className='text-center mb-8 text-primaryAlt'>Frontend Experience</h3>
-          <div className='grid grid-cols-2 gap-8 experience_content'>
-            <article className='flex gap-4 experience_details'>
-            <BsPatchCheckFill className='mt-[6px] text-primaryAlt' />
-              <div>
-                <h4>HTML</h4>
-                <small className='text-light'>Experienced</small>
-              </div>
-            </article>
-            <article className='flex gap-4 experience_details'>
-            <BsPatchCheckFill className='mt-[6px] text-primaryAlt' />
-              <div>
-                <h4>CSS</h4>
-                <small className='text-light'>Intermediate</small>
-              </div>
-            </article>
-            <article className='flex gap-4 experience_details'>
-            <BsPatchCheckFill className='mt-[6px] text-primaryAlt' />
-              <div>
-                <h4>JvaScript</h4>
-                <small className='text-light'>Experienced</small>
-              </div>
-            </article>
-            <article className='flex gap-4 experience_details'>
-            <BsPatchCheckFill className='mt-[6px] text-primaryAlt' />
-              <div>
-                <h4>Bootstrap</h4>
-                <small className='text-light'>Experienced</small>
-              </div>
-            </article>
-            <article className='flex gap-4 experience_details'>
-            <BsPatchCheckFill className='mt-[6px] text-primaryAlt' />
-              <div>
-                <h4>Tailwind</h4>
-                <small className='text-light'>Experienced</small>
-              </div>
-            </article>
-            <article className='flex gap-4 experience_details'>
-            <BsPatchCheckFill className='mt-[6px] text-primaryAlt' />
-              <div>
-                <h4>React</h4>
-                <small className='text-light'>Experienced</small>
-              </div>
-            </article>
+          <div className='grid grid-cols-2 gap-8'>
+            <ExperienceItem lang='HTML' grade={experienced} />
+            <ExperienceItem lang='CSS' grade={Intermediate} />
+            <ExperienceItem lang='JavaScript' grade={experienced} />
+            <ExperienceItem lang='Bootstrap' grade={experienced} />
+            <ExperienceItem lang='Tailwind' grade={experienced} />
+            <ExperienceItem lang='React' grade={experienced} />
           </div>
         </div>
 
-        <div className='bg-bgAlt py-10 px-20 rounded-[2rem] border-solid border-[1px] border-transparent 
+        <div className='bg-bgAlt py-5 px-5 lg:py-10 lg:px-20 rounded-[2rem] border-solid border-[1px] border-transparent 
                         hover:bg-transparent hover:border-primary cursor-default 
-                        transition ease-linear duration-300 experience_backend'>
+                        transition ease-linear duration-300'>
           <h3 className='text-center mb-8 text-primaryAlt'>Backend Experience</h3>
-          <div className='grid grid-cols-2 gap-8 experience_content'>
-            <article className='flex gap-4 experience_details'>
-              <BsPatchCheckFill className='mt-[6px] text-primaryAlt' />
-              <div>
-                <h4>Node JS</h4>
-                <small className='text-light'>Experienced</small>
-              </div>
-            </article>
-            <article className='flex gap-4 experience_details'>
-              <BsPatchCheckFill className='mt-[6px] text-primaryAlt' />
-              <div>
-                <h4>MongoDB</h4>
-                <small className='text-light'>Intermediate</small>
-              </div>
-            </article>
-            <article className='flex gap-4 experience_details'>
-              <BsPatchCheckFill className='mt-[6px] text-primaryAlt' />
-              <div>
-                <h4>MySQL</h4>
-                <small className='text-light'>Experienced</small></div>
-            </article>
-            <article className='flex gap-4 experience_details'>
-              <BsPatchCheckFill className='mt-[6px] text-primaryAlt' />
-              <div>
-                <h4>PostgreSQL</h4>
-                <small className='text-light'>Experienced</small>
-              </div>
-            </article>
-            <article className='flex gap-4 experience_details'>
-              <BsPatchCheckFill className='mt-[6px] text-primaryAlt' />
-              <div>
-                <h4>Java</h4>
-                <small className='text-light'>Experienced</small>
-              </div>
-            </article>
+          <div className='grid grid-cols-2 gap-8'>
+            <ExperienceItem lang='Node JS' grade={experienced} />
+            <ExperienceItem lang='MongoDB' grade={Intermediate} />
+            <ExperienceItem lang='MySQL' grade={experienced} />
+            <ExperienceItem lang='PostgreSQL' grade={experienced} />
+            <ExperienceItem lang='Java' grade={experienced} />
           </div>
         </div>
       </div>
