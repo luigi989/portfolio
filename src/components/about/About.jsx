@@ -2,11 +2,13 @@ import React from 'react'
 import { FaAward } from 'react-icons/fa';
 import { FiUsers } from 'react-icons/fi';
 import { VscFolderLibrary } from 'react-icons/vsc';
-import ME from '../../assets/me-about.jpg'
+import ME from '../../assets/me-about.jpg';
+import ProfilePic from '../../assets/profilbild2.jpg';
+import AboutItem from './AboutItem';
 
 const About = () => {
   return (
-    <section id='about' className='mt-32 h-fit lg:h-screen pt-4 lg:pt-8'>      
+    <section id='about' className='mt-32 h-fit lg:h-screen pt-4 lg:pt-8'>
       <h5 className='text-light font-medium'>Get to know</h5>
       <h2 className='text-primaryAlt font-medium text-3xl mb-16 lg:mb-32'>About Me</h2>
 
@@ -14,38 +16,31 @@ const About = () => {
         <div className='w-3/4 md:w-1/2 lg:w-3/4 aspect-square rounded-[2rem] bg-gradient-to-tr from-transparent via-primaryAlt to-transparent
                         grid place-items-center'>
           <div className='rounded-[2rem] overflow-hidden rotate-12 hover:rotate-0 transition ease-linear duration-300'>
-            <img src={ME} alt={'About me'} className='block w-full object-cover' />
+            <img src={ProfilePic} alt={'About me'} className='block w-full object-cover' />
           </div>
         </div>
 
         <div className='flex flex-col justify-center items-center'>
           <div className='grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-6'>
-            <article className='bg-bgAlt border-solid border-[1px] border-transparent rounded-2xl p-5 lg:p-8 text-center
-                                hover:bg-transparent hover:border-primary hover:cursor-default transition ease-linear duration-300'>
+            <AboutItem header='Computer Science' text='4+ Years studying'>
               <FaAward className='m-auto text-primaryAlt text-2xl mb-4' />
-              <h5 className='text-base'>Experience</h5>
-              <small className='text-xs text-light'>3+ Years Working</small> 
-            </article>
-
-            <article className='bg-bgAlt border-solid border-[1px] border-transparent rounded-2xl p-5 lg:p-8 text-center
-                                hover:bg-transparent hover:border-primary hover:cursor-default transition ease-linear duration-300'>
+            </AboutItem>
+        
+            <AboutItem header='Clients' text='200+ Worldwide'>
               <FiUsers className='m-auto text-primaryAlt text-2xl mb-4' />
-              <h5 className='text-base'>Clients</h5>
-              <small className='text-xs text-light'>200+ Worldwide</small> 
-            </article>
+            </AboutItem>
 
-            <article className='bg-bgAlt border-solid border-[1px] border-transparent rounded-2xl p-5 lg:p-8 text-center
-                                hover:bg-transparent hover:border-primary hover:cursor-default transition ease-linear duration-300'>
+            <AboutItem header='Projects' text='10+ Completed'>
               <VscFolderLibrary className='m-auto text-primaryAlt text-2xl mb-4' />
-              <h5 className='text-base'>Projects</h5>
-              <small className='text-xs text-light'>80+ Completed</small> 
-            </article>
+            </AboutItem>
           </div>
 
           <p className='mt-4 lg:mt-8 mx-0 mb-5 lg:mb-10 text-light '>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur sequi repellat, in dolorum 
-            cum obcaecati. Odio minus corrupti delectus obcaecati nihil temporibus quasi magnam
-              nesciunt! Soluta quisquam alias sunt dolor.
+            Currently studying towards a Master in Computer Science. In my free time I like to climb, play squash or go out for a run. 
+            Building puzzles is also a hobby of mine, but I sadly don't have enough time for that currently. 
+            I also have multiple code projects that I try to finish (sometime I will finish them all...). 
+            At the moment I am working on converting an old website about the periodic system to React. 
+            Also planning to add more advanced functions like filtering elements by category and more.
           </p>
 
           <a href='#contact' className='text-bg bg-primaryAlt transition ease-linear duration-300 
