@@ -30,14 +30,6 @@ body {
   background-image: url(../src/assets/bg-texture.png);
 }
 
-/* === GENERAL STYLES === */
-  /*
-    container width lg 75%, 
-                    md 86%,
-                    ms 90%
-  */
-
-
 .container {
   width: 75%;
   margin: 0 auto;
@@ -63,37 +55,6 @@ section > h2, section > h5 {
 section > h2 {
   /* color: color-primary */
   margin-bottom: 3rem;
-}
-
-a {
-  /* color: primary */
-  /* transition: all 400ms ease; */
-}
-
-a:hover {
-  /* color: white; */
-}
-
-.btn {
-  width: max-content;
-  display: inline-block;
-  /* color primary */
-  padding: 0.75rem 1.2rem;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  border: 1px solid /*color primary */;
-  transition: all 400ms ease;
-}
-
-.btn:hover {
-  /* background: white
-      color: bg */
-  border-color: transparent;
-}
-
-.btn-primary {
-  /* background primary 
-      color bg */
 }
 
 img { 
