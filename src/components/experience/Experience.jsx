@@ -16,12 +16,12 @@ const Experience = () => {
                         transition ease-linear duration-300'>
           <h3 className='text-center mb-8 text-primaryAlt'>Frontend Experience</h3>
           <div className='grid grid-cols-2 gap-8'>
-            <ExperienceItem lang='HTML' grade={experienced} />
-            <ExperienceItem lang='CSS' grade={Intermediate} />
-            <ExperienceItem lang='JavaScript' grade={experienced} />
-            <ExperienceItem lang='Bootstrap' grade={experienced} />
-            <ExperienceItem lang='Tailwind' grade={experienced} />
             <ExperienceItem lang='React' grade={experienced} />
+            <ExperienceItem lang='JavaScript' grade={Intermediate} />
+            <ExperienceItem lang='HTML' grade={experienced} />
+            <ExperienceItem lang='CSS' grade={experienced} />
+            <ExperienceItem lang='Tailwind' grade={experienced} />
+            <ExperienceItem lang='Bootstrap' grade={Intermediate} />
           </div>
         </div>
 
@@ -30,11 +30,14 @@ const Experience = () => {
                         transition ease-linear duration-300'>
           <h3 className='text-center mb-8 text-primaryAlt'>Backend Experience</h3>
           <div className='grid grid-cols-2 gap-8'>
-            <ExperienceItem lang='Node JS' grade={experienced} />
-            <ExperienceItem lang='MongoDB' grade={Intermediate} />
-            <ExperienceItem lang='MySQL' grade={experienced} />
-            <ExperienceItem lang='PostgreSQL' grade={experienced} />
             <ExperienceItem lang='Java' grade={experienced} />
+            <ExperienceItem lang='C#' grade={Intermediate} />
+            <ExperienceItem lang='MySQL' grade={Intermediate} />
+            <ExperienceItem lang='PostgreSQL' grade={Intermediate} />
+          </div>
+          <h3 className='text-center mb-8 text-primaryAlt pt-10'>Other Experience</h3>
+          <div className='grid grid-cols-2 gap-8'>
+            <ExperienceItem lang='Git' grade={experienced} />
           </div>
         </div>
       </div>
