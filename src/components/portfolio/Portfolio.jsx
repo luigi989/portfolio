@@ -1,6 +1,6 @@
 import React from 'react'
 import PortfolioCard from './PortfolioCard';
-import portfolio1 from '../../assets/portfolio1.jpg';
+import portfolio1 from '../../assets/periodicSystem.png';
 import portfolio2 from '../../assets/portfolio2.jpg';
 import portfolio3 from '../../assets/portfolio3.jpg';
 import portfolio4 from '../../assets/portfolio4.jpg';
