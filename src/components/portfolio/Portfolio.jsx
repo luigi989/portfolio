@@ -15,7 +15,8 @@ const Portfolio = () => {
 
       <div className='w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
         <PortfolioCard 
-          header='Crypto Currency Dashboard and Financial Visualization' 
+          header='The Periodic System in a interactive system' 
+          link='https://github.com/luigi989/periodic'
           path={portfolio1} 
         />
         <PortfolioCard 
