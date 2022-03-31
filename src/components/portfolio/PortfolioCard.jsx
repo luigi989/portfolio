@@ -13,7 +13,7 @@ const PortfolioCard = (props) => {
                 transition ease-linear duration-300
                 w-max inline-block py-1 px-3 rounded-lg cursor-pointer border-solid border-[1px]
                 border-primaryAlt text-primaryAlt'
-                    href='https://github.com' target='_blank' rel='noreferrer' download>Github</a>
+                    href={props.link ? props.link : 'https://github.com/luigi989'} target='_blank' rel='noreferrer' download>Github</a>
                 <a className='hover:text-bg hover:bg-white hover:border-transparent 
                 transition ease-linear duration-300
                 w-max inline-block py-1 px-3 rounded-lg cursor-pointer border-solid border-[1px] 
