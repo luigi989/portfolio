@@ -1,8 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { FaAward } from 'react-icons/fa';
 import { FiUsers } from 'react-icons/fi';
 import { VscFolderLibrary } from 'react-icons/vsc';
-import ME from '../../assets/me-about.jpg';
 import ProfilePic from '../../assets/profilbild2.jpg';
 import AboutItem from './AboutItem';
 

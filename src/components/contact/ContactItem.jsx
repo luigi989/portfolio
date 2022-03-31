@@ -1,5 +1,4 @@
-import React from 'react'
-import { FiMail } from 'react-icons/fi';
+import React from 'react';
 
 const ContactItem = (props) => {
   return (
