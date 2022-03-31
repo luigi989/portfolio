@@ -4,10 +4,10 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 const Footer = () => {
   return (
     <footer id='footer' className='bg-primaryAlt mt-28 py-12 px-0 text-center text-sm'>
-      <a href='#' className='text-bg text-4xl font-medium mb-8 inline-block'>Ludvig Lindahl</a>
+      <a href='/#' className='text-bg text-4xl font-medium mb-8 inline-block'>Ludvig Lindahl</a>
 
       <ul className='flex flex-col md:flex-row flex-wrap justify-center gap-6 md:gap-8 mt-0 mx-auto mb-6 md:mb-12'>
-        <li><a href='#' className='text-bg hover:underline'>Home</a></li>
+        <li><a href='/#' className='text-bg hover:underline'>Home</a></li>
         <li><a href='#about' className='text-bg hover:underline'>About</a></li>
         <li><a href='#experience' className='text-bg hover:underline'>Experience</a></li>
         <li><a href='#services' className='text-bg hover:underline'>Services</a></li>

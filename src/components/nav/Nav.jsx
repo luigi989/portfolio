@@ -17,7 +17,7 @@ const Nav = () => {
                     flex gap-3 rounded-[3rem] backdrop-blur-lg">
 
       <a className={activeNav === '#' ? navClass + active: navClass} 
-         href='#'
+         href='/#'
          onClick={() => setActiveNav('#')}><AiOutlineHome /></a>
                     
       <a className={activeNav === '#about' ? navClass + active : navClass} 
