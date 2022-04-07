@@ -43,7 +43,7 @@ const Contact = () => {
             className='bg-transparent border-solid border-[1px] border-primary p-5 rounded-xl resize-none w-full'></textarea>
           <button type='submit' className='text-bg bg-primaryAlt transition ease-linear duration-300
                                         w-max inline-block py-3 px-5 cursor-pointer rounded-md border-solid border-2 border-primaryAlt 
-                                        hover:border-transparent hover:bg-white'>Send Message</button>
+                                        hover:text-primary hover:bg-bgAlt'>Send Message</button>
         </form>
       </div>
     </section>

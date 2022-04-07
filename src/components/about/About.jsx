@@ -44,7 +44,7 @@ const About = () => {
 
           <a href='#contact' className='text-bg bg-primaryAlt transition ease-linear duration-300 
                                         w-max inline-block py-3 px-5 cursor-pointer rounded-md border-solid border-2 border-primaryAlt 
-                                        hover:border-transparent hover:bg-white'>Let's talk</a>
+                                        hover:text-primary hover:bg-bgAlt'>Let's talk</a>
         </div>
       </div>
 
