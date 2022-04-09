@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsLinkedin, BsGithub, BsDribbble } from 'react-icons/bs';
+import { BsLinkedin, BsGithub, BsFacebook } from 'react-icons/bs';
 
 const HeaderSocials = () => {
   return (
@@ -10,8 +10,7 @@ const HeaderSocials = () => {
         <a className='inline-block text-primaryAlt hover:text-white transition ease-linear duration-300'
             href='https://github.com/luigi989' target='_blank' rel='noreferrer'><BsGithub /></a>
         <a className='inline-block text-primaryAlt hover:text-white transition ease-linear duration-300'
-        // Here my portfolio dashboard shoule be???
-            href='https://dribble.com' target='_blank' rel='noreferrer'><BsDribbble /></a>
+            href='https://www.facebook.com/ludvig.lindahl.1' target='_blank' rel='noreferrer'><BsFacebook /></a>
     </div>
   )
 }

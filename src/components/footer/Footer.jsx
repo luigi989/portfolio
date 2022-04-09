@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -10,19 +10,22 @@ const Footer = () => {
         <li><a href='/#' className='text-bg hover:underline'>Home</a></li>
         <li><a href='#about' className='text-bg hover:underline'>About</a></li>
         <li><a href='#experience' className='text-bg hover:underline'>Experience</a></li>
-        <li><a href='#services' className='text-bg hover:underline'>Services</a></li>
+        {/* <li><a href='#services' className='text-bg hover:underline'>Services</a></li> */}
         <li><a href='#portfolio' className='text-bg hover:underline'>Portfolio</a></li>
         <li><a href='#testimonials' className='text-bg hover:underline'>Testamonials</a></li>
         <li><a href='#contact' className='text-bg hover:underline'>Contact</a></li>
       </ul>
 
       <div className='flex justify-center gap-4 mb-4'>
-        <a href='https:facebook.com' className='bg-bg text-white hover:text-bg hover:border-bg hover:bg-transparent p-3 rounded-xl flex 
+        <a href='https://www.linkedin.com/in/ludvig-lindahl/' target='_blank' rel='noreferrer' 
+          className='bg-bg text-white hover:text-bg hover:border-bg hover:bg-transparent p-3 rounded-xl flex 
+          border-solid border-[1px] border-transparent'><FaLinkedin /></a>
+        <a href='https://github.com/luigi989' target='_blank' rel='noreferrer'
+          className='bg-bg text-white hover:text-bg hover:border-bg hover:bg-transparent p-3 rounded-xl flex 
+          border-solid border-[1px] border-transparent'><FaGithub /></a>
+        <a href='https://www.facebook.com/ludvig.lindahl.1' target='_blank' rel='noreferrer'
+          className='bg-bg text-white hover:text-bg hover:border-bg hover:bg-transparent p-3 rounded-xl flex 
           border-solid border-[1px] border-transparent'><FaFacebook /></a>
-        <a href='https:instagram.com' className='bg-bg text-white hover:text-bg hover:border-bg hover:bg-transparent p-3 rounded-xl flex 
-          border-solid border-[1px] border-transparent'><FaInstagram /></a>
-        <a href='https:twitter.com' className='bg-bg text-white hover:text-bg hover:border-bg hover:bg-transparent p-3 rounded-xl flex 
-          border-solid border-[1px] border-transparent'><FaTwitter /></a>
       </div>
 
       <div className='mb-16 text-bg'>
