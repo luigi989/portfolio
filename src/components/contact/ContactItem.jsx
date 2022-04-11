@@ -8,7 +8,8 @@ const ContactItem = (props) => {
         {props.children}
         <h5 className='text-base'>{props.header}</h5>
         <small className='text-xs text-light mb-4'>{props.contact}</small> 
-        <a href='mailto:ludde.lindahl@gmail.com' className='text-sm text-primary hover:text-light'>Send a Message</a>
+        <a href={props.href} target='_blank' rel='noreferrer' 
+          className='text-sm text-primary hover:text-light'>Send a Message</a>
     </article>
   )
 }
