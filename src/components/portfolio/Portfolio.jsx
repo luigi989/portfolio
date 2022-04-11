@@ -1,7 +1,7 @@
 import React from 'react'
 import PortfolioCard from './PortfolioCard';
-import portfolio1 from '../../assets/periodicSystem.png';
-import portfolio2 from '../../assets/portfolio2.jpg';
+import portfolio_periodic from '../../assets/portfolio_periodic.png';
+import portfolio_exaples from '../../assets/portfolio_examples.png';
 import portfolio3 from '../../assets/portfolio3.jpg';
 import portfolio4 from '../../assets/portfolio4.jpg';
 import portfolio5 from '../../assets/portfolio5.png';
@@ -17,11 +17,12 @@ const Portfolio = () => {
         <PortfolioCard 
           header='The Periodic System in a interactive system' 
           link='https://github.com/luigi989/periodic'
-          path={portfolio1} 
+          path={portfolio_periodic} 
         />
         <PortfolioCard 
           header='Charts templates and infographs in Figma' 
-          path={portfolio2} 
+          link='https://github.com/luigi989/examples'
+          path={portfolio_exaples} 
         />
         <PortfolioCard 
           header='Figma dashboard UI kit for data design with apps' 
