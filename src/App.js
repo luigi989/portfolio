@@ -9,19 +9,29 @@ import Testimonials from './components/testimonials/Testimonials';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
+
 function App() {
   return (
     <div className="relative">
       <>
-        <Header />
-        <About />
-        <Experience />
-        {/* <Services /> */}
-        <Portfolio />
-        <Testimonials />
-        <Contact />
-        <Footer />
-        <Nav />
+        <RecoilRoot>
+          <Header />
+          <About />
+          <Experience />
+          {/* <Services /> */}
+          <Portfolio />
+          <Testimonials />
+          <Contact />
+          <Footer />
+          <Nav />
+        </RecoilRoot>
       </>
     </div>
   );
