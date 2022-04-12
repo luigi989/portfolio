@@ -18,8 +18,8 @@ const Contact = () => {
 
   return (
     <section id='contact' className='mt-32 h-fit lg:h-screen pt-4 lg:pt-8'>
-      <h5 className='text-light font-medium'>Get in touch</h5>
-      <h2 className='text-primaryAlt font-medium text-3xl lg:mb-16'>Contact me</h2>  
+      <h5 className='text-center text-light font-medium'>Get in touch</h5>
+      <h2 className='text-center text-primaryAlt font-medium text-3xl lg:mb-16'>Contact me</h2>  
       
       <div className='w-3/4 lg:w-2/4 m-auto flex flex-col md:flex-row gap-16 lg:gap-32'>
         <div className='flex flex-col gap-6'>

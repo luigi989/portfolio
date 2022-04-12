@@ -5,11 +5,11 @@ import { VscFolderLibrary } from 'react-icons/vsc';
 import ProfilePic from '../../assets/profilbild2.jpg';
 import AboutItem from './AboutItem';
 
-const About = () => {
+function About(props) {
   return (
-    <section id='about' className='mt-32 h-fit lg:h-screen pt-4 lg:pt-8'>
-      <h5 className='text-light font-medium'>Get to know</h5>
-      <h2 className='text-primaryAlt font-medium text-3xl mb-16 lg:mb-32'>About Me</h2>
+    <section id='about' ref={props.inView} className='mt-32 h-fit lg:h-screen pt-4 lg:pt-8'>
+      <h5 className='text-center text-light font-medium'>Get to know</h5>
+      <h2 className='text-center text-primaryAlt font-medium text-3xl mb-16 lg:mb-32'>About Me</h2>
 
       <div className='w-3/4 m-auto grid grid-cols-1 lg:grid-cols-2 gap-[10%] lg:gap-[15%] place-items-center'>
         <div className='w-3/4 md:w-1/2 lg:w-3/4 aspect-square rounded-[2rem] bg-gradient-to-tr from-transparent via-primaryAlt to-transparent

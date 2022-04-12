@@ -20,8 +20,8 @@ const Testimonials = () => {
 
   return (
     <section id='testimonials' className='mt-32 h-fit lg:h-screen pt-4 lg:pt-8'>
-      <h5 className='text-light font-medium'>Review from clients</h5>
-      <h2 className='text-primaryAlt font-medium text-3xl lg:mb-16'>Testimonials</h2>  
+      <h5 className='text-center text-light font-medium'>Review from clients</h5>
+      <h2 className='text-center text-primaryAlt font-medium text-3xl lg:mb-16'>Testimonials</h2>  
 
       <Swiper className='w-4/5 lg:w-2/5 m-auto'
         modules={[ Pagination ]}

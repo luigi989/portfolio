@@ -7,8 +7,8 @@ const Experience = () => {
 
   return (
     <section id='experience' className='mt-32 h-fit lg:h-screen pt-4 lg:pt-8'>
-      <h5 className='text-light font-medium'>What Skills I have</h5>
-      <h2 className='text-primaryAlt font-medium text-3xl mb-10 lg:mb-32'>My Experience</h2>
+      <h5 className='text-center text-light font-medium'>What Skills I have</h5>
+      <h2 className='text-center text-primaryAlt font-medium text-3xl mb-10 lg:mb-32'>My Experience</h2>
 
       <div className='w-11/12 lg:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8'>
         <div className='bg-bgAlt py-5 px-5 lg:py-10 lg:px-20 rounded-[2rem] border-solid border-[1px] border-transparent 

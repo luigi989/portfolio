@@ -7,11 +7,11 @@ import portfolio4 from '../../assets/portfolio4.jpg';
 import portfolio5 from '../../assets/portfolio5.png';
 import portfolio6 from '../../assets/portfolio6.jpg';
 
-const Portfolio = () => {
+function Portfolio(props) {
   return (
-    <section id='portfolio' className='mt-32 h-fit pt-4 lg:pt-8'>
-      <h5 className='text-light font-medium'>My Recent Work</h5>
-      <h2 className='text-primaryAlt font-medium text-3xl lg:mb-16'>Portfolio</h2>
+    <section id='portfolio' ref={props.inView} className='mt-32 h-fit pt-4 lg:pt-8'>
+      <h5 className='text-center text-light font-medium'>My Recent Work</h5>
+      <h2 className='text-center text-primaryAlt font-medium text-3xl lg:mb-16'>Portfolio</h2>
 
       <div className='w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
         <PortfolioCard 
