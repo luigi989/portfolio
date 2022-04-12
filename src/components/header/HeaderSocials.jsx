@@ -5,12 +5,14 @@ const HeaderSocials = () => {
   return (
     <div className="hidden lg:flex flex-col items-center gap-3 absolute left-0 bottom-12
                     after:content-[''] after:w-[1px] after:h-8 after:bg-primaryAlt">
-        <a className='inline-block text-primaryAlt hover:text-white transition ease-linear duration-300' 
-            href='https://www.linkedin.com/in/ludvig-lindahl/' target='_blank' rel='noreferrer'><BsLinkedin /></a>
-        <a className='inline-block text-primaryAlt hover:text-white transition ease-linear duration-300'
-            href='https://github.com/luigi989' target='_blank' rel='noreferrer'><BsGithub /></a>
-        <a className='inline-block text-primaryAlt hover:text-white transition ease-linear duration-300'
-            href='https://www.facebook.com/ludvig.lindahl.1' target='_blank' rel='noreferrer'><BsFacebook /></a>
+      {[['https://www.linkedin.com/in/ludvig-lindahl/', <BsLinkedin />],
+        ['https://github.com/luigi989', <BsGithub />],
+        ['https://www.facebook.com/ludvig.lindahl.1', <BsFacebook />]
+      ].map(([url, icon]) => (
+          <a className='inline-block text-primaryAlt transition ease-linear duration-300
+            hover:text-white'
+            href={url} target='_blank' rel='noreferrer'>{icon}</a>
+        ))}
     </div>
   )
 }
