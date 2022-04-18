@@ -11,9 +11,9 @@ function Portfolio(props) {
   return (
     <section id='portfolio' ref={props.inView} className='mt-32 h-fit pt-4 lg:pt-8'>
       <h5 className='text-center text-light font-medium'>My Recent Work</h5>
-      <h2 className='text-center text-primaryAlt font-medium text-3xl lg:mb-16'>Portfolio</h2>
+      <h2 className='text-center text-primaryAlt font-medium text-3xl lg:mb-4'>Portfolio</h2>
 
-      <div className='w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
+      <div className='w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
         <PortfolioCard 
           header='The Periodic System in a interactive system' 
           link='https://github.com/luigi989/periodic'
@@ -26,19 +26,19 @@ function Portfolio(props) {
         />
         <PortfolioCard 
           header='Figma dashboard UI kit for data design with apps' 
-          path={portfolio3} 
+          path={portfolio_exaples} 
         />
         <PortfolioCard 
           header='Maintaining tasks and tracking process' 
-          path={portfolio4} 
+          path={portfolio_exaples} 
         />
         <PortfolioCard 
           header='Charts tempaltes and infographs in Figma' 
-          path={portfolio5} 
+          path={portfolio_exaples} 
         />
         <PortfolioCard 
           header='Charts tempaltes and infographs in Figma' 
-          path={portfolio6} 
+          path={portfolio_exaples} 
         />
       </div>
     </section>
