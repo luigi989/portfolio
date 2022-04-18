@@ -8,7 +8,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 import ContactItem from './ContactItem';
 
-const Contact = () => {
+const Contact = ({ snap }) => {
   const form = useRef();
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data);
@@ -21,7 +21,7 @@ const Contact = () => {
   };
 
   return (
-    <section id='contact' className='mt-32 h-fit lg:h-screen pt-4 lg:pt-8'>
+    <section id='contact' className={ snap + ' mt-32 h-fit lg:h-screen pt-4 lg:pt-8'}>
       <h5 className='text-center text-light font-medium'>Get in touch</h5>
       <h2 className='text-center text-primaryAlt font-medium text-3xl lg:mb-16'>Contact me</h2>
 

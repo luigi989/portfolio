@@ -5,9 +5,9 @@ import { VscFolderLibrary } from 'react-icons/vsc';
 import ProfilePic from '../../assets/profilbild2.jpg';
 import AboutItem from './AboutItem';
 
-function About(props) {
+function About({ snap }) {
   return (
-    <section id='about' ref={props.inView} className='mt-32 h-fit lg:h-screen pt-4 lg:pt-8'>
+    <section id='about' className={ snap + ' mt-32 h-fit lg:h-screen pt-4 lg:pt-8'}>
       <h5 className='text-center text-light font-medium'>Get to know</h5>
       <h2 className='text-center text-primaryAlt font-medium text-3xl mb-16 lg:mb-32'>About Me</h2>
 

@@ -3,9 +3,9 @@ import CTA from './CTA';
 import ME from '../../assets/me.png';
 import HeaderSocials from './HeaderSocials';
 
-const Header = () => {
+const Header = ({ snap }) => {
   return (
-    <header className='h-screen md:h-[68vh] lg:h-screen w-3/4 m-auto pt-28 overflow-hidden'>
+    <header className={snap + ' h-screen md:h-[68vh] lg:h-screen w-3/4 m-auto pt-28 overflow-hidden'}>
       <div className='h-full w-3/4 m-auto text-center relative'>
         <h5 className='font-medium font-4xl'>Hello I'm</h5>
         <h1 className='font-medium'>Ludvig Lindahl</h1>

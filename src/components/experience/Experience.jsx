@@ -1,12 +1,12 @@
 import React from 'react'
 import ExperienceItem from './ExperienceItem';
 
-const Experience = () => {
+const Experience = ({ snap }) => {
   const Intermediate = 'Intermediate';
   const experienced = 'Experienced';
 
   return (
-    <section id='experience' className='mt-32 h-fit lg:h-screen pt-4 lg:pt-8'>
+    <section id='experience' className={ snap + ' mt-32 h-fit lg:h-screen pt-4 lg:pt-8'}>
       <h5 className='text-center text-light font-medium'>What Skills I have</h5>
       <h2 className='text-center text-primaryAlt font-medium text-3xl mb-10 lg:mb-32'>My Experience</h2>
 

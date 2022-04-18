@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useState } from 'react';
 import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
 import { BiBook, BiMessageSquareDetail } from 'react-icons/bi';
-import { BsBriefcase, BsWindowSidebar } from 'react-icons/bs';
+import { BsBriefcase } from 'react-icons/bs';
 
 const Nav = () => {
    const [activeNav, setActiveNav] = useState('#');

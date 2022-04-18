@@ -13,13 +13,13 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper';
 
 
-const Testimonials = () => {
+const Testimonials = ({ snap }) => {
   const text = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, doloremque.' + 
     'Officiis iste laudantium nemo, porro, rem recusandae maxime nobis laboriosam ' +
     'beatae in a eligendi suscipit odio perspiciatis similique, molestias sapiente.';
 
   return (
-    <section id='testimonials' className='mt-32 h-fit lg:h-screen pt-4 lg:pt-8'>
+    <section id='testimonials' className={ snap + ' mt-32 h-fit lg:h-screen pt-4 lg:pt-8'}>
       <h5 className='text-center text-light font-medium'>Review from clients</h5>
       <h2 className='text-center text-primaryAlt font-medium text-3xl lg:mb-16'>Testimonials</h2>  
 

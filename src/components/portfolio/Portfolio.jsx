@@ -2,14 +2,10 @@ import React from 'react'
 import PortfolioCard from './PortfolioCard';
 import portfolio_periodic from '../../assets/portfolio_periodic.png';
 import portfolio_exaples from '../../assets/portfolio_examples.png';
-import portfolio3 from '../../assets/portfolio3.jpg';
-import portfolio4 from '../../assets/portfolio4.jpg';
-import portfolio5 from '../../assets/portfolio5.png';
-import portfolio6 from '../../assets/portfolio6.jpg';
 
-function Portfolio(props) {
+function Portfolio({ snap }) {
   return (
-    <section id='portfolio' ref={props.inView} className='mt-32 h-fit pt-4 lg:pt-8'>
+    <section id='portfolio' className={ snap + ' mt-32 h-fit pt-4 lg:pt-8'}>
       <h5 className='text-center text-light font-medium'>My Recent Work</h5>
       <h2 className='text-center text-primaryAlt font-medium text-3xl lg:mb-4'>Portfolio</h2>
 
