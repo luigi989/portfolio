@@ -19,13 +19,13 @@ const Footer = ({ snap }) => {
       <div className='flex justify-center gap-4 mb-4'>
         <a href='https://www.linkedin.com/in/ludvig-lindahl/' target='_blank' rel='noreferrer'
           className='bg-bg text-white p-3 rounded-xl flex border-2 border-solid border-transparent
-          hover:bg-transparent hover:text-bg hover:border-bg'><FaLinkedin /></a>
+          hover:bg-transparent hover:text-bg hover:border-bg transition ease-linear duration-200'><FaLinkedin /></a>
         <a href='https://github.com/luigi989' target='_blank' rel='noreferrer'
           className='bg-bg text-white p-3 rounded-xl flex border-2 border-solid border-transparent
-          hover:bg-transparent hover:text-bg hover:border-bg'><FaGithub /></a>
+          hover:bg-transparent hover:text-bg hover:border-bg transition ease-linear duration-200'><FaGithub /></a>
         <a href='https://www.facebook.com/ludvig.lindahl.1' target='_blank' rel='noreferrer'
           className='bg-bg text-white p-3 rounded-xl flex border-2 border-solid border-transparent
-          hover:bg-transparent hover:text-bg hover:border-bg'><FaFacebook /></a>
+          hover:bg-transparent hover:text-bg hover:border-bg transition ease-linear duration-200'><FaFacebook /></a>
       </div>
 
       <div className='mb-16 text-bg'>
