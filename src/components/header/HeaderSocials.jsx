@@ -9,7 +9,7 @@ const HeaderSocials = () => {
         ['https://github.com/luigi989', <BsGithub />],
         ['https://www.facebook.com/ludvig.lindahl.1', <BsFacebook />]
       ].map(([url, icon]) => (
-          <a className='inline-block text-primaryAlt transition ease-linear duration-300
+          <a key={url} className='inline-block text-primaryAlt transition ease-linear duration-300
             hover:text-white'
             href={url} target='_blank' rel='noreferrer'>{icon}</a>
         ))}

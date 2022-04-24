@@ -13,7 +13,7 @@ const Nav = () => {
    const active = " bg-primaryAlt text-white";
 
    return (
-      <nav className="bg-black bg-opacity-50 w-max py-3 px-4 fixed left-20 -translate-y-1/2 top-1/2
+      <nav className="bg-black bg-opacity-50 w-max py-3 px-4 fixed left-12 -translate-y-1/2 top-1/2
                     flex flex-col gap-3 rounded-[3rem] backdrop-blur-lg">
 
          <a className={activeNav === '#' ? navClass + active : navClass}
