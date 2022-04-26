@@ -3,7 +3,7 @@ import { BsLinkedin, BsGithub, BsFacebook } from 'react-icons/bs';
 
 const HeaderSocials = () => {
   return (
-    <div className="hidden lg:flex flex-col items-center gap-3 absolute left-0 bottom-12
+    <div className="hidden lg:flex flex-col items-center gap-3 absolute left-0 bottom-12 bg-liBg p-1 dark:bg-transparent
                     after:content-[''] after:w-[1px] after:h-8 after:bg-liSec dark:after:bg-primaryAlt">
       {[['https://www.linkedin.com/in/ludvig-lindahl/', <BsLinkedin />],
         ['https://github.com/luigi989', <BsGithub />],

@@ -1,64 +1,53 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
 import { BiBook, BiMessageSquareDetail } from 'react-icons/bi';
 import { BsBriefcase } from 'react-icons/bs';
-import {
-   RecoilRoot,
-   atom,
-   selector,
-   useRecoilState,
-   useRecoilValue,
-   useSetRecoilState,
- } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { darkModeState } from '../../atoms/atoms';
 
 const Nav = () => {
    const [activeNav, setActiveNav] = useState('#');
+   const setIsDark = useSetRecoilState(darkModeState);
+
+   const setDarkMode = () => {
+      if (localStorage.getItem('color-theme')) {
+         if (localStorage.getItem('color-theme') === 'light') {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
+            setIsDark(true);
+         } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('color-theme', 'light');
+            setIsDark(false);
+         }
+
+         // if NOT set via local storage previously
+      } else {
+         if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('color-theme', 'light');
+            setIsDark(false);
+         } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
+            setIsDark(true);
+         }
+      }
+   }
+
+   useEffect(() => {
+      if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+         document.documentElement.classList.add('dark');
+      } else {
+         document.documentElement.classList.remove('dark')
+      }
+   }, [])
 
    const navClass = "text-liBg hover:text-liSec hover:bg-liPrimary hover:bg-opacity-80 " +
       "dark:hover:bg-opacity-60 dark:hover:bg-primaryAlt dark:hover:text-black dark:text-primaryAlt " +
       "bg-transparent p-[0.9rem] rounded-[50%] flex text-lg " +
       "transition ease-linear duration-300 "
    const active = "bg-liPrimary text-liSec dark:bg-primaryAlt dark:text-black";
-
-
-   const setIsDark = useSetRecoilState(darkModeState);
-
-   const setDarkMode = () => {
-      if (localStorage.getItem('color-theme')) {
-         if (localStorage.getItem('color-theme') === 'light') {
-             document.documentElement.classList.add('dark');
-             localStorage.setItem('color-theme', 'dark');
-             setIsDark(true);
-         } else {
-             document.documentElement.classList.remove('dark');
-             localStorage.setItem('color-theme', 'light');
-             setIsDark(false);
-         }
- 
-     // if NOT set via local storage previously
-     } else {
-         if (document.documentElement.classList.contains('dark')) {
-             document.documentElement.classList.remove('dark');
-             localStorage.setItem('color-theme', 'light');
-             setIsDark(false);
-         } else {
-             document.documentElement.classList.add('dark');
-             localStorage.setItem('color-theme', 'dark');
-             setIsDark(true);
-         }
-     }
-   }
-
-   useEffect(() => {
-      if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-         document.documentElement.classList.add('dark');
-     } else {
-         document.documentElement.classList.remove('dark')
-     }
-   }, [])
-   
 
    return (
       <div className='fixed left-12 -translate-y-1/2 top-1/2 flex flex-col justify-center items-center gap-5'>
