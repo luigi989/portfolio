@@ -3,23 +3,38 @@ import { useState } from 'react';
 import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
 import { BiBook, BiMessageSquareDetail } from 'react-icons/bi';
 import { BsBriefcase } from 'react-icons/bs';
+import {
+   RecoilRoot,
+   atom,
+   selector,
+   useRecoilState,
+   useRecoilValue,
+   useSetRecoilState,
+ } from 'recoil';
+import { darkModeState } from '../../atoms/atoms';
 
 const Nav = () => {
    const [activeNav, setActiveNav] = useState('#');
 
-   const navClass = "text-black hover:bg-liBg hover:bg-opacity-60 dark:text-primaryAlt " +
+   const navClass = "text-liBg hover:text-liSec hover:bg-liPrimary hover:bg-opacity-80 " +
+      "dark:hover:bg-opacity-60 dark:hover:bg-primaryAlt dark:hover:text-black dark:text-primaryAlt " +
       "bg-transparent p-[0.9rem] rounded-[50%] flex text-lg " +
       "transition ease-linear duration-300 "
-   const active = "bg-liBg dark:bg-primaryAlt text-black";
+   const active = "bg-liPrimary text-liSec dark:bg-primaryAlt dark:text-black";
+
+
+   const setIsDark = useSetRecoilState(darkModeState);
 
    const setDarkMode = () => {
       if (localStorage.getItem('color-theme')) {
          if (localStorage.getItem('color-theme') === 'light') {
              document.documentElement.classList.add('dark');
              localStorage.setItem('color-theme', 'dark');
+             setIsDark(true);
          } else {
              document.documentElement.classList.remove('dark');
              localStorage.setItem('color-theme', 'light');
+             setIsDark(false);
          }
  
      // if NOT set via local storage previously
@@ -27,9 +42,11 @@ const Nav = () => {
          if (document.documentElement.classList.contains('dark')) {
              document.documentElement.classList.remove('dark');
              localStorage.setItem('color-theme', 'light');
+             setIsDark(false);
          } else {
              document.documentElement.classList.add('dark');
              localStorage.setItem('color-theme', 'dark');
+             setIsDark(true);
          }
      }
    }
@@ -45,7 +62,7 @@ const Nav = () => {
 
    return (
       <div className='fixed left-12 -translate-y-1/2 top-1/2 flex flex-col justify-center items-center gap-5'>
-         <nav className="bg-liBg dark:bg-black bg-opacity-50 w-max py-3 px-4 flex flex-col gap-3 
+         <nav className="bg-liSec dark:bg-black w-max py-3 px-4 flex flex-col gap-3 
                         rounded-[3rem] backdrop-blur-lg">
 
             <a className={activeNav === '#' ? navClass + active : navClass}
@@ -70,9 +87,9 @@ const Nav = () => {
 
          </nav>
 
-         <div className='bg-liBg dark:bg-black bg-opacity-50 w-max py-2 px-2 rounded-[3rem] backdrop-blur-lg'>
+         <div className='bg-liSec dark:bg-black w-max py-2 px-2 rounded-[3rem] backdrop-blur-lg'>
             <label className="swap swap-rotate 
-            text-black hover:bg-liBg dark:hover:bg-primaryAlt dark:text-primaryAlt dark:hover:text-black 
+            text-liBg hover:bg-liPrimary hover:text-liSec dark:hover:bg-primaryAlt dark:text-primaryAlt dark:hover:text-black 
             transition ease-linear duration-300
             bg-transparent p-[0.9rem] rounded-[50%] text-lg">
                <input type="checkbox" onClick={setDarkMode} />
