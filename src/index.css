@@ -23,3 +23,10 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.7;
 }
+
+.lightPattern {
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-size: 48px 48px;
+  background-image:  repeating-linear-gradient(0deg, #484b6a, #484b6a 2.4000000000000004px, #e5e5f7 2.4000000000000004px, #e5e5f7);
+}
