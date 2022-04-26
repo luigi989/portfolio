@@ -5,18 +5,18 @@ module.exports = {
     extend: {
       colors: {
         //Dark mode
-        bg: '#282828',
-        bgAlt: '#1d2021',
-        primary: '#98971a',
-        primaryAlt: '#98971a',
-        light: '#ebdbb2',
+        "bg": '#282828',
+        "bgAlt": '#1d2021',
+        "primary": '#98971a',
+        "primaryAlt": '#98971a',
+        "light": '#ebdbb2',
 
         // Light mode
-        liBg: '#b9cdda',
-        liBgAlt: '#d7dae5',
-        liPrimary: '#6b7d7d',
-        liPrimaryAlt: '#8eaf9d',
-        liLight: '#a6d8d4',
+        "liBg": '#e5e5f7',
+        "liBgAlt": '#e4e5f1',
+        "liPrimary": '#d2d3db',
+        "liSec": "#484b6a",
+        "liLight": '#9394a5',
       },
       textColor: {
         primary: '#98971a',
