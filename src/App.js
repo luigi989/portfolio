@@ -7,47 +7,22 @@ import Experience from './components/experience/Experience';
 import Portfolio from './components/portfolio/Portfolio';
 import Testimonials from './components/testimonials/Testimonials';
 import Contact from './components/contact/Contact';
-import Footer from './components/footer/Footer';
-
-// import {
-//   RecoilRoot,
-//   atom,
-//   selector,
-//   useRecoilState,
-//   useRecoilValue,
-// } from 'recoil';
+import Footer from './components/footer/Footer';  
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
+import { darkModeState } from './atoms/atoms';
 
 function App() {
-  // const ref = useRef();
-  // const ref2 = useRef();
-  // const onScreen = useOnScreen(ref, "-300px", "about");
-  // const onScreen2 = useOnScreen(ref2, "-300px", "portfolio");
-
-  // function useOnScreen(ref, rootMargin = "0px", message) {
-  //   const [isIntersecting, setIntersecting] = useState(false);
-
-  //   useEffect(() => {
-  //     const observer = new IntersectionObserver(
-  //       ([entry]) => {
-  //         setIntersecting(entry.isIntersecting);
-  //       },
-  //       {
-  //         rootMargin,
-  //       }
-  //     );
-  //     if (ref.current) {
-  //       observer.observe(ref.current);
-  //     }
-  //     return () => {
-  //       observer.unobserve(ref.current);
-  //     };
-  //   }, []);
-  //   console.log(message);
-  //   return isIntersecting;
-  // }
+  const isDark = useRecoilValue(darkModeState);
+  console.log(isDark)
 
   return (
-    <div>
+    <div className={isDark ? 'bg-bgTexture ' : 'lightPattern ' + 'bg-liBg text-black dark:bg-bg dark:bg-bgTexture dark:text-white'}>
       <Header snap='lg:snap-start' />
       <About snap='lg:snap-start' />
       <Experience snap='lg:snap-start' />
