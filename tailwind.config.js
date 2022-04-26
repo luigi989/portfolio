@@ -1,26 +1,28 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}",],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
+        //Dark mode
         bg: '#282828',
         bgAlt: '#1d2021',
         primary: '#98971a',
         primaryAlt: '#98971a',
         light: '#ebdbb2',
 
-        // === Original color scheme ===ct
-        // bg: '#1f1f38',
-        // bgAlt: '#2c2c6c',
-        // primary: '#4db5ff66',
-        // primaryAlt: '#4db5ff',
-        // light: '#ffffff99'
+        // Light mode
+        liBg: '#b9cdda',
+        liBgAlt: '#d7dae5',
+        liPrimary: '#6b7d7d',
+        liPrimaryAlt: '#8eaf9d',
+        liLight: '#a6d8d4',
       },
       textColor: {
         primary: '#98971a',
       },
       backgroundImage: {
-        'bg-texture': "url('../src/assets/bg-texture.png')",
+        'bgTexture': "url('../src/assets/bg-texture.png')",
       },
     },
   },
