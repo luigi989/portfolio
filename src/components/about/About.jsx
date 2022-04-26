@@ -3,6 +3,7 @@ import { FaAward } from 'react-icons/fa';
 import { FiUsers } from 'react-icons/fi';
 import { VscFolderLibrary } from 'react-icons/vsc';
 import ProfilePic from '../../assets/profilbild2.jpg';
+import Button from '../shared/Button';
 import AboutItem from './AboutItem';
 
 function About({ snap }) {
@@ -42,9 +43,7 @@ function About({ snap }) {
             Also planning to add more advanced functions like filtering elements by category and more.
           </p>
 
-          <a href='#contact' className='text-bg bg-primaryAlt transition ease-linear duration-300 
-                                        w-max inline-block py-3 px-5 cursor-pointer rounded-md border-solid border-2 border-primaryAlt 
-                                        hover:text-primary hover:bg-bgAlt'>Let's talk</a>
+          <Button link={"#contact"}>Let's talk</Button>
         </div>
       </div>
 
