@@ -19,14 +19,7 @@ html {
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 body {
   font-family: 'Poppins', sans-serif;
-  background: #282828;
-  color: white;
   line-height: 1.7;
-  background-image: url(../src/assets/bg-texture.png);
 }
