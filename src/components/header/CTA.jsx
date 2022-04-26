@@ -5,7 +5,7 @@ import Button from '../shared/Button';
 const CTA = () => {
   return (
     <div className='mt-[37px] flex gap-5 justify-center'>
-      <button className='dark:hover:bg-bgAlt dark:hover:text-white dark:hover:border-transparent dark:border-primary dark:text-primaryAlt dark:bg-none
+      <button className='bg-liBg dark:bg-transparent dark:hover:bg-bgAlt dark:hover:text-white dark:hover:border-transparent dark:border-primary dark:text-primaryAlt dark:bg-none
                       border-solid border-2
                       border-transparent text-liSec border-liSec hover:bg-liSec hover:text-liBg
                       transition ease-linear duration-300
