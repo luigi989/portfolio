@@ -1,22 +1,27 @@
-import React from 'react';
-import { useRef } from 'react';
-import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
+import React, { useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { FaWhatsapp } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
 import { RiMessengerLine } from 'react-icons/ri';
-import { BiErrorCircle } from 'react-icons/bi';
-import { FaWhatsapp } from 'react-icons/fa';
-
+import Button from '../shared/Button';
 import ContactItem from './ContactItem';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Error from './Error';
+
 const Contact = ({ snap }) => {
+  const notify = () => toast.success('Mail send successfully!')
   const form = useRef();
   const { register, handleSubmit, formState: { errors } } = useForm({
     mode: "all",
   });
+  const [rangeValue, setRangeValue] = useState(3);
 
   const sendEmail = (e) => {
     emailjs.sendForm('service_7rev2zh', 'template_6486erl', form.current, '8B07cv2sLjPq7_d-B');
+    notify();
     form.current.reset();
   };
 
@@ -28,13 +33,13 @@ const Contact = ({ snap }) => {
       <div className='w-3/4 lg:w-3/5 m-auto flex flex-col md:flex-row gap-16 lg:gap-20'>
         <div className='flex flex-col gap-6'>
           <ContactItem header='Email' contact='ludde.lindahl@gmail.com' href='mailto:ludde.lindahl@gmail.com'>
-            <FiMail className='m-auto text-2xl mb-4' />
+            <FiMail className='text-primary m-auto text-2xl mb-4' />
           </ContactItem>
           <ContactItem header='Messenger' contact='Ludvig Lindahl' href='https://m.me/ludvig.lindahl.1'>
-            <RiMessengerLine className='m-auto text-2xl mb-4' />
+            <RiMessengerLine className='text-primary m-auto text-2xl mb-4' />
           </ContactItem>
           <ContactItem header='WhatsApp' contact='+46705789618' href='https://wa.me/46705789618'>
-            <FaWhatsapp className='m-auto text-2xl mb-4' />
+            <FaWhatsapp className='text-primary m-auto text-2xl mb-4' />
           </ContactItem>
         </div>
 
@@ -46,12 +51,13 @@ const Contact = ({ snap }) => {
               name='name'
               placeholder='Your full name'
               aria-invalid={errors.name ? 'true' : 'false'}
-              className={errors.name ? 'input input-error' : 'input !outline-primaryAlt'}
+              className={errors.name ? 'input input-error !bg-bgAlt' : 'input !bg-bgAlt !outline-primaryAlt'}
             />
-            {errors.name?.type === 'required' ?
-              <span className='mt-1 label-text-alt text-error'>Please enter a name</span> :
+            <div className='flex'>
+              {errors.name?.type === 'required' &&
+                <Error>Please enter a name</Error>}
               <span className='mt-1 label-text-alt text-xs'>&nbsp;</span>
-            }
+            </div>
           </div>
 
           <div className='form-control w-full'>
@@ -60,37 +66,54 @@ const Contact = ({ snap }) => {
               type='email'
               name='email'
               placeholder='Your email'
-              className={errors.email ? 'input input-error' : 'input !outline-primaryAlt'}
+              className={errors.email ? 'input input-error !bg-bgAlt' : 'input !bg-bgAlt !outline-primaryAlt'}
             />
             <div className='flex'>
-              {errors.email?.type === 'required' && 
-                <span role='alert' className='mt-1 label-text-alt text-error'>Please enter a email</span>}
+              {errors.email?.type === 'required' &&
+                <Error>Please enetr a email</Error>}
               {errors.email?.type === 'pattern' &&
-                <span role='alert' className='mt-1 label-text-alt text-error'>Please enter a valid email</span>}
+                <Error>Please enter a valid email</Error>}
               <span className='mt-1 label-test-alt text-xs'>&nbsp;</span>
 
             </div>
           </div>
 
           <div className='form-control w-full'>
-            <textarea rows='7'
+            <textarea
               {...register("message", { required: true })}
               name='message'
               placeholder='Your message'
-              className={errors.message ? 'textarea textarea-error resize-none' : 'textarea resize-none !outline-primaryAlt'}
+              rows='7'
+              className={errors.message ? 'textarea textarea-error resize-none !bg-bgAlt ' : 'textarea resize-none !bg-bgAlt !outline-primaryAlt'}
             ></textarea>
-            {errors.message?.type === 'required' ?
-              <span className='mt-1 label-text-alt text-error'>Please enter a message</span> :
+            <div className='flex'>
+              {errors.message?.type === 'required' &&
+                <Error>Please enter a message</Error>}
               <span className='mt-1 label-test-alt text-xs'>&nbsp;</span>
-            }
+            </div>
           </div>
-          
-          <button type='submit' 
-                  className='self-end text-bg bg-primaryAlt transition ease-linear duration-300
-                            w-max inline-block py-3 px-5 cursor-pointer rounded-md border-solid border-2
-                            hover:text-primary hover:bg-bgAlt focus:text-primary focus:bg-bgAlt'>
-                  Send
-          </button>
+
+          <div className='flex justify-between w-full items-center'>
+            <div className='flex flex-col'>
+              <h3 className='mb-1'>Rate the website</h3>
+              <input type="range" 
+                name='rating'
+                min="1" max="5" 
+                value={rangeValue} 
+                onChange={(e) => setRangeValue(e.target.value)}
+                className="range range-accent" 
+                step="1" />
+              <div className="w-full flex justify-between text-xs px-2">
+                <span>|</span>
+                <span>|</span>
+                <span>|</span>
+                <span>|</span>
+                <span>|</span>
+              </div>
+            </div>
+            <Button submit={"submit"}>Send</Button>
+          </div>
+          <ToastContainer theme='dark' toastStyle={{ backgroundColor: '#1d2021', }} />
         </form>
       </div>
     </section>
