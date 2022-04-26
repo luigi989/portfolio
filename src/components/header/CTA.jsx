@@ -1,5 +1,6 @@
 import React from 'react'
 import CV from '../../assets/cv_eng.pdf';
+import Button from '../shared/Button';
 
 const CTA = () => {
   return (
@@ -9,11 +10,7 @@ const CTA = () => {
                       w-max inline-block py-3 px-5 rounded-lg cursor-pointer border-solid border-2
                       border-primary text-primaryAlt' 
            href={CV} download>Download CV</a>
-        <a className='hover:text-primary hover:bg-bgAlt 
-                      transition ease-linear duration-300
-                      w-max inline-block py-3 px-5 rounded-lg cursor-pointer border-solid border-2 
-                      border-primary bg-primaryAlt text-bg' 
-           href="#contact">Let's talk</a>
+        <Button link={"#contact"}>Let's talk</Button>
     </div>
   )
 }
