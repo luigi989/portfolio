@@ -9,7 +9,7 @@ const PortfolioCard = (props) => {
 
             <h4 className='grow my-5'>{props.header}</h4>
             <div className='flex gap-3 '>
-                <a className='hover:bg-primary hover:text-bg hover:border-transparent
+                <a className='hover:bg-primary hover:text-bgAlt 
                 transition ease-linear duration-300
                 w-max inline-block py-1 px-3 rounded-lg cursor-pointer border-solid border-[1px]
                 border-primaryAlt text-primaryAlt'
