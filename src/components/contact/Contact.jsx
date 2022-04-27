@@ -47,8 +47,8 @@ const Contact = ({ snap }) => {
 
         <form noValidate autoComplete='off' ref={form} 
           onSubmit={handleSubmit(sendEmail)} 
-          className='flex flex-col gap-2 items-start w-full p-3 bg-liBg dark:bg-transparent rounded-2xl 
-                    transition ease-linear duration-300 text-liBg dark:text-white'>
+          className='flex flex-col gap-2 items-start w-full p-6 bg-liSec dark:bg-transparent rounded-2xl 
+                    transition ease-linear duration-300 text-liSec dark:text-white'>
           <div className='form-control w-full'>
             <input
               {...register("name", { required: true })}
@@ -56,7 +56,7 @@ const Contact = ({ snap }) => {
               name='name'
               placeholder='Your full name'
               aria-invalid={errors.name ? 'true' : 'false'}
-              className={errors.name ? 'input input-error bg-liSec dark:bg-bgAlt' : 'input !outline-primaryAlt bg-liSec dark:bg-bgAlt'}
+              className={errors.name ? 'input input-error bg-liBg dark:bg-bgAlt' : 'input !outline-primaryAlt bg-liBg dark:bg-bgAlt'}
             />
             <div className='flex'>
               {errors.name?.type === 'required' &&
@@ -71,7 +71,7 @@ const Contact = ({ snap }) => {
               type='email'
               name='email'
               placeholder='Your email'
-              className={errors.email ? 'input input-error !bg-bgAlt' : 'input !bg-bgAlt !outline-primaryAlt'}
+              className={errors.email ? 'input input-error bg-liBg dark:bg-bgAlt' : 'input !outline-primaryAlt bg-liBg dark:bg-bgAlt'}
             />
             <div className='flex'>
               {errors.email?.type === 'required' &&
@@ -89,7 +89,8 @@ const Contact = ({ snap }) => {
               name='message'
               placeholder='Your message'
               rows='7'
-              className={errors.message ? 'textarea textarea-error resize-none !bg-bgAlt ' : 'textarea resize-none !bg-bgAlt !outline-primaryAlt'}
+              className={errors.message ? 'textarea textarea-error resize-none bg-liBg dark:bg-bgAlt' : 
+                'textarea resize-none !outline-primaryAlt bg-liBg dark:bg-bgAlt'}
             ></textarea>
             <div className='flex'>
               {errors.message?.type === 'required' &&
@@ -98,9 +99,9 @@ const Contact = ({ snap }) => {
             </div>
           </div>
 
-          <div className='flex justify-between w-full items-center'>
-            <div className='flex flex-col'>
-              <h3 className='mb-1'>Rate the website</h3>
+          <div className='flex justify-between w-full items-center text-liBg dark:text-white'>
+            <div className='flex flex-col basis-1/3'>
+              <h3 className='mb-1 text-center'>Rate the website</h3>
               <input type="range"
                 name='rating'
                 min="1" max="5"
