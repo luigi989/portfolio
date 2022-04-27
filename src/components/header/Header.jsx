@@ -7,8 +7,12 @@ const Header = ({ snap }) => {
   return (
     <header className={snap + ' h-screen md:h-[68vh] lg:h-screen w-3/4 m-auto pt-16 overflow-hidden'}>
       <div className='h-full w-3/4 m-auto text-center relative text-liSec dark:text-white'>
-        <h1 className='mb-4 text-3xl'>Hello I'm Ludvig Lindahl</h1>
-        <h5 className='text-2xl'>Fullstack Developer</h5>
+
+        <div className='p-1 flex flex-col bg-liBg dark:bg-transparent w-fit m-auto'>
+          <h5 className='mb-3 text-center text-liLight dark:text-light font-medium text-3xl'>Hello I'm Ludvig Lindahl</h5>
+          <h2 className='text-center text-liSec dark:text-primaryAlt font-medium text-2xl'>Fullstack Developer</h2>
+        </div>
+
         <CTA />
         <a href='#contact' className='hidden lg:block text-liSec hover:text-liLight dark:text-primaryAlt dark:hover:text-white 
                                       p-1 bg-liBg dark:bg-transparent text-sm
