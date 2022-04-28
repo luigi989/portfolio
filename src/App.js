@@ -21,7 +21,6 @@ function App() {
       <About snap='lg:snap-start' />
       <Experience snap='lg:snap-start' />
       <Portfolio snap='lg:snap-start' />
-      <Testimonials snap='lg:snap-start' />
       <Contact snap='lg:snap-start' />
       <Footer snap='lg:snap-start' />
       <div><Nav /></div>

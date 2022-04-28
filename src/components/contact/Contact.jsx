@@ -75,7 +75,7 @@ const Contact = ({ snap }) => {
             />
             <div className='flex'>
               {errors.email?.type === 'required' &&
-                <Error>Please enetr a email</Error>}
+                <Error>Please enter a email</Error>}
               {errors.email?.type === 'pattern' &&
                 <Error>Please enter a valid email</Error>}
               <span className='mt-1 label-test-alt text-xs'>&nbsp;</span>

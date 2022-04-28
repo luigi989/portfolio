@@ -7,7 +7,7 @@ const PortfolioCard = (props) => {
                 <img src={props.path} alt='portfolio 1' className='rounded-2xl' />
             </div>
 
-            <h4 className='grow my-5 text-liBg dark:text-black'>{props.header}</h4>
+            <h4 className='grow my-5 text-liBg dark:text-white'>{props.header}</h4>
             <div className='flex gap-3 '>
                 <button className='hover:bg-liLight hover:text-liSec
                     dark:hover:bg-primary dark:hover:text-bgAlt 

@@ -13,10 +13,9 @@ const Experience = ({ snap }) => {
       </div>
 
       <div className='w-11/12 lg:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8'>
-        <div className='group bg-liSec dark:bg-bgAlt py-5 px-5 lg:py-10 lg:px-20 rounded-[2rem] border-solid border-[1px] border-transparent 
-                        hover:border-liSec hover:bg-liBg dark:hover:border-primary dark:hover:bg-transparent cursor-default 
+        <div className='bg-liSec dark:bg-bgAlt py-5 px-5 lg:py-10 lg:px-20 rounded-[2rem] border-solid border-[1px] border-transparent 
                         transition ease-linear duration-300'>
-          <h3 className='text-center mb-8 text-liBg group-hover:text-liSec dark:text-primaryAlt dark:group-hover:text-primaryAlt'>Frontend Experience</h3>
+          <h3 className='text-center mb-8 text-liBg dark:text-primaryAlt'>Frontend Experience</h3>
           <div className='grid grid-cols-2 gap-8'>
             <ExperienceItem lang='React' grade={experienced} />
             <ExperienceItem lang='JavaScript' grade={Intermediate} />
@@ -27,17 +26,16 @@ const Experience = ({ snap }) => {
           </div>
         </div>
 
-        <div className='group bg-liSec dark:bg-bgAlt py-5 px-5 lg:py-10 lg:px-20 rounded-[2rem] border-solid border-[1px] border-transparent 
-                        hover:border-liSec hover:bg-liBg dark:hover:border-primary dark:hover:bg-transparent cursor-default 
+        <div className='bg-liSec dark:bg-bgAlt py-5 px-5 lg:py-10 lg:px-20 rounded-[2rem] border-solid border-[1px] border-transparent 
                         transition ease-linear duration-300'>
-          <h3 className='text-center mb-8 text-liBg group-hover:text-liSec dark:text-primaryAlt dark:group-hover:text-primaryAlt'>Backend Experience</h3>
+          <h3 className='text-center mb-8 text-liBg dark:text-primaryAlt'>Backend Experience</h3>
           <div className='grid grid-cols-2 gap-8'>
             <ExperienceItem lang='Java' grade={experienced} />
             <ExperienceItem lang='C#' grade={Intermediate} />
             <ExperienceItem lang='MySQL' grade={Intermediate} />
             <ExperienceItem lang='PostgreSQL' grade={Intermediate} />
           </div>
-          <h3 className='text-center mb-8 text-liBg group-hover:text-liSec dark:text-primaryAlt dark:group-hover:text-primaryAlt pt-10'>Other Experience</h3>
+          <h3 className='text-center mb-8 text-liBg dark:text-primaryAlt pt-10'>Other Experience</h3>
           <div className='grid grid-cols-2 gap-8'>
             <ExperienceItem lang='Git' grade={experienced} />
           </div>

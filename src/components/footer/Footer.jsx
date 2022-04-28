@@ -12,7 +12,6 @@ const Footer = ({ snap }) => {
         <li><a href='#about' className='hover:underline'>About</a></li>
         <li><a href='#experience' className='hover:underline'>Experience</a></li>
         <li><a href='#portfolio' className='hover:underline'>Portfolio</a></li>
-        <li><a href='#testimonials' className='hover:underline'>Testamonials</a></li>
         <li><a href='#contact' className='hover:underline'>Contact</a></li>
       </ul>
 
