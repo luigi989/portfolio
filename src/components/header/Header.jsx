@@ -3,9 +3,9 @@ import CTA from './CTA';
 import ME from '../../assets/me.png';
 import HeaderSocials from './HeaderSocials';
 
-const Header = ({ snap }) => {
+const Header = ({ visibilityRef, snap }) => {
   return (
-    <header className={snap + ' h-screen md:h-[68vh] lg:h-screen w-3/4 m-auto pt-16 overflow-hidden'}>
+    <header ref={visibilityRef} className={snap + ' h-screen md:h-[68vh] lg:h-screen w-3/4 m-auto pt-16 overflow-hidden'}>
       <div className='h-full w-3/4 m-auto text-center relative text-liSec dark:text-white'>
 
         <div className='p-1 flex flex-col bg-liBg dark:bg-transparent w-fit m-auto'>

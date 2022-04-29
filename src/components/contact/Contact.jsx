@@ -11,7 +11,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Error from './Error';
 
-const Contact = ({ snap }) => {
+const Contact = ({ visibilityRef, snap }) => {
   const notify = () => toast.success('Mail send successfully!')
   const form = useRef();
   const { register, handleSubmit, formState: { errors } } = useForm({
@@ -26,7 +26,7 @@ const Contact = ({ snap }) => {
   };
 
   return (
-    <section id='contact' className={snap + ' mt-32 h-fit lg:h-screen pt-4 lg:pt-8'}>
+    <section ref={visibilityRef} id='contact' className={snap + ' mt-32 h-fit lg:h-screen pt-4 lg:pt-8'}>
       <div className='p-1 flex flex-col bg-liBg dark:bg-transparent w-fit m-auto lg:mb-16'>
         <h5 className='text-center text-liLight dark:text-light font-medium'>Get in touch</h5>
         <h2 className='text-center text-liSec dark:text-primaryAlt font-medium text-3xl'>Contact me</h2>
