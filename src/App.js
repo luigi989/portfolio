@@ -18,46 +18,83 @@ function App() {
 
   const useView = () => {
     const { observe, inView} = useInView({
-      threshold: 1,
+      threshold: 0.8,
       onChange: ({ inView, scrollDirection }) => {
-        if (inView) {
-          console.log(scrollDirection.vertical);
-        }
       },
     })
 
     return { observe, inView };
   }
 
-  const { observe: observeAbout, inView: inViewAbout, scrollDirection: scrollAbout } = useView();
+  const { observe: observeHeader, inView: inViewHeader } = useView();
+  const { observe: observeAbout, inView: inViewAbout } = useView();
   const { observe: observeExperience, inView: inViewExperince } = useView();
+  const { observe: observePortfolio, inView: inViewPortfolio } = useView();
+  const { observe: observeContact, inView: inViewContact } = useView();
+
+  class Sections {
+    constructor() {
+      this.header = false;
+      this.about = false;
+      this.experience = false;
+      this.portfolio = false;
+      this.contact = false;
+    }
+  }
+
+  useEffect(() => {
+    if (inViewHeader) {
+      console.log('Header visible');
+      const sections = new Sections();
+      sections.header = true;
+      setSectionsVisible(sections);
+    }
+  }, [inViewHeader, setSectionsVisible])
 
   useEffect(() => {
     if (inViewAbout) {
       console.log('About visible');
-      // console.log(scrollAbout);
-      const sections = sectionsVisible;
-
-      console.log(sections);
+      const sections = new Sections();
+      sections.about = true;
+      setSectionsVisible(sections);
     }
-  }, [observeAbout, inViewAbout, sectionsVisible, scrollAbout])
+  }, [inViewAbout, setSectionsVisible])
 
-  // useEffect(() => {
-  //   if (inViewExperince) {
-  //     console.log('Experience visible');
-  //     console.log(observeExperience);
-  //   }
-  // }, [observeExperience, inViewExperince, changeVisibleState])
+  useEffect(() => {
+    if (inViewExperince) {
+      console.log('Experience visible');
+      const sections = new Sections();
+      sections.experience = true;
+      setSectionsVisible(sections);
+    }
+  }, [inViewExperince, setSectionsVisible])
 
+  useEffect(() => {
+    if (inViewPortfolio) {
+      console.log('Portfolio visible');
+      const sections = new Sections();
+      sections.portfolio = true;
+      setSectionsVisible(sections);
+    }
+  }, [inViewPortfolio, setSectionsVisible])
+
+  useEffect(() => {
+    if (inViewContact) {
+      console.log('Contact visible');
+      const sections = new Sections();
+      sections.contact = true;
+      setSectionsVisible(sections);
+    }
+  }, [inViewContact, setSectionsVisible])
 
   return (
     <div className={isDark ? 'bg-bgTexture bg-liBg text-black dark:bg-bg dark:text-white' :
       'lightPattern bg-liBg text-black dark:bg-bg dark:text-white'}>
-      <Header snap='lg:snap-start' />
+      <Header visibilityRef={observeHeader} snap='lg:snap-start' />
       <About visibilityRef={observeAbout} snap='lg:snap-start' />
       <Experience visibilityRef={observeExperience} snap='lg:snap-start' />
-      <Portfolio snap='lg:snap-start' />
-      <Contact snap='lg:snap-start' />
+      <Portfolio visibilityRef={observePortfolio} snap='lg:snap-start' />
+      <Contact visibilityRef={observeContact} snap='lg:snap-start' />
       <Footer snap='lg:snap-end' />
       <div><Nav /></div>
     </div>
