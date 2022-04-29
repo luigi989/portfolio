@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
 import { BiBook, BiMessageSquareDetail } from 'react-icons/bi';
 import { BsBriefcase } from 'react-icons/bs';
-import { useSetRecoilState } from 'recoil';
-import { darkModeState } from '../../atoms/atoms';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { darkModeState, sectionVisibleState } from '../../atoms/atoms';
 
 const Nav = () => {
-   const [activeNav, setActiveNav] = useState('#');
+   const [activeNav, setActiveNav] = useState();
    const setIsDark = useSetRecoilState(darkModeState);
+   const sectionsVisible = useRecoilValue(sectionVisibleState);
 
    const setDarkMode = () => {
       if (localStorage.getItem('color-theme')) {
@@ -44,6 +45,32 @@ const Nav = () => {
          setIsDark(false);
       }
    }, [setIsDark])
+
+   useEffect(() => {
+      const url = new URL(window.location);
+      if(sectionsVisible.header) {
+         url.hash = '#';
+         setActiveNav('#');
+      }
+      if (sectionsVisible.about) {
+         url.hash = '#about';
+         setActiveNav('#about');
+      }
+      if (sectionsVisible.experience) {
+         url.hash = '#experience';
+         setActiveNav('#experience');
+      }
+      if(sectionsVisible.portfolio) {
+         url.hash = 'portfolio';
+         setActiveNav('#portfolio');
+      }
+      if(sectionsVisible.contact) {
+         url.hash = 'contact';
+         setActiveNav('#contact');
+      }
+      window.history.pushState({}, '', url);
+   }, [sectionsVisible])
+
 
    const navClass = "text-liBg hover:text-liSec hover:bg-liPrimary hover:bg-opacity-80 " +
       "dark:hover:bg-opacity-60 dark:hover:bg-primaryAlt dark:hover:text-black dark:text-primaryAlt " +
