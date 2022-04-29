@@ -4,7 +4,7 @@ import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 const Footer = ({ snap }) => {
   return (
     <footer id='footer' 
-      className={ snap + ' bg-liSec dark:bg-primaryAlt mt-28 py-12 px-0 text-center text-sm text-liBg dark:text-bg'}>
+      className={ snap + ' bg-liSec dark:bg-primaryAlt py-12 px-0 text-center text-sm text-liBg dark:text-bg'}>
       <a href='/#' className='text-4xl font-medium mb-8 inline-block'>Ludvig Lindahl</a>
 
       <ul className='flex flex-col md:flex-row flex-wrap justify-center gap-6 md:gap-8 mt-0 mx-auto mb-6 md:mb-12'>
@@ -33,7 +33,7 @@ const Footer = ({ snap }) => {
             <FaFacebook /></a>
       </div>
 
-      <div className='mb-16'>
+      <div className='mb-4'>
         <small>&copy; Ludvig Lindahl. All rights reserved</small>
       </div>
     </footer>
