@@ -1,12 +1,12 @@
 import React from 'react'
 import ExperienceItem from './ExperienceItem';
 
-const Experience = ({ snap }) => {
+const Experience = ({ visibilityRef, snap }) => {
   const Intermediate = 'Intermediate';
   const experienced = 'Experienced';
 
   return (
-    <section id='experience' className={ snap + ' mt-32 h-fit lg:h-screen pt-4 lg:pt-8'}>
+    <section ref={visibilityRef} id='experience' className={ snap + ' mt-32 h-fit lg:h-screen pt-4 lg:pt-8'}>
       <div className='flex flex-col bg-liBg dark:bg-transparent w-fit mb-16 lg:mb-32 m-auto'>
       <h5 className='text-center text-liLight dark:text-light font-medium'>What Skills I have</h5>
       <h2 className='text-center text-liSec dark:text-primaryAlt font-medium text-3xl'>My Experience</h2>

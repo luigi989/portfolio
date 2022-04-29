@@ -6,9 +6,9 @@ import ProfilePic from '../../assets/profilbild2.jpg';
 import Button from '../shared/Button';
 import AboutItem from './AboutItem';
 
-function About({ snap }) {
+function About({ visibilityRef, inView, snap }) {
   return (
-    <section id='about' className={ snap + ' mt-28 h-fit lg:h-screen pt-4 lg:pt-8'}>
+    <section ref={visibilityRef} id='about' className={ snap + ' mt-28 h-fit lg:h-screen pt-4 lg:pt-8'}>
       <div className='flex flex-col bg-liBg dark:bg-transparent w-fit mb-16 lg:mb-32 m-auto'>
         <h5 className='text-center text-liLight dark:text-light font-medium '>Get to know</h5>
         <h2 className='text-center text-liSec dark:text-primaryAlt font-medium text-3xl'>About Me</h2>
