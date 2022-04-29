@@ -38,10 +38,12 @@ const Nav = () => {
    useEffect(() => {
       if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
          document.documentElement.classList.add('dark');
+         setIsDark(true);
       } else {
-         document.documentElement.classList.remove('dark')
+         document.documentElement.classList.remove('dark');
+         setIsDark(false);
       }
-   }, [])
+   }, [setIsDark])
 
    const navClass = "text-liBg hover:text-liSec hover:bg-liPrimary hover:bg-opacity-80 " +
       "dark:hover:bg-opacity-60 dark:hover:bg-primaryAlt dark:hover:text-black dark:text-primaryAlt " +
