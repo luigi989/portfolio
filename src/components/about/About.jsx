@@ -6,7 +6,7 @@ import ProfilePic from '../../assets/profilbild2.jpg';
 import Button from '../shared/Button';
 import AboutItem from './AboutItem';
 
-function About({ visibilityRef, inView, snap }) {
+function About({ visibilityRef, snap }) {
   return (
     <section ref={visibilityRef} id='about' className={ snap + ' mt-28 h-fit lg:h-screen pt-4 lg:pt-8'}>
       <div className='flex flex-col bg-liBg dark:bg-transparent w-fit mb-16 lg:mb-32 m-auto'>
