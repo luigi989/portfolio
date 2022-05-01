@@ -76,7 +76,8 @@ const Nav = () => {
       "dark:hover:bg-opacity-60 dark:hover:bg-primaryAlt dark:hover:text-black dark:text-primaryAlt " +
       "bg-transparent p-[0.9rem] rounded-[50%] flex text-lg " +
       "transition ease-linear duration-300 "
-   const active = "bg-liPrimary text-liSec dark:bg-primaryAlt dark:text-black";
+
+   const active = 'bg-liPrimary text-gray-700 dark:bg-primaryAlt dark:text-black';
 
    return (
       <div className='fixed left-12 -translate-y-1/2 top-1/2 flex flex-col justify-center items-center gap-5'>
