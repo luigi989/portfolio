@@ -2,6 +2,7 @@ import React from 'react'
 import PortfolioCard from './PortfolioCard';
 import portfolio_periodic from '../../assets/portfolio_periodic.png';
 import portfolio_exaples from '../../assets/portfolio_examples.png';
+import portfolio_smallApps from '../../assets/portfolio_smallApps.png';
 
 function Portfolio({ visibilityRef, snap }) {
   return (
@@ -40,7 +41,7 @@ function Portfolio({ visibilityRef, snap }) {
         <PortfolioCard
           header='smallApps'
           link='https://github.com/luigi989/smallApps'
-          path={portfolio_exaples}
+          path={portfolio_smallApps}
         />
       </div>
     </section>
