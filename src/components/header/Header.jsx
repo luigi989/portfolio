@@ -1,6 +1,6 @@
 import React from 'react'
 import CTA from './CTA';
-import ME from '../../assets/me.png';
+import ME from '../../assets/profilbild.png';
 import HeaderSocials from './HeaderSocials';
 
 const Header = ({ visibilityRef, snap }) => {
@@ -21,7 +21,7 @@ const Header = ({ visibilityRef, snap }) => {
 
         <div className='bg-gradient-to-b from-liSec dark:from-primaryAlt w-[22rem] h-[30rem] mt-16 
                         rounded-tl-[12rem] rounded-tr-[12rem] 
-                        absolute left-[calc(50%-11rem)] overflow-hidden px-6 pb-6 pt-20'>
+                        mx-auto overflow-hidden px-1 pb-6 pt-20'>
           <img className='block object-cover' src={ME} alt='me' />
         </div>
 
