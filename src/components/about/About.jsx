@@ -1,6 +1,5 @@
 import React from 'react';
-import { FaAward } from 'react-icons/fa';
-import { FiUsers } from 'react-icons/fi';
+import { FaAward, FaCode } from 'react-icons/fa';
 import { VscFolderLibrary } from 'react-icons/vsc';
 import ProfilePic from '../../assets/profilbild2.jpg';
 import Button from '../shared/Button';
@@ -28,8 +27,8 @@ function About({ visibilityRef, snap }) {
               <FaAward className='m-auto text-liBg group-hover:text-liSec dark:text-primaryAlt text-2xl mb-4' />
             </AboutItem>
         
-            <AboutItem header='Clients' text='200+ Worldwide'>
-              <FiUsers className='m-auto text-liBg group-hover:text-liSec dark:text-primaryAlt text-2xl mb-4' />
+            <AboutItem header='Coding' text='7+ years experince'>
+              <FaCode className='m-auto text-liBg group-hover:text-liSec dark:text-primaryAlt text-2xl mb-4' />
             </AboutItem>
 
             <AboutItem header='Projects' text='10+ Completed'>
