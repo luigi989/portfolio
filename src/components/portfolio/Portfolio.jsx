@@ -18,24 +18,28 @@ function Portfolio({ visibilityRef, snap }) {
           path={portfolio_periodic}
         />
         <PortfolioCard
-          header='Charts templates and infographs in Figma'
+          header='Examples in HTML/CSS'
           link='https://github.com/luigi989/examples'
           path={portfolio_exaples}
         />
         <PortfolioCard
-          header='Figma dashboard UI kit for data design with apps'
+          header='Ragnarok'
+          link='https://github.com/luigi989/Ragnarok'
           path={portfolio_exaples}
         />
         <PortfolioCard
-          header='Maintaining tasks and tracking process'
+          header='Meal-Planner'
+          link='https://github.com/HawkieOne/Meal-Planner'
           path={portfolio_exaples}
         />
         <PortfolioCard
-          header='Charts tempaltes and infographs in Figma'
+          header='Space-app'
+          link='https://github.com/HawkieOne/space-app'
           path={portfolio_exaples}
         />
         <PortfolioCard
-          header='Charts tempaltes and infographs in Figma'
+          header='smallApps'
+          link='https://github.com/luigi989/smallApps'
           path={portfolio_exaples}
         />
       </div>
