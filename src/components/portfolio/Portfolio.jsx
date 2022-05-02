@@ -3,6 +3,7 @@ import PortfolioCard from './PortfolioCard';
 import portfolio_periodic from '../../assets/portfolio_periodic.png';
 import portfolio_exaples from '../../assets/portfolio_examples.png';
 import portfolio_smallApps from '../../assets/portfolio_smallApps.png';
+import portfolio_ragnarok from '../../assets/portfolio_ragnarok.png';
 
 function Portfolio({ visibilityRef, snap }) {
   return (
@@ -26,7 +27,7 @@ function Portfolio({ visibilityRef, snap }) {
         <PortfolioCard
           header='Ragnarok'
           link='https://github.com/luigi989/Ragnarok'
-          path={portfolio_exaples}
+          path={portfolio_ragnarok}
         />
         <PortfolioCard
           header='Meal-Planner'
