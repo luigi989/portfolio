@@ -4,6 +4,8 @@ import portfolio_periodic from '../../assets/portfolio_periodic.png';
 import portfolio_exaples from '../../assets/portfolio_examples.png';
 import portfolio_smallApps from '../../assets/portfolio_smallApps.png';
 import portfolio_ragnarok from '../../assets/portfolio_ragnarok.png';
+import portfolio_spaceApp from '../../assets/portfolio_spaceApp.png';
+import portfolio_mealPlanner from '../../assets/portfolio_mealPlanner.png';
 
 function Portfolio({ visibilityRef, snap }) {
   return (
@@ -32,12 +34,12 @@ function Portfolio({ visibilityRef, snap }) {
         <PortfolioCard
           header='Meal-Planner'
           link='https://github.com/HawkieOne/Meal-Planner'
-          path={portfolio_exaples}
+          path={portfolio_mealPlanner}
         />
         <PortfolioCard
           header='Space-app'
           link='https://github.com/HawkieOne/space-app'
-          path={portfolio_exaples}
+          path={portfolio_spaceApp}
         />
         <PortfolioCard
           header='smallApps'
