@@ -15,7 +15,7 @@ function Portfolio({ visibilityRef, snap }) {
         <h2 className='text-center text-liSec dark:text-primaryAlt font-medium text-3xl'>Portfolio</h2>
       </div>
 
-      <div className='w-11/12 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
+      <div className='w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
         <PortfolioCard
           header='The Periodic System in a interactive system'
           link='https://github.com/luigi989/periodic'
