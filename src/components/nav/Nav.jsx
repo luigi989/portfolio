@@ -48,7 +48,7 @@ const Nav = () => {
 
    useEffect(() => {
       const url = new URL(window.location);
-      if(sectionsVisible.header) {
+      if (sectionsVisible.header) {
          url.hash = '#';
          setActiveNav('#');
       }
@@ -60,11 +60,11 @@ const Nav = () => {
          url.hash = '#experience';
          setActiveNav('#experience');
       }
-      if(sectionsVisible.portfolio) {
+      if (sectionsVisible.portfolio) {
          url.hash = 'portfolio';
          setActiveNav('#portfolio');
       }
-      if(sectionsVisible.contact) {
+      if (sectionsVisible.contact) {
          url.hash = 'contact';
          setActiveNav('#contact');
       }
@@ -80,39 +80,46 @@ const Nav = () => {
    const active = 'bg-liPrimary text-gray-700 dark:bg-primaryAlt dark:text-black';
 
    return (
-      <div className='hidden fixed left-12 -translate-y-1/2 top-1/2 lg:flex flex-col justify-center items-center gap-5'>
+      <div className='hidden fixed left-12 -translate-y-1/2 top-1/2 lg:flex flex-col justify-center items-center gap-5 print:hidden'>
          <nav className="bg-liSec dark:bg-black w-max py-3 px-4 flex flex-col gap-3 
                         rounded-[3rem] backdrop-blur-lg">
 
             <a className={activeNav === '#' ? navClass + active : navClass}
                href='/#'
+               title='Header'
                aria-label='Go to Home section'
                onClick={() => setActiveNav('#')}><AiOutlineHome /></a>
 
             <a className={activeNav === '#about' ? navClass + active : navClass}
                href='#about'
+               title='About me'
                aria-label='Go to About section'
                onClick={() => setActiveNav('#about')}><AiOutlineUser /></a>
 
             <a className={activeNav === '#experience' ? navClass + active : navClass}
                href='#experience'
+               title='Experience'
                aria-label='Go to Experience section'
                onClick={() => setActiveNav('#experience')}><BiBook /></a>
 
             <a className={activeNav === '#portfolio' ? navClass + active : navClass}
                href='#portfolio'
+               title='Portfolio'
                aria-label='Go to Portfolio section'
                onClick={() => setActiveNav('#portfolio')}><BsBriefcase /></a>
 
             <a className={activeNav === '#contact' ? navClass + active : navClass}
                href='#contact'
+               title='Contact me'
                aria-label='Go to Contact section'
                onClick={() => setActiveNav('#contact')}><BiMessageSquareDetail /></a>
 
          </nav>
 
          <div className='bg-liSec dark:bg-black w-max py-2 px-2 rounded-[3rem] backdrop-blur-lg'>
-            <label className="swap swap-rotate 
+            <label
+               title='Dark/Light mode'
+               className="swap swap-rotate 
             text-liBg hover:bg-liPrimary hover:text-liSec dark:hover:bg-primaryAlt dark:text-primaryAlt dark:hover:text-black 
             transition ease-linear duration-300
             bg-transparent p-[0.9rem] rounded-[50%] text-lg">

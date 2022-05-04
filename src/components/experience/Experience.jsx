@@ -6,7 +6,7 @@ const Experience = ({ visibilityRef, snap }) => {
   const experienced = 'Experienced';
 
   return (
-    <section ref={visibilityRef} id='experience' className={ snap + ' mt-32 h-fit lg:h-screen pt-4 lg:pt-8'}>
+    <section ref={visibilityRef} id='experience' className={ snap + ' mt-32 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}>
       <div className='flex flex-col bg-liBg dark:bg-transparent w-fit mb-8 lg:mb-32 m-auto'>
       <h1 className='text-center text-liLight dark:text-light font-medium text-base'>What Skills I have</h1>
       <h2 className='text-center text-liSec dark:text-primaryAlt font-medium text-3xl'>My Experience</h2>

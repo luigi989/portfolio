@@ -9,13 +9,13 @@ import portfolio_mealPlanner from '../../assets/portfolio_mealPlanner.webp';
 
 function Portfolio({ visibilityRef, snap }) {
   return (
-    <section ref={visibilityRef} id='portfolio' className={snap + ' mt-16 lg:mt-32 h-fit lg:h-screen pt-4 lg:pt-8'}>
+    <section ref={visibilityRef} id='portfolio' className={snap + ' mt-16 lg:mt-32 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}>
       <div className='flex flex-col bg-liBg dark:bg-transparent w-fit mb-8 lg:mb-16 m-auto'>
         <h1 className='text-center text-liLight dark:text-light font-medium text-base'>My Recent Work</h1>
         <h2 className='text-center text-liSec dark:text-primaryAlt font-medium text-3xl'>Portfolio</h2>
       </div>
 
-      <div className='w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
+      <div className='w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 print:grid-cols-3'>
         <PortfolioCard
           header='The Periodic System in a interactive system'
           link='https://github.com/luigi989/periodic'
@@ -42,7 +42,7 @@ function Portfolio({ visibilityRef, snap }) {
           path={portfolio_spaceApp}
         />
         <PortfolioCard
-          header='smallApps'
+          header='SmallApps'
           link='https://github.com/luigi989/smallApps'
           path={portfolio_smallApps}
         />

@@ -1,8 +1,10 @@
 import React from 'react'
 
-export default function Button({ submit, link, children }) {
+export default function Button({ submit, link, children, title }) {
     if (submit) return (
-        <button type='submit'
+        <button 
+            type='submit'
+            title={title}
             className='self-end transition ease-linear duration-300
             w-max inline-block py-3 px-5 cursor-pointer rounded-md border-solid border-2 
             text-liBg bg-transparent border-liBg hover:bg-liBg hover:text-liSec
@@ -14,6 +16,7 @@ export default function Button({ submit, link, children }) {
     if (link) return (
         <a href={link}>
             <button
+                title={title}
                 className='self-end transition ease-linear duration-300 w-max inline-block py-3 px-5 
                 cursor-pointer rounded-lg 
                 border-solid border-2 dark:border-primary border-liSec

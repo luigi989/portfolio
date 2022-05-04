@@ -14,7 +14,10 @@ const Header = ({ visibilityRef, snap }) => {
         </div>
 
         <CTA />
-        <a href='#contact' className='hidden lg:block text-liSec hover:text-liLight dark:text-primaryAlt dark:hover:text-white 
+        <a 
+          href='#contact' 
+          title='Scroll down'
+          className='hidden lg:block text-liSec hover:text-liLight dark:text-primaryAlt dark:hover:text-white 
                                       p-1 bg-liBg dark:bg-transparent text-sm
                                       absolute -right-9 bottom-20 rotate-90 font-light'>Scroll Down</a>
         <HeaderSocials />
