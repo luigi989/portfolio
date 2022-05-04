@@ -80,7 +80,7 @@ const Nav = () => {
    const active = 'bg-liPrimary text-gray-700 dark:bg-primaryAlt dark:text-black';
 
    return (
-      <div className='fixed left-12 -translate-y-1/2 top-1/2 flex flex-col justify-center items-center gap-5'>
+      <div className='hidden fixed left-12 -translate-y-1/2 top-1/2 lg:flex flex-col justify-center items-center gap-5'>
          <nav className="bg-liSec dark:bg-black w-max py-3 px-4 flex flex-col gap-3 
                         rounded-[3rem] backdrop-blur-lg">
 
