@@ -40,7 +40,7 @@ function App() {
       this.portfolio = false;
       this.contact = false;
     }
-  }
+  } 
 
   useEffect(() => {
     if (inViewHeader) {

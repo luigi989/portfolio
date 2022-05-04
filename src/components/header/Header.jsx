@@ -1,6 +1,6 @@
 import React from 'react'
 import CTA from './CTA';
-import ME from '../../assets/profilbild.png';
+import ME from '../../assets/profilbild.webp';
 import HeaderSocials from './HeaderSocials';
 
 const Header = ({ visibilityRef, snap }) => {

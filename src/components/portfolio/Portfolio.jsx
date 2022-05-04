@@ -1,11 +1,11 @@
 import React from 'react'
 import PortfolioCard from './PortfolioCard';
-import portfolio_periodic from '../../assets/portfolio_periodic.png';
-import portfolio_exaples from '../../assets/portfolio_examples.png';
-import portfolio_smallApps from '../../assets/portfolio_smallApps.png';
-import portfolio_ragnarok from '../../assets/portfolio_ragnarok.png';
-import portfolio_spaceApp from '../../assets/portfolio_spaceApp.png';
-import portfolio_mealPlanner from '../../assets/portfolio_mealPlanner.png';
+import portfolio_periodic from '../../assets/portfolio_periodic.webp';
+import portfolio_exaples from '../../assets/portfolio_examples.webp';
+import portfolio_smallApps from '../../assets/portfolio_smallApps.webp';
+import portfolio_ragnarok from '../../assets/portfolio_ragnarok.webp';
+import portfolio_spaceApp from '../../assets/portfolio_spaceApp.webp';
+import portfolio_mealPlanner from '../../assets/portfolio_mealPlanner.webp';
 
 function Portfolio({ visibilityRef, snap }) {
   return (

@@ -22,7 +22,7 @@ module.exports = {
         primary: '#98971a',
       },
       backgroundImage: {
-        'bgTexture': "url('../src/assets/bg-texture.png')",
+        'bgTexture': "url('../src/assets/bg-texture.webp')",
       },
     },
   },
