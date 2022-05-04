@@ -28,7 +28,7 @@ const Contact = ({ visibilityRef, snap }) => {
   return (
     <section ref={visibilityRef} id='contact' className={snap + ' mt-32 h-fit lg:h-screen pt-4 lg:pt-8'}>
       <div className='p-1 flex flex-col bg-liBg dark:bg-transparent w-fit m-auto lg:mb-16'>
-        <h5 className='text-center text-liLight dark:text-light font-medium'>Get in touch</h5>
+        <h1 className='text-center text-liLight dark:text-light font-medium text-base'>Get in touch</h1>
         <h2 className='text-center text-liSec dark:text-primaryAlt font-medium text-3xl'>Contact me</h2>
       </div>
 
@@ -101,14 +101,16 @@ const Contact = ({ visibilityRef, snap }) => {
 
           <div className='flex justify-between w-full items-center text-liBg dark:text-white'>
             <div className='flex flex-col basis-1/3'>
-              <h3 className='mb-1 text-center'>Rate the website</h3>
-              <input type="range"
-                name='rating'
-                min="1" max="5"
-                value={rangeValue}
-                onChange={(e) => setRangeValue(e.target.value)}
-                className="range range-accent"
-                step="1" />
+              <label className='mb-0 p-0'>
+                Rate the website
+                <input type="range"
+                  name='rating'
+                  min="1" max="5"
+                  value={rangeValue}
+                  onChange={(e) => setRangeValue(e.target.value)}
+                  className="range range-accent"
+                  step="1" />
+              </label>
               <div className="w-full flex justify-between text-xs px-2">
                 <span>|</span>
                 <span>|</span>

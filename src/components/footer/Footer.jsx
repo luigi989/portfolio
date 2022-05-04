@@ -17,16 +17,19 @@ const Footer = ({ snap }) => {
 
       <div className='flex justify-center gap-4 mb-4'>
         <a href='https://www.linkedin.com/in/ludvig-lindahl/' target='_blank' rel='noreferrer'
+          aria-label='Go to Linkedin'
           className='bg-transparent dark:bg-bg dark:text-white p-3 rounded-xl flex border-2 border-solid border-liBg dark:border-transparent
           hover:bg-liBg hover:text-liSec transition ease-linear duration-200
           dark:hover:bg-transparent dark:hover:text-bg dark:hover:border-bg'>
             <FaLinkedin /></a>
         <a href='https://github.com/luigi989' target='_blank' rel='noreferrer'
+          aria-label='Go to Github'
           className='bg-transparent dark:bg-bg dark:text-white p-3 rounded-xl flex border-2 border-solid border-liBg dark:border-transparent
           hover:bg-liBg hover:text-liSec transition ease-linear duration-200
           dark:hover:bg-transparent dark:hover:text-bg dark:hover:border-bg'>
             <FaGithub /></a>
         <a href='https://www.facebook.com/ludvig.lindahl.1' target='_blank' rel='noreferrer'
+          aria-label='Go to Facebook'
           className='bg-transparent dark:bg-bg dark:text-white p-3 rounded-xl flex border-2 border-solid border-liBg dark:border-transparent
           hover:bg-liBg hover:text-liSec transition ease-linear duration-200
           dark:hover:bg-transparent dark:hover:text-bg dark:hover:border-bg'>
