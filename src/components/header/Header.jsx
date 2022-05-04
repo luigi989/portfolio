@@ -6,7 +6,7 @@ import HeaderSocials from './HeaderSocials';
 const Header = ({ visibilityRef, snap }) => {
   return (
     <header ref={visibilityRef} className={snap + ' h-screen md:h-[68vh] lg:h-screen w-3/4 m-auto pt-16 overflow-hidden'}>
-      <div className='h-full w-3/4 m-auto text-center relative text-liSec dark:text-white'>
+      <div className='h-full w-11/12 m-auto text-center relative text-liSec dark:text-white'>
 
         <div className='p-1 flex flex-col bg-liBg dark:bg-transparent w-fit m-auto'>
           <h1 className='mb-3 text-center text-liLight dark:text-light font-medium text-3xl'>Hello I'm Ludvig Lindahl</h1>

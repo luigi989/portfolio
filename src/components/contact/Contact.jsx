@@ -26,13 +26,13 @@ const Contact = ({ visibilityRef, snap }) => {
   };
 
   return (
-    <section ref={visibilityRef} id='contact' className={snap + ' mt-32 h-fit lg:h-screen pt-4 lg:pt-8'}>
-      <div className='p-1 flex flex-col bg-liBg dark:bg-transparent w-fit m-auto lg:mb-16'>
+    <section ref={visibilityRef} id='contact' className={snap + ' mb-10 lg:mb-0 mt-16 lg:mt-32 h-fit lg:h-screen pt-4 lg:pt-8'}>
+      <div className='p-1 flex flex-col bg-liBg dark:bg-transparent w-fit m-auto mb-8 lg:mb-16'>
         <h1 className='text-center text-liLight dark:text-light font-medium text-base'>Get in touch</h1>
         <h2 className='text-center text-liSec dark:text-primaryAlt font-medium text-3xl'>Contact me</h2>
       </div>
 
-      <div className='w-3/4 lg:w-3/5 m-auto flex flex-col md:flex-row gap-16 lg:gap-20'>
+      <div className='w-11/12 lg:w-3/5 m-auto flex flex-col md:flex-row gap-10 lg:gap-20'>
         <div className='flex flex-col gap-6 bg-liBg dark:bg-transparent'>
           <ContactItem header='Email' contact='ludde.lindahl@gmail.com' href='mailto:ludde.lindahl@gmail.com'>
             <FiMail className='text-liBg group-hover:text-liSec dark:text-primary dark:group-hover:text-primary m-auto text-2xl mb-4' />
@@ -47,7 +47,7 @@ const Contact = ({ visibilityRef, snap }) => {
 
         <form noValidate autoComplete='off' ref={form} 
           onSubmit={handleSubmit(sendEmail)} 
-          className='flex flex-col gap-2 items-start w-full p-6 bg-liSec dark:bg-transparent rounded-2xl 
+          className='flex flex-col gap-2 items-start w-full p-0 md:p-6 bg-liSec dark:bg-transparent rounded-2xl 
                     transition ease-linear duration-300 text-liSec dark:text-white'>
           <div className='form-control w-full'>
             <input
@@ -100,7 +100,7 @@ const Contact = ({ visibilityRef, snap }) => {
           </div>
 
           <div className='flex justify-between w-full items-center text-liBg dark:text-white'>
-            <div className='flex flex-col basis-1/3'>
+            <div className='flex flex-col basis-1/2 md:basis-1/3'>
               <label className='mb-0 p-0'>
                 Rate the website
                 <input type="range"

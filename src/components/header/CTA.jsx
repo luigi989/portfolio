@@ -10,7 +10,7 @@ const CTA = () => {
                       border-solid border-2
                       border-transparent text-liSec border-liSec hover:bg-liSec hover:text-liBg
                       transition ease-linear duration-300
-                      py-3 px-5 rounded-lg cursor-pointer text-center'>
+                      py-3 px-5 rounded-lg cursor-pointer text-center text-sm whitespace-nowrap md:text-lg md:whitespace-normal'>
         <a href={CV} download>Download CV</a>
       </button>
       <Button link={"#contact"}>Let's talk</Button>
