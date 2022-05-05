@@ -44,7 +44,6 @@ function App() {
 
   useEffect(() => {
     if (inViewHeader) {
-      console.log('Header visible');
       const sections = new Sections();
       sections.header = true;
       setSectionsVisible(sections);
@@ -53,7 +52,6 @@ function App() {
 
   useEffect(() => {
     if (inViewAbout) {
-      console.log('About visible');
       const sections = new Sections();
       sections.about = true;
       setSectionsVisible(sections);
@@ -62,7 +60,6 @@ function App() {
 
   useEffect(() => {
     if (inViewExperince) {
-      console.log('Experience visible');
       const sections = new Sections();
       sections.experience = true;
       setSectionsVisible(sections);
@@ -71,7 +68,6 @@ function App() {
 
   useEffect(() => {
     if (inViewPortfolio) {
-      console.log('Portfolio visible');
       const sections = new Sections();
       sections.portfolio = true;
       setSectionsVisible(sections);
@@ -80,7 +76,6 @@ function App() {
 
   useEffect(() => {
     if (inViewContact) {
-      console.log('Contact visible');
       const sections = new Sections();
       sections.contact = true;
       setSectionsVisible(sections);
@@ -90,11 +85,11 @@ function App() {
   return (
     <div className={isDark ? 'bg-bgTexture bg-liBg text-black dark:bg-bg dark:text-white' :
       'lightPattern bg-liBg text-black dark:bg-bg dark:text-white'}>
-      <Header visibilityRef={observeHeader} snap='lg:snap-start' />
-      <About visibilityRef={observeAbout} snap='lg:snap-start' />
-      <Experience visibilityRef={observeExperience} snap='lg:snap-start' />
-      <Portfolio visibilityRef={observePortfolio} snap='lg:snap-start' />
-      <Contact visibilityRef={observeContact} snap='lg:snap-start' />
+      <Header visibilityRef={observeHeader} snap='lg:snap-start snap-always' />
+      <About visibilityRef={observeAbout} snap='lg:snap-start snap-always' />
+      <Experience visibilityRef={observeExperience} snap='lg:snap-start snap-always' />
+      <Portfolio visibilityRef={observePortfolio} snap='lg:snap-start snap-always' />
+      <Contact visibilityRef={observeContact} snap='lg:snap-start snap-always' />
       <Footer snap='lg:snap-end' />
       <div><Nav /></div>
     </div>

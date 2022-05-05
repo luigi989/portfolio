@@ -3,7 +3,9 @@ import CTA from './CTA';
 import ME from '../../assets/profilbild.webp';
 import HeaderSocials from './HeaderSocials';
 
+
 const Header = ({ visibilityRef, snap }) => {
+
   return (
     <header ref={visibilityRef} className={snap + ' h-fit md:h-[68vh] lg:h-screen w-3/4 m-auto pt-16 overflow-hidden'}>
       <div className='h-full w-11/12 md:w-3/4 m-auto text-center relative text-liSec dark:text-white'>

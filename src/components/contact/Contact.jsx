@@ -1,15 +1,14 @@
 import emailjs from '@emailjs/browser';
 import React, { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { FaWhatsapp } from 'react-icons/fa';
+import { toast, ToastContainer } from 'react-toastify';
+import { BsMessenger, BsWhatsapp } from 'react-icons/bs';
 import { FiMail } from 'react-icons/fi';
-import { RiMessengerLine } from 'react-icons/ri';
+import 'react-toastify/dist/ReactToastify.css';
 import Button from '../shared/Button';
 import ContactItem from './ContactItem';
-
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import Error from './Error';
+
 
 const Contact = ({ visibilityRef, snap }) => {
   const notify = () => toast.success('Mail send successfully!')
@@ -38,10 +37,10 @@ const Contact = ({ visibilityRef, snap }) => {
             <FiMail className='text-liBg group-hover:text-liSec dark:text-primary dark:group-hover:text-primary m-auto text-2xl mb-4' />
           </ContactItem>
           <ContactItem header='Messenger' contact='Ludvig Lindahl' href='https://m.me/ludvig.lindahl.1'>
-            <RiMessengerLine className='text-liBg group-hover:text-liSec dark:text-primary dark:group-hover:text-primary m-auto text-2xl mb-4' />
+            <BsMessenger className='text-liBg group-hover:text-liSec dark:text-primary dark:group-hover:text-primary m-auto text-2xl mb-4' />
           </ContactItem>
           <ContactItem header='WhatsApp' contact='+46705789618' href='https://wa.me/46705789618'>
-            <FaWhatsapp className='text-liBg group-hover:text-liSec dark:text-primary dark:group-hover:text-primary m-auto text-2xl mb-4' />
+            <BsWhatsapp className='text-liBg group-hover:text-liSec dark:text-primary dark:group-hover:text-primary m-auto text-2xl mb-4' />
           </ContactItem>
         </div>
 

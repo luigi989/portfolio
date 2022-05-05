@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaAward, FaCode } from 'react-icons/fa';
+import { BsAward, BsCodeSlash } from 'react-icons/bs';
 import { VscFolderLibrary } from 'react-icons/vsc';
 import ProfilePic from '../../assets/profilbild2.webp';
 import Button from '../shared/Button';
@@ -24,11 +24,11 @@ function About({ visibilityRef, snap }) {
         <div className='flex flex-col justify-center items-center'>
           <div className='grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-6 print:grid-cols-3'>
             <AboutItem header='Computer Science' text='4+ Years studying'>
-              <FaAward className='m-auto text-liBg group-hover:text-liSec dark:text-primaryAlt text-2xl mb-4' />
+              <BsAward className='m-auto text-liBg group-hover:text-liSec dark:text-primaryAlt text-2xl mb-4' />
             </AboutItem>
         
             <AboutItem header='Coding' text='7+ years experince'>
-              <FaCode className='m-auto text-liBg group-hover:text-liSec dark:text-primaryAlt text-2xl mb-4' />
+              <BsCodeSlash className='m-auto text-liBg group-hover:text-liSec dark:text-primaryAlt text-2xl mb-4' />
             </AboutItem>
 
             <AboutItem header='Projects' text='10+ Completed'>

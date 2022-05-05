@@ -1,5 +1,5 @@
-import React from 'react'
-import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
+import React from 'react';
+import { BsFacebook, BsGithub, BsLinkedin } from 'react-icons/bs';
 
 const Footer = ({ snap }) => {
   return (
@@ -28,21 +28,21 @@ const Footer = ({ snap }) => {
           className='bg-transparent dark:bg-bg dark:text-white p-3 rounded-xl flex border-2 border-solid border-liBg dark:border-transparent
           hover:bg-liBg hover:text-liSec transition ease-linear duration-200
           dark:hover:bg-transparent dark:hover:text-bg dark:hover:border-bg'>
-            <FaLinkedin /></a>
+            <BsLinkedin /></a>
         <a href='https://github.com/luigi989' target='_blank' rel='noreferrer'
           aria-label='Github'
           title='Github'
           className='bg-transparent dark:bg-bg dark:text-white p-3 rounded-xl flex border-2 border-solid border-liBg dark:border-transparent
           hover:bg-liBg hover:text-liSec transition ease-linear duration-200
           dark:hover:bg-transparent dark:hover:text-bg dark:hover:border-bg'>
-            <FaGithub /></a>
+            <BsGithub /></a>
         <a href='https://www.facebook.com/ludvig.lindahl.1' target='_blank' rel='noreferrer'
           aria-label='Facebook'
           title='Facebook'
           className='bg-transparent dark:bg-bg dark:text-white p-3 rounded-xl flex border-2 border-solid border-liBg dark:border-transparent
           hover:bg-liBg hover:text-liSec transition ease-linear duration-200
           dark:hover:bg-transparent dark:hover:text-bg dark:hover:border-bg'>
-            <FaFacebook /></a>
+            <BsFacebook /></a>
       </div>
 
       <div className='mb-0 lg:mb-4'>
