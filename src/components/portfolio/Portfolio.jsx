@@ -16,20 +16,28 @@ function Portfolio({ visibilityRef, snap }) {
       </div>
 
       <div className='w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 print:grid-cols-3'>
-        <PortfolioCard
+      <PortfolioCard
           header='The Periodic System in a interactive system'
           link='https://github.com/luigi989/periodic'
+          demoLink='https://periodic.luigiworks.tech'
           path={portfolio_periodic}
+        />
+        <PortfolioCard
+          header='SmallApps'
+          link='https://github.com/luigi989/smallApps'
+          demoLink='https://apps.luigiworks.tech'
+          path={portfolio_smallApps}
+        />
+        <PortfolioCard
+          header='Ragnarok'
+          link='https://github.com/luigi989/Ragnarok'
+          demoLink='https://ragnarok.luigiworks.tech'
+          path={portfolio_ragnarok}
         />
         <PortfolioCard
           header='Examples in HTML/CSS'
           link='https://github.com/luigi989/examples'
           path={portfolio_exaples}
-        />
-        <PortfolioCard
-          header='Ragnarok'
-          link='https://github.com/luigi989/Ragnarok'
-          path={portfolio_ragnarok}
         />
         <PortfolioCard
           header='Meal-Planner'
@@ -40,11 +48,6 @@ function Portfolio({ visibilityRef, snap }) {
           header='Space-app'
           link='https://github.com/HawkieOne/space-app'
           path={portfolio_spaceApp}
-        />
-        <PortfolioCard
-          header='SmallApps'
-          link='https://github.com/luigi989/smallApps'
-          path={portfolio_smallApps}
         />
       </div>
     </section>
