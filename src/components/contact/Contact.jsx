@@ -110,7 +110,7 @@ const Contact = ({ visibilityRef, snap }) => {
                   className="range range-accent"
                   step="1" />
               </label>
-              <div className="w-full flex justify-between text-xs px-2">
+              <div className="w-full flex justify-between text-base px-2">
                 <span>|</span>
                 <span>|</span>
                 <span>|</span>

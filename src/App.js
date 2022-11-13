@@ -85,11 +85,11 @@ function App() {
   return (
     <div className={isDark ? 'bg-bgTexture bg-liBg text-black dark:bg-bg dark:text-white' :
       'lightPattern bg-liBg text-black dark:bg-bg dark:text-white'}>
-      <Header visibilityRef={observeHeader} snap='lg:snap-start snap-always' />
-      <About visibilityRef={observeAbout} snap='lg:snap-start snap-always' />
-      <Experience visibilityRef={observeExperience} snap='lg:snap-start snap-always' />
-      <Portfolio visibilityRef={observePortfolio} snap='lg:snap-start snap-always' />
-      <Contact visibilityRef={observeContact} snap='lg:snap-start snap-always' />
+      <Header visibilityRef={observeHeader} snap='lg:snap-start' />
+      <About visibilityRef={observeAbout} snap='lg:snap-start' />
+      <Experience visibilityRef={observeExperience} snap='lg:snap-start' />
+      <Portfolio visibilityRef={observePortfolio} snap='lg:snap-start' />
+      <Contact visibilityRef={observeContact} snap='lg:snap-start' />
       <Footer snap='lg:snap-end' />
       <div><Nav /></div>
     </div>
