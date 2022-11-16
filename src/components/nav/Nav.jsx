@@ -80,8 +80,8 @@ const Nav = () => {
    const active = 'bg-liPrimary text-gray-700 dark:bg-primaryAlt dark:text-black';
 
    return (
-      <div className='hidden fixed left-12 -translate-y-1/2 top-1/2 lg:flex flex-col justify-center items-center gap-5 print:hidden'>
-         <nav className="bg-liSec dark:bg-black w-max py-3 px-4 flex flex-col gap-3 
+      <div className='fixed flex flex-col left-1 lg:left-12 justify-center items-center gap-1 lg:gap-5 -translate-y-1/2 top-3/4 lg:top-1/2 print:hidden'>
+         <nav className="bg-liSec dark:bg-black w-max py-3 px-4 flex flex-col gap-1 lg:gap-3 
                         rounded-[3rem] backdrop-blur-lg">
 
             <a className={activeNav === '#' ? navClass + active : navClass}
@@ -113,7 +113,6 @@ const Nav = () => {
                title='Contact me'
                aria-label='Go to Contact section'
                onClick={() => setActiveNav('#contact')}><BiMessageSquareDetail /></a>
-
          </nav>
 
          <div className='bg-liSec dark:bg-black w-max py-2 px-2 rounded-[3rem] backdrop-blur-lg'>
