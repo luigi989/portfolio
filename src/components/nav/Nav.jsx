@@ -81,7 +81,7 @@ const Nav = () => {
    const active = 'bg-liPrimary text-gray-700 dark:bg-primaryAlt dark:text-black';
 
    return (
-      <div className={'fixed h-5/6 bg-red flex flex-col left-1 lg:left-12 justify-center items-center gap-1 lg:gap-5 -translate-y-1/2 top-1/2 lg:top-1/2 print:hidden ' +
+      <div className={'fixed bg-red flex flex-col left-1 lg:left-12 justify-center items-center gap-1 lg:gap-5 lg:-translate-y-1/2 bottom-3 lg:top-1/2 print:hidden ' +
       (navVisible ? "pointer-events-auto" : "pointer-events-none lg:pointer-events-auto")} >
          <nav className={"bg-liSec dark:bg-black w-max py-3 px-4 flex flex-col gap-5 lg:gap-3 " +
             "rounded-[3rem] backdrop-blur-lg " + (navVisible ? "visible" : "invisible lg:visible")}>
