@@ -15,7 +15,7 @@ const PortfolioCard = (props) => {
                     dark:hover:bg-primary dark:hover:text-bgAlt 
                     transition ease-linear duration-300
                     w-max inline-block py-1 px-3 rounded-lg cursor-pointer border-solid border-[1px]
-                    border-liPrimary dark:border-primaryAlt text-liPrimary dark:text-primaryAlt'>Github</button>
+                    border-liPrimary dark:border-primaryAlt text-liPrimary dark:text-primaryAlt print:text-xs'>Github</button>
                 </a>
                 {props.demoLink &&
                     <a target='_blank' rel='noreferrer'
@@ -23,7 +23,8 @@ const PortfolioCard = (props) => {
                         <button className='hover:text-liSec hover:bg-liPrimary dark:hover:text-light dark:hover:bg-bgAlt 
                     transition ease-linear duration-300
                     w-max inline-block py-1 px-3 rounded-lg cursor-pointer border-solid border-[1px] 
-                    border-liPrimary bg-transparent text-liPrimary dark:border-primary dark:bg-primaryAlt dark:text-bg'>Live Demo</button>
+                    border-liPrimary bg-transparent text-liPrimary dark:border-primary dark:bg-primaryAlt dark:text-bg
+                    print:text-xs'>Live Demo</button>
                     </a>}
             </div>
         </article>
