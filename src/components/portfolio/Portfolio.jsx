@@ -1,11 +1,35 @@
 import React from 'react'
 import PortfolioCard from './PortfolioCard';
-import portfolio_periodic from '../../assets/portfolio_periodic.webp';
-import portfolio_exaples from '../../assets/portfolio_examples.webp';
-import portfolio_smallApps from '../../assets/portfolio_smallApps.webp';
-import portfolio_ragnarok from '../../assets/portfolio_ragnarok.webp';
-import portfolio_spaceApp from '../../assets/portfolio_spaceApp.webp';
-import portfolio_mealPlanner from '../../assets/portfolio_mealPlanner.webp';
+
+import portfolio_periodic_xs from '../../assets/periodic/periodic-xs.webp';
+import portfolio_periodic_sm from '../../assets/periodic/periodic-sm.webp';
+import portfolio_periodic from '../../assets/periodic/periodic.webp';
+import portfolio_periodic_xl from '../../assets/periodic/periodic-xl.webp';
+
+import portfolio_smallApps_xs from '../../assets/smallApps/smallApps-xs.webp';
+import portfolio_smallApps_sm from '../../assets/smallApps/smallApps-sm.webp';
+import portfolio_smallApps from '../../assets/smallApps/smallApps.webp';
+import portfolio_smallApps_xl from '../../assets/smallApps/smallApps-xl.webp';
+
+import portfolio_ragnarok_xs from '../../assets/ragnarok/ragnarok-xs.webp';
+import portfolio_ragnarok_sm from '../../assets/ragnarok/ragnarok-sm.webp';
+import portfolio_ragnarok from '../../assets/ragnarok/ragnarok.webp';
+import portfolio_ragnarok_xl from '../../assets/ragnarok/ragnarok-xl.webp';
+
+import portfolio_examples_xs from '../../assets/examples/examples-xs.webp';
+import portfolio_examples_sm from '../../assets/examples/examples-sm.webp';
+import portfolio_examples from '../../assets/examples/examples.webp';
+import portfolio_examples_xl from '../../assets/examples/examples-xl.webp';
+
+import portfolio_mealPlanner_xs from '../../assets/mealPlanner/mealPlanner-xs.webp';
+import portfolio_mealPlanner_sm from '../../assets/mealPlanner/mealPlanner-sm.webp';
+import portfolio_mealPlanner from '../../assets/mealPlanner/mealPlanner.webp';
+import portfolio_mealPlanner_xl from '../../assets/mealPlanner/mealPlanner-xl.webp';
+
+import portfolio_spaceApp_xs from '../../assets/spaceApp/spaceApp-xs.webp';
+import portfolio_spaceApp_sm from '../../assets/spaceApp/spaceApp-sm.webp';
+import portfolio_spaceApp from '../../assets/spaceApp/spaceApp.webp';
+import portfolio_spaceApp_xl from '../../assets/spaceApp/spaceApp-xl.webp';
 
 function Portfolio({ visibilityRef, snap }) {
   return (
@@ -20,34 +44,58 @@ function Portfolio({ visibilityRef, snap }) {
           header='The Periodic System in a interactive system'
           link='https://github.com/luigi989/periodic'
           demoLink='https://periodic.luigiworks.tech'
-          path={portfolio_periodic}
+          path={portfolio_periodic_sm}
+          path1x={portfolio_periodic_xs}
+          path2x={portfolio_periodic_sm}
+          path3x={portfolio_periodic}
+          path4x={portfolio_periodic_xl}
         />
         <PortfolioCard
           header='SmallApps'
           link='https://github.com/luigi989/smallApps'
           demoLink='https://apps.luigiworks.tech'
-          path={portfolio_smallApps}
+          path={portfolio_smallApps_sm}
+          path1x={portfolio_smallApps_xs}
+          path2x={portfolio_smallApps_sm}
+          path3x={portfolio_smallApps}
+          path4x={portfolio_smallApps_xl}
         />
         <PortfolioCard
           header='Ragnarok'
           link='https://github.com/luigi989/Ragnarok'
           demoLink='https://ragnarok.luigiworks.tech'
-          path={portfolio_ragnarok}
+          path={portfolio_ragnarok_sm}
+          path1x={portfolio_ragnarok_xs}
+          path2x={portfolio_ragnarok_sm}
+          path3x={portfolio_ragnarok}
+          path4x={portfolio_ragnarok_xl}
         />
         <PortfolioCard
           header='Examples in HTML/CSS'
           link='https://github.com/luigi989/examples'
-          path={portfolio_exaples}
+          path={portfolio_examples_sm}
+          path1x={portfolio_examples_xs}
+          path2x={portfolio_examples_sm}
+          path3x={portfolio_examples}
+          path4x={portfolio_examples_xl}
         />
         <PortfolioCard
           header='Meal-Planner'
           link='https://github.com/HawkieOne/Meal-Planner'
-          path={portfolio_mealPlanner}
+          path={portfolio_mealPlanner_sm}
+          path1x={portfolio_mealPlanner_xs}
+          path2x={portfolio_mealPlanner_sm}
+          path3x={portfolio_mealPlanner}
+          path4x={portfolio_mealPlanner_xl}
         />
         <PortfolioCard
           header='Space-app'
           link='https://github.com/HawkieOne/space-app'
-          path={portfolio_spaceApp}
+          path={portfolio_spaceApp_sm}
+          path1x={portfolio_spaceApp_xs}
+          path2x={portfolio_spaceApp_sm}
+          path3x={portfolio_spaceApp}
+          path4x={portfolio_spaceApp_xl}
         />
       </div>
     </section>

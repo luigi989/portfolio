@@ -4,7 +4,9 @@ const PortfolioCard = (props) => {
     return (
         <article className='p-5 bg-liSec dark:bg-bgAlt rounded-2xl flex flex-col'>
             <div className='rounded-2xl'>
-                <img src={props.path} alt='portfolio 1' className='rounded-2xl' />
+                <img className='rounded-2xl' alt='portfolio 1' 
+                    src={props.path}
+                    srcSet={`${props.path4x} 4x, ${props.path3x} 3x, ${props.path2x} 2x, ${props.path1x} 1x`} />
             </div>
 
             <h1 className='grow my-5 text-liBg dark:text-white'>{props.header}</h1>
