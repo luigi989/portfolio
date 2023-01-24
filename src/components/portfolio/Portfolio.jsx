@@ -31,6 +31,11 @@ import portfolio_spaceApp_sm from '../../assets/spaceApp/spaceApp-sm.webp';
 import portfolio_spaceApp from '../../assets/spaceApp/spaceApp.webp';
 import portfolio_spaceApp_xl from '../../assets/spaceApp/spaceApp-xl.webp';
 
+import builder_xs from '../../assets/kurskatalog/builder-xs.webp';
+import builder_sm from '../../assets/kurskatalog/builder-sm.webp';
+import builder from '../../assets/kurskatalog/builder.webp';
+import builder_xl from '../../assets/kurskatalog/builder-xl.webp';
+
 function Portfolio({ visibilityRef, snap }) {
   return (
     <section ref={visibilityRef} id='portfolio' className={snap + ' mt-16 lg:mt-32 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}>
@@ -40,7 +45,7 @@ function Portfolio({ visibilityRef, snap }) {
       </div>
 
       <div className='w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 print:grid-cols-3'>
-      <PortfolioCard
+        <PortfolioCard
           header='The Periodic System in an interactive system'
           link='https://github.com/luigi989/periodic'
           demoLink='https://periodic.luigiworks.tech'
@@ -69,6 +74,16 @@ function Portfolio({ visibilityRef, snap }) {
           path2x={portfolio_ragnarok_sm}
           path3x={portfolio_ragnarok}
           path4x={portfolio_ragnarok_xl}
+        />
+        <PortfolioCard
+          header='Kurskatalog'
+          link='https://github.com/HawkieOne/kurskatalog-id'
+          demoLink='https://kurskatalog.hawkie.me/'
+          path={builder_sm}
+          path1x={builder_xs}
+          path2x={builder_sm}
+          path3x={builder}
+          path4x={builder_xl}
         />
         <PortfolioCard
           header='Examples in HTML/CSS'
