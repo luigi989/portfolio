@@ -56,6 +56,26 @@ function Portfolio({ visibilityRef, snap }) {
           path4x={portfolio_periodic_xl}
         />
         <PortfolioCard
+          header='Kurskatalog'
+          link='https://github.com/HawkieOne/kurskatalog-id'
+          demoLink='https://kurskatalog.hawkie.me/'
+          path={builder_sm}
+          path1x={builder_xs}
+          path2x={builder_sm}
+          path3x={builder}
+          path4x={builder_xl}
+        />
+        <PortfolioCard
+          header='Space-app'
+          link='https://github.com/HawkieOne/space-app'
+          demoLink='https://spaceapp.hawkie.me'
+          path={portfolio_spaceApp_sm}
+          path1x={portfolio_spaceApp_xs}
+          path2x={portfolio_spaceApp_sm}
+          path3x={portfolio_spaceApp}
+          path4x={portfolio_spaceApp_xl}
+        />
+        <PortfolioCard
           header='SmallApps'
           link='https://github.com/luigi989/smallApps'
           demoLink='https://apps.luigiworks.tech'
@@ -76,16 +96,6 @@ function Portfolio({ visibilityRef, snap }) {
           path4x={portfolio_ragnarok_xl}
         />
         <PortfolioCard
-          header='Kurskatalog'
-          link='https://github.com/HawkieOne/kurskatalog-id'
-          demoLink='https://kurskatalog.hawkie.me/'
-          path={builder_sm}
-          path1x={builder_xs}
-          path2x={builder_sm}
-          path3x={builder}
-          path4x={builder_xl}
-        />
-        <PortfolioCard
           header='Examples in HTML/CSS'
           link='https://github.com/luigi989/examples'
           path={portfolio_examples_sm}
@@ -102,15 +112,6 @@ function Portfolio({ visibilityRef, snap }) {
           path2x={portfolio_mealPlanner_sm}
           path3x={portfolio_mealPlanner}
           path4x={portfolio_mealPlanner_xl}
-        />
-        <PortfolioCard
-          header='Space-app'
-          link='https://github.com/HawkieOne/space-app'
-          path={portfolio_spaceApp_sm}
-          path1x={portfolio_spaceApp_xs}
-          path2x={portfolio_spaceApp_sm}
-          path3x={portfolio_spaceApp}
-          path4x={portfolio_spaceApp_xl}
         />
       </div>
     </section>
