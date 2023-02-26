@@ -47,7 +47,7 @@ const Contact = ({ visibilityRef, snap }) => {
         <form noValidate autoComplete='off' ref={form} 
           onSubmit={handleSubmit(sendEmail)} 
           className='flex flex-col gap-2 items-start w-full p-0 md:p-6 bg-liSec dark:bg-transparent rounded-2xl 
-                    transition ease-linear duration-300 text-liSec dark:text-white print:p-2'>
+                    transition ease-linear duration-300 text-liSec dark:text-white print:p-2 p-3'>
           <div className='form-control w-full'>
             <input
               {...register("name", { required: true })}

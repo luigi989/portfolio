@@ -11,7 +11,7 @@ import profileImage_xxl from '../../assets/profile_image/profileImage-xxl.webp';
 const Header = ({ visibilityRef, snap }) => {
 
   return (
-    <header ref={visibilityRef} className={snap + ' h-fit md:h-[68vh] lg:h-screen w-3/4 m-auto pt-16 overflow-hidden'}>
+    <header ref={visibilityRef} className={snap + ' h-fit md:h-[68vh] lg:h-screen w-3/4 m-auto pt-16 overflow-hidden print:h-screen'}>
       <div className='h-full w-11/12 md:w-3/4 m-auto text-center relative text-liSec dark:text-white'>
 
         <div className='p-1 flex flex-col bg-liBg dark:bg-transparent w-fit m-auto'>
