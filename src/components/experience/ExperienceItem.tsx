@@ -1,4 +1,3 @@
-import React from 'react'
 import { BsPatchCheckFill } from 'react-icons/bs';
 
 interface ExperienceItemProps {
@@ -8,7 +7,7 @@ interface ExperienceItemProps {
 
 const ExperienceItem = ({lang, grade}: ExperienceItemProps) => {
   return (
-    <article className='flex gap-4 experience_details'>
+    <article className='flex gap-4'>
       <BsPatchCheckFill className='mt-[6px] text-liBg group-hover:text-liSec dark:text-primaryAlt dark:group-hover:text-primaryAlt' />
       <div>
         <h1 className='text-liLight dark:text-white'>{lang}</h1>

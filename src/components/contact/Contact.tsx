@@ -35,6 +35,7 @@ const Contact = ({ visibilityRef, snap }: ContactProps) => {
   return (
     <section ref={visibilityRef} id='contact' className={snap + ' mb-10 lg:mb-0 mt-16 lg:mt-32 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}>
       <SectionHeader
+        className='lg:mb-16'
         header='Contact me'
         subHeader='Get in touch'
       />

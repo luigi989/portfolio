@@ -46,6 +46,7 @@ function Portfolio({ visibilityRef, snap } : PortfolioProps) {
   return (
     <section ref={visibilityRef} id='portfolio' className={snap + ' mt-16 lg:mt-32 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}>
       <SectionHeader
+        className='lg:mb-16'
         header='Portfolio'
         subHeader='My Recent Work'
       />

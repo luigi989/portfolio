@@ -35,17 +35,23 @@ function About({ visibilityRef, snap }: AboutProps) {
 
         <div className='flex flex-col justify-center items-center'>
           <div className='grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-6 print:grid-cols-3'>
-            <AboutItem header='Computer Science' text='4+ Years studying'>
-              <BsAward className='m-auto text-liBg group-hover:text-liSec dark:text-primaryAlt text-2xl mb-4' />
-            </AboutItem>
+            <AboutItem
+              header='Computer Science' 
+              text='4+ Years studying'
+              icon={<BsAward />}
+            />
         
-            <AboutItem header='Coding' text='7+ years experince'>
-              <BsCodeSlash className='m-auto text-liBg group-hover:text-liSec dark:text-primaryAlt text-2xl mb-4' />
-            </AboutItem>
+            <AboutItem 
+              header='Coding' 
+              text='7+ years experince'
+              icon={<BsCodeSlash />} 
+            />
 
-            <AboutItem header='Projects' text='10+ Completed'>
-              <VscFolderLibrary className='m-auto group-hover:text-liSec text-liBg dark:text-primaryAlt text-2xl mb-4' />
-            </AboutItem>
+            <AboutItem 
+              header='Projects' 
+              text='10+ Completed'               
+              icon={<VscFolderLibrary />} 
+            />
           </div>
 
           <p className='p-2 mt-4 lg:mt-6 mx-0 mb-5 lg:mb-10 text-liSec bg-liBg dark:text-light dark:bg-transparent'>

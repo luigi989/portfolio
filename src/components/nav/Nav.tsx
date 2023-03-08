@@ -49,9 +49,7 @@ const Nav = () => {
          setIsDark(false);
       }
    }, [setIsDark])
-
-   console.log(navVisible);
-   
+      
    return (
       <div className={'fixed bg-red flex flex-col left-1 lg:left-12 justify-center items-center gap-1 lg:gap-5 lg:-translate-y-1/2 bottom-3 lg:top-1/2 print:hidden ' +
          (navVisible ? "pointer-events-auto" : "pointer-events-none lg:pointer-events-auto")} >
