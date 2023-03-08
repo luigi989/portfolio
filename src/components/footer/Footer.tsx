@@ -1,7 +1,11 @@
 import React from 'react';
 import { BsFacebook, BsGithub, BsLinkedin } from 'react-icons/bs';
 
-const Footer = ({ snap }) => {
+interface FooterProps {
+  snap: string;
+}
+
+const Footer = ({ snap }: FooterProps) => {
   return (
     <footer id='footer' 
       className={ snap + ' bg-liSec dark:bg-primaryAlt py-8 lg:py-12 px-0 text-center text-sm text-liBg dark:text-bg'}>

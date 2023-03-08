@@ -1,5 +1,5 @@
 import emailjs from '@emailjs/browser';
-import React, { useRef, useState } from 'react';
+import { useRef, useState, Ref } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 import { BsMessenger, BsWhatsapp } from 'react-icons/bs';
@@ -9,19 +9,26 @@ import Button from '../shared/Button';
 import ContactItem from './ContactItem';
 import Error from './Error';
 
+interface ContactProps {
+  snap: string;
+  visibilityRef: Ref<HTMLDivElement>;
+}
 
-const Contact = ({ visibilityRef, snap }) => {
+const Contact = ({ visibilityRef, snap }: ContactProps) => {
   const notify = () => toast.success('Mail send successfully!')
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
   const { register, handleSubmit, formState: { errors } } = useForm({
     mode: "all",
   });
   const [rangeValue, setRangeValue] = useState(3);
+  
+  const sendEmail = () => {
+    const currentForm = form.current;
+    if(currentForm == null) return;
 
-  const sendEmail = (e) => {
-    emailjs.sendForm('service_7rev2zh', 'template_6486erl', form.current, '8B07cv2sLjPq7_d-B');
+    emailjs.sendForm('service_7rev2zh', 'template_6486erl', currentForm, '8B07cv2sLjPq7_d-B');
     notify();
-    form.current.reset();
+    currentForm.reset();
   };
 
   return (
@@ -33,20 +40,20 @@ const Contact = ({ visibilityRef, snap }) => {
 
       <div className='w-11/12 lg:w-3/5 m-auto flex flex-col md:flex-row gap-10 lg:gap-20'>
         <div className='flex flex-col gap-6 bg-liBg dark:bg-transparent print:flex-row print:justify-around'>
-          <ContactItem header='Email' contact='ludde.lindahl@gmail.com' href='mailto:ludde.lindahl@gmail.com'>
+          <ContactItem header='Email' contact='ludde.lindahl@gmail.com' link='mailto:ludde.lindahl@gmail.com'>
             <FiMail className='text-liBg group-hover:text-liSec dark:text-primary dark:group-hover:text-primary m-auto text-2xl mb-4' />
           </ContactItem>
-          <ContactItem header='Messenger' contact='Ludvig Lindahl' href='https://m.me/ludvig.lindahl.1'>
+          <ContactItem header='Messenger' contact='Ludvig Lindahl' link='https://m.me/ludvig.lindahl.1'>
             <BsMessenger className='text-liBg group-hover:text-liSec dark:text-primary dark:group-hover:text-primary m-auto text-2xl mb-4' />
           </ContactItem>
-          <ContactItem header='WhatsApp' contact='+46705789618' href='https://wa.me/46705789618'>
+          <ContactItem header='WhatsApp' contact='+46705789618' link='https://wa.me/46705789618'>
             <BsWhatsapp className='text-liBg group-hover:text-liSec dark:text-primary dark:group-hover:text-primary m-auto text-2xl mb-4' />
           </ContactItem>
         </div>
 
         <form noValidate autoComplete='off' ref={form} 
           onSubmit={handleSubmit(sendEmail)} 
-          className='flex flex-col gap-2 items-start w-full p-0 md:p-6 bg-liSec dark:bg-transparent rounded-2xl 
+          className='flex flex-col gap-2 items-start w-full md:p-6 bg-liSec dark:bg-transparent rounded-2xl 
                     transition ease-linear duration-300 text-liSec dark:text-white print:p-2 p-3'>
           <div className='form-control w-full'>
             <input
@@ -87,7 +94,7 @@ const Contact = ({ visibilityRef, snap }) => {
               {...register("message", { required: true })}
               name='message'
               placeholder='Your message'
-              rows='7'
+              rows={7}
               className={errors.message ? 'textarea textarea-error resize-none bg-liBg dark:bg-bgAlt' : 
                 'textarea resize-none !outline-primaryAlt bg-liBg dark:bg-bgAlt'}
             ></textarea>
@@ -106,7 +113,7 @@ const Contact = ({ visibilityRef, snap }) => {
                   name='rating'
                   min="1" max="5"
                   value={rangeValue}
-                  onChange={(e) => setRangeValue(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setRangeValue(parseInt(e.target.value))}
                   className="range range-accent"
                   step="1" />
               </label>
@@ -118,7 +125,7 @@ const Contact = ({ visibilityRef, snap }) => {
                 <span>|</span>
               </div>
             </div>
-            <Button submit={"submit"}>Send</Button>
+            <Button title='Send message'>Send</Button>
           </div>
           <ToastContainer theme='dark' toastStyle={{ backgroundColor: '#1d2021', }} />
         </form>

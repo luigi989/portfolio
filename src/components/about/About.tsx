@@ -1,14 +1,19 @@
-import React from 'react';
+import { Ref } from 'react';
 import { BsAward, BsCodeSlash } from 'react-icons/bs';
 import { VscFolderLibrary } from 'react-icons/vsc';
-import profileImage2 from '../../assets/profile_image2/profileImage2.webp';
-import profileImage2_sm from '../../assets/profile_image2/profileImage2-sm.webp';
-import profileImage2_xl from '../../assets/profile_image2/profileImage2-xl.webp';
-import profileImage2_xxl from '../../assets/profile_image2/profileImage2-xxl.webp';
 import Button from '../shared/Button';
 import AboutItem from './AboutItem';
+const profileImage2 = require('../../assets/profile_image2/profileImage2.webp');
+const profileImage2_sm = require('../../assets/profile_image2/profileImage2-sm.webp');
+const profileImage2_xl = require('../../assets/profile_image2/profileImage2-xl.webp');
+const profileImage2_xxl = require('../../assets/profile_image2/profileImage2-xxl.webp');
 
-function About({ visibilityRef, snap }) {
+interface AboutProps {
+  snap: string;
+  visibilityRef: Ref<HTMLDivElement>;
+}
+
+function About({ visibilityRef, snap }: AboutProps) {
   return (
     <section ref={visibilityRef} id='about' className={ snap + ' mt-28 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}>
       <div className='flex flex-col bg-liBg dark:bg-transparent w-fit mb-16 lg:mb-32 m-auto'>

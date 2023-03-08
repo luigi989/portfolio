@@ -18,7 +18,7 @@ function App() {
 
   const useView = () => {
     const { observe, inView} = useInView({
-      threshold: 0.8,
+      threshold: 0.9,
       onChange: ({ inView, scrollDirection }) => {
       },
     })
@@ -32,55 +32,35 @@ function App() {
   const { observe: observePortfolio, inView: inViewPortfolio } = useView();
   const { observe: observeContact, inView: inViewContact } = useView();
 
-  class Sections {
-    constructor() {
-      this.header = false;
-      this.about = false;
-      this.experience = false;
-      this.portfolio = false;
-      this.contact = false;
-    }
-  } 
-
   useEffect(() => {
     if (inViewHeader) {
-      const sections = new Sections();
-      sections.header = true;
-      setSectionsVisible(sections);
+      window.history.replaceState({}, '', '#');
     }
-  }, [inViewHeader, setSectionsVisible])
+  }, [inViewHeader])
 
   useEffect(() => {
     if (inViewAbout) {
-      const sections = new Sections();
-      sections.about = true;
-      setSectionsVisible(sections);
+      window.history.replaceState({}, '', '#about');
     }
-  }, [inViewAbout, setSectionsVisible])
+  }, [inViewAbout])
 
   useEffect(() => {
     if (inViewExperince) {
-      const sections = new Sections();
-      sections.experience = true;
-      setSectionsVisible(sections);
+      window.history.replaceState({}, '', '#experience');
     }
-  }, [inViewExperince, setSectionsVisible])
+  }, [inViewExperince])
 
   useEffect(() => {
     if (inViewPortfolio) {
-      const sections = new Sections();
-      sections.portfolio = true;
-      setSectionsVisible(sections);
+      window.history.replaceState({}, '', '#portfolio');
     }
-  }, [inViewPortfolio, setSectionsVisible])
+  }, [inViewPortfolio])
 
   useEffect(() => {
     if (inViewContact) {
-      const sections = new Sections();
-      sections.contact = true;
-      setSectionsVisible(sections);
+      window.history.replaceState({}, '', '#contact');
     }
-  }, [inViewContact, setSectionsVisible])
+  }, [inViewContact])
 
   return (
     <div className={isDark ? 'bg-bgTexture bg-liBg text-black dark:bg-bg dark:text-white' :
@@ -91,7 +71,7 @@ function App() {
       <Portfolio visibilityRef={observePortfolio} snap='lg:snap-start' />
       <Contact visibilityRef={observeContact} snap='lg:snap-start' />
       <Footer snap='lg:snap-end' />
-      <div><Nav /></div>
+      <Nav />
     </div>
   );
 }

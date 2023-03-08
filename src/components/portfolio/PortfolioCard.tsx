@@ -1,27 +1,36 @@
-import React from 'react'
+interface PortfolioCardProps {
+    header: string;
+    link: string;
+    demoLink?: string;
+    path: string;
+    path1x: string;
+    path2x: string;
+    path3x: string;   
+    path4x: string;
+}
 
-const PortfolioCard = (props) => {
+const PortfolioCard = ({ header, link, demoLink, path, path1x, path2x, path3x, path4x} : PortfolioCardProps) => {
     return (
         <article className='p-5 bg-liSec dark:bg-bgAlt rounded-2xl flex flex-col'>
             <div className='rounded-2xl'>
                 <img className='rounded-2xl' alt='portfolio 1' 
-                    src={props.path}
-                    srcSet={`${props.path4x} 4x, ${props.path3x} 3x, ${props.path2x} 2x, ${props.path1x} 1x`} />
+                    src={path}
+                    srcSet={`${path4x} 4x, ${path3x} 3x, ${path2x} 2x, ${path1x} 1x`} />
             </div>
 
-            <h1 className='grow my-5 text-liBg dark:text-white'>{props.header}</h1>
+            <h1 className='grow my-5 text-liBg dark:text-white'>{header}</h1>
             <div className='flex gap-3 '>
                 <a target='_blank' rel='noreferrer'
-                    href={props.link ? props.link : 'https://github.com/luigi989'}>
+                    href={link ? link : 'https://github.com/luigi989'}>
                     <button className='hover:bg-liPrimary hover:text-liSec
                     dark:hover:bg-primary dark:hover:text-bgAlt 
                     transition ease-linear duration-300
                     w-max inline-block py-1 px-3 rounded-lg cursor-pointer border-solid border-[1px]
                     border-liPrimary dark:border-primaryAlt text-liPrimary dark:text-primaryAlt print:text-xs'>Github</button>
                 </a>
-                {props.demoLink &&
+                {demoLink &&
                     <a target='_blank' rel='noreferrer'
-                        href={props.demoLink}>
+                        href={demoLink}>
                         <button className='hover:text-liSec hover:bg-liPrimary dark:hover:text-light dark:hover:bg-bgAlt 
                     transition ease-linear duration-300
                     w-max inline-block py-1 px-3 rounded-lg cursor-pointer border-solid border-[1px] 

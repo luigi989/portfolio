@@ -1,6 +1,8 @@
-import React from 'react'
+interface ErrorProps {
+    children: React.ReactNode;
+}
 
-const Error = ({ children }) => {
+const Error = ({ children }: ErrorProps) => {
     return (
         <span className='mt-1 label-text-alt text-error'>{children}</span>
     )

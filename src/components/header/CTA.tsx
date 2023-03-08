@@ -1,6 +1,5 @@
-import React from 'react'
-import CV from '../../assets/cv_eng.pdf';
 import Button from '../shared/Button';
+const CV = require('../../assets/cv_eng.pdf');
 
 const CTA = () => {
   return (

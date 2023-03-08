@@ -1,19 +1,16 @@
-import React from 'react'
-import Avatar1 from '../../assets/avatar1.jpg';
-import Avatar2 from '../../assets/avatar2.jpg';
-import Avatar3 from '../../assets/avatar3.jpg';
-import Avatar4 from '../../assets/avatar4.jpg';
 import AvatarCard from './AvatarCard';
-
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
+import { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper';
 
+interface TestimonialsProps {
+  snap: string;
+}
 
-const Testimonials = ({ snap }) => {
+const Testimonials = ({ snap } : TestimonialsProps) => {
   const text = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, doloremque.' +
     'Officiis iste laudantium nemo, porro, rem recusandae maxime nobis laboriosam ' +
     'beatae in a eligendi suscipit odio perspiciatis similique, molestias sapiente.';
@@ -31,10 +28,10 @@ const Testimonials = ({ snap }) => {
         slidesPerView={1}
         pagination={{ clickable: true }}
       >
-        <SwiperSlide><AvatarCard name='Ernst Achiever' text={text} path={Avatar1} /></SwiperSlide>
+        {/* <SwiperSlide><AvatarCard name='Ernst Achiever' text={text} path={Avatar1} /></SwiperSlide>
         <SwiperSlide><AvatarCard name='Ernst Achiever' text={text} path={Avatar2} /></SwiperSlide>
         <SwiperSlide><AvatarCard name='Ernst Achiever' text={text} path={Avatar3} /></SwiperSlide>
-        <SwiperSlide><AvatarCard name='Ernst Achiever' text={text} path={Avatar4} /></SwiperSlide>
+        <SwiperSlide><AvatarCard name='Ernst Achiever' text={text} path={Avatar4} /></SwiperSlide> */}
       </Swiper>
     </section>
   )

@@ -1,7 +1,12 @@
-import React from 'react'
+import { Ref } from 'react';
 import ExperienceItem from './ExperienceItem';
 
-const Experience = ({ visibilityRef, snap }) => {
+interface ExperienceProps {
+  snap: string;
+  visibilityRef: Ref<HTMLDivElement>;
+}
+
+const Experience = ({ visibilityRef, snap }: ExperienceProps) => {
   const Intermediate = 'Intermediate';
   const experienced = 'Experienced';
 
