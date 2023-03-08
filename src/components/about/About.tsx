@@ -2,6 +2,7 @@ import { Ref } from 'react';
 import { BsAward, BsCodeSlash } from 'react-icons/bs';
 import { VscFolderLibrary } from 'react-icons/vsc';
 import Button from '../shared/Button';
+import SectionHeader from '../shared/SectionHeader';
 import AboutItem from './AboutItem';
 const profileImage2 = require('../../assets/profile_image2/profileImage2.webp');
 const profileImage2_sm = require('../../assets/profile_image2/profileImage2-sm.webp');
@@ -16,10 +17,10 @@ interface AboutProps {
 function About({ visibilityRef, snap }: AboutProps) {
   return (
     <section ref={visibilityRef} id='about' className={ snap + ' mt-28 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}>
-      <div className='flex flex-col bg-liBg dark:bg-transparent w-fit mb-16 lg:mb-32 m-auto'>
-        <h1 className='text-center text-liLight dark:text-light font-medium text-base'>Get to know</h1>
-        <h2 className='text-center text-liSec dark:text-primaryAlt font-medium text-3xl'>About Me</h2>
-      </div>
+      <SectionHeader
+        header='About me' 
+        subHeader='Get to know'
+      />
 
       <div className='w-11/12 md:w-3/4 m-auto grid grid-cols-1 lg:grid-cols-2 gap-[10%] lg:gap-[15%] place-items-center'>
         <div className='w-3/4 md:w-1/2 lg:w-3/4 aspect-square rounded-[2rem] bg-gradient-to-tr from-transparent via-liSec dark:via-primaryAlt to-transparent

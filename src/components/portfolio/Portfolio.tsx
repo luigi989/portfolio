@@ -1,4 +1,5 @@
 import { Ref } from 'react';
+import SectionHeader from '../shared/SectionHeader';
 import PortfolioCard from './PortfolioCard';
 
 const portfolio_periodic_sm = require('../../assets/periodic/periodic-sm.webp');
@@ -44,10 +45,10 @@ interface PortfolioProps {
 function Portfolio({ visibilityRef, snap } : PortfolioProps) {
   return (
     <section ref={visibilityRef} id='portfolio' className={snap + ' mt-16 lg:mt-32 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}>
-      <div className='flex flex-col bg-liBg dark:bg-transparent w-fit mb-8 lg:mb-16 m-auto'>
-        <h1 className='text-center text-liLight dark:text-light font-medium text-base'>My Recent Work</h1>
-        <h2 className='text-center text-liSec dark:text-primaryAlt font-medium text-3xl'>Portfolio</h2>
-      </div>
+      <SectionHeader
+        header='Portfolio'
+        subHeader='My Recent Work'
+      />
 
       <div className='w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 print:grid-cols-3'>
         <PortfolioCard

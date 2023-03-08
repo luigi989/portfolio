@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Button from '../shared/Button';
 import ContactItem from './ContactItem';
 import Error from './Error';
+import SectionHeader from '../shared/SectionHeader';
 
 interface ContactProps {
   snap: string;
@@ -33,10 +34,10 @@ const Contact = ({ visibilityRef, snap }: ContactProps) => {
 
   return (
     <section ref={visibilityRef} id='contact' className={snap + ' mb-10 lg:mb-0 mt-16 lg:mt-32 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}>
-      <div className='p-1 flex flex-col bg-liBg dark:bg-transparent w-fit m-auto mb-8 lg:mb-16'>
-        <h1 className='text-center text-liLight dark:text-light font-medium text-base'>Get in touch</h1>
-        <h2 className='text-center text-liSec dark:text-primaryAlt font-medium text-3xl'>Contact me</h2>
-      </div>
+      <SectionHeader
+        header='Contact me'
+        subHeader='Get in touch'
+      />
 
       <div className='w-11/12 lg:w-3/5 m-auto flex flex-col md:flex-row gap-10 lg:gap-20'>
         <div className='flex flex-col gap-6 bg-liBg dark:bg-transparent print:flex-row print:justify-around'>
