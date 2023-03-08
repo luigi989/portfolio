@@ -1,6 +1,4 @@
 import React from 'react'
-import { BsLinkedin, BsGithub, BsFacebook } from 'react-icons/bs';
-import { IconType } from 'react-icons/lib';
 
 interface HeaderSocialProps {
   label: string

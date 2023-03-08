@@ -5,16 +5,14 @@ import { BsBriefcase } from 'react-icons/bs';
 import { ImSun } from 'react-icons/im';
 import { FiMenu } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { darkModeState, sectionVisibleState } from '../../atoms/atoms';
+import { useSetRecoilState } from 'recoil';
+import { darkModeState } from '../../atoms/atoms';
 import NavItem from './NavItem';
 import SwapButton from './SwapButton';
 
 const Nav = () => {
-   // const [activeNav, setActiveNav] = useState("");
    const [navVisible, setNavVisible] = useState(false);
    const setIsDark = useSetRecoilState(darkModeState);
-   // const sectionVisible = useRecoilValue(sectionVisibleState);
 
    const setDarkMode = () => {
       if (localStorage.getItem('color-theme')) {

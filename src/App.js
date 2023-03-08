@@ -1,7 +1,7 @@
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { useInView } from "react-cool-inview";
 import { useEffect } from 'react';
-import { darkModeState, sectionVisibleState } from './atoms/atoms';
+import { darkModeState } from './atoms/atoms';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
 import Experience from './components/experience/Experience';
@@ -13,8 +13,6 @@ import './App.css';
 
 function App() {
   const isDark = useRecoilValue(darkModeState);
-
-  const [sectionsVisible, setSectionsVisible] = useRecoilState(sectionVisibleState);
 
   const useView = () => {
     const { observe, inView} = useInView({

@@ -5,8 +5,6 @@ import HeaderSocial from './HeaderSocial';
 const profileImage_xs = require('../../assets/profile_image/profileImage-xs.webp');
 const profileImage_sm = require('../../assets/profile_image/profileImage-sm.webp');
 const profileImage = require('../../assets/profile_image/profileImage.webp');
-const profileImage_xl = require('../../assets/profile_image/profileImage-xl.webp');
-const profileImage_xxl = require('../../assets/profile_image/profileImage-xxl.webp');
 
 interface HeaderProps {
   snap: string;
@@ -33,9 +31,20 @@ const Header = ({ visibilityRef, snap } : HeaderProps) => {
                                       absolute -right-9 bottom-20 rotate-90 font-light'>Scroll Down</a>
         <div className="hidden lg:flex flex-col items-center gap-3 absolute left-0 bottom-12 bg-liBg p-1 dark:bg-transparent
                     after:content-[''] after:w-[1px] after:h-8 after:bg-liSec dark:after:bg-primaryAlt">
-          <HeaderSocial label='Linkedin' url='https://www.linkedin.com/in/ludvig-lindahl/' icon={<BsLinkedin/>} />
-          <HeaderSocial label='Github' url='https://github.com/luigi989/' icon={<BsGithub/>} />
-          <HeaderSocial label='Facebook' url='https://www.facebook.com/ludvig.lindahl.1' icon={<BsFacebook/>} />
+          <HeaderSocial 
+            label='Linkedin' 
+            url='https://www.linkedin.com/in/ludvig-lindahl/' 
+            icon={<BsLinkedin/>} 
+          />
+          <HeaderSocial 
+            label='Github' 
+            url='https://github.com/luigi989/' 
+          icon={<BsGithub/>} />
+          <HeaderSocial 
+            label='Facebook' 
+            url='https://www.facebook.com/ludvig.lindahl.1' 
+            icon={<BsFacebook/>} 
+          />
         </div>
 
         <div className='bg-gradient-to-b from-liSec dark:from-primaryAlt md:w-[22rem] md:h-[30rem] mt-16 
