@@ -1,3 +1,6 @@
+const { default: daisyui } = require('daisyui');
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}",],
   darkMode: 'class',
@@ -28,3 +31,4 @@ module.exports = {
   },
   plugins: [require("daisyui")],
 }
+

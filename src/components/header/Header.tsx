@@ -2,9 +2,9 @@ import { Ref } from 'react';
 import { BsLinkedin, BsGithub, BsFacebook } from 'react-icons/bs';
 import CTA from './CTA';
 import HeaderSocial from './HeaderSocial';
-const profileImage_xs = require('../../assets/profile_image/profileImage-xs.webp');
-const profileImage_sm = require('../../assets/profile_image/profileImage-sm.webp');
-const profileImage = require('../../assets/profile_image/profileImage.webp');
+import profileImage_xs from '../../assets/profile_image/profileImage-xs.webp';
+import profileImage_sm from '../../assets/profile_image/profileImage-sm.webp';
+import profileImage from '../../assets/profile_image/profileImage.webp';
 
 interface HeaderProps {
   snap: string;
@@ -52,7 +52,7 @@ const Header = ({ visibilityRef, snap } : HeaderProps) => {
         <div className='bg-gradient-to-b from-liSec dark:from-primaryAlt md:w-[22rem] md:h-[30rem] mt-16 
                         rounded-tl-[12rem] rounded-tr-[12rem] 
                         mx-auto overflow-hidden px-1 pb-6 pt-20'>
-          <img className='block object-cover' alt='me'
+          <img className='block object-cover' alt='Profile image'
             src={profileImage_xs}
             srcSet={`${profileImage} 4x, ${profileImage_sm} 3x, ${profileImage_sm} 2x, ${profileImage_sm} 1x, `}
           />

@@ -4,10 +4,10 @@ import { VscFolderLibrary } from 'react-icons/vsc';
 import Button from '../shared/Button';
 import SectionHeader from '../shared/SectionHeader';
 import AboutItem from './AboutItem';
-const profileImage2 = require('../../assets/profile_image2/profileImage2.webp');
-const profileImage2_sm = require('../../assets/profile_image2/profileImage2-sm.webp');
-const profileImage2_xl = require('../../assets/profile_image2/profileImage2-xl.webp');
-const profileImage2_xxl = require('../../assets/profile_image2/profileImage2-xxl.webp');
+import profileImage2 from '../../assets/profile_image2/profileImage2.webp';
+import profileImage2_sm from '../../assets/profile_image2/profileImage2-sm.webp';
+import profileImage2_xl from '../../assets/profile_image2/profileImage2-xl.webp';
+import profileImage2_xxl from '../../assets/profile_image2/profileImage2-xxl.webp';
 
 interface AboutProps {
   snap: string;

@@ -1,57 +1,62 @@
-import { Ref } from 'react';
+import { Ref, useState } from 'react';
 import SectionHeader from '../shared/SectionHeader';
 import PortfolioCard from './PortfolioCard';
 
-const portfolio_periodic_sm = require('../../assets/periodic/periodic-sm.webp');
-const portfolio_periodic_xl = require('../../assets/periodic/periodic-xl.webp');
-const portfolio_periodic_xs = require('../../assets/periodic/periodic-xs.webp');
-const portfolio_periodic = require('../../assets/periodic/periodic.webp');
+import portfolio_periodic_sm from '../../assets/periodic/periodic-sm.webp';
+import portfolio_periodic_xl from '../../assets/periodic/periodic-xl.webp';
+import portfolio_periodic_xs from '../../assets/periodic/periodic-xs.webp';
+import portfolio_periodic from '../../assets/periodic/periodic.webp';
 
-const portfolio_smallApps_sm = require('../../assets/smallApps/smallApps-sm.webp');
-const portfolio_smallApps_xl = require('../../assets/smallApps/smallApps-xl.webp');
-const portfolio_smallApps_xs = require('../../assets/smallApps/smallApps-xs.webp');
-const portfolio_smallApps = require('../../assets/smallApps/smallApps.webp');
+import portfolio_smallApps_sm from '../../assets/smallApps/smallApps-sm.webp';
+import portfolio_smallApps_xl from '../../assets/smallApps/smallApps-xl.webp';
+import portfolio_smallApps_xs from '../../assets/smallApps/smallApps-xs.webp';
+import portfolio_smallApps from '../../assets/smallApps/smallApps.webp';
 
-const portfolio_ragnarok_sm = require('../../assets/ragnarok/ragnarok-sm.webp');
-const portfolio_ragnarok_xl = require('../../assets/ragnarok/ragnarok-xl.webp');
-const portfolio_ragnarok_xs = require('../../assets/ragnarok/ragnarok-xs.webp');
-const portfolio_ragnarok = require('../../assets/ragnarok/ragnarok.webp');
+import portfolio_ragnarok_sm from '../../assets/ragnarok/ragnarok-sm.webp';
+import portfolio_ragnarok_xl from '../../assets/ragnarok/ragnarok-xl.webp';
+import portfolio_ragnarok_xs from '../../assets/ragnarok/ragnarok-xs.webp';
+import portfolio_ragnarok from '../../assets/ragnarok/ragnarok.webp';
 
-const portfolio_examples_sm = require('../../assets/examples/examples-sm.webp');
-const portfolio_examples_xl = require('../../assets/examples/examples-xl.webp');
-const portfolio_examples_xs = require('../../assets/examples/examples-xs.webp');
-const portfolio_examples = require('../../assets/examples/examples.webp');
+import portfolio_examples_sm from '../../assets/examples/examples-sm.webp';
+import portfolio_examples_xl from '../../assets/examples/examples-xl.webp';
+import portfolio_examples_xs from '../../assets/examples/examples-xs.webp';
+import portfolio_examples from '../../assets/examples/examples.webp';
 
-const portfolio_mealPlanner_sm = require('../../assets/mealPlanner/mealPlanner-sm.webp');
-const portfolio_mealPlanner_xl = require('../../assets/mealPlanner/mealPlanner-xl.webp');
-const portfolio_mealPlanner_xs = require('../../assets/mealPlanner/mealPlanner-xs.webp');
-const portfolio_mealPlanner = require('../../assets/mealPlanner/mealPlanner.webp');
+import portfolio_mealPlanner_sm from '../../assets/mealPlanner/mealPlanner-sm.webp';
+import portfolio_mealPlanner_xl from '../../assets/mealPlanner/mealPlanner-xl.webp';
+import portfolio_mealPlanner_xs from '../../assets/mealPlanner/mealPlanner-xs.webp';
+import portfolio_mealPlanner from '../../assets/mealPlanner/mealPlanner.webp';
 
-const portfolio_spaceApp_sm = require('../../assets/spaceApp/spaceApp-sm.webp');
-const portfolio_spaceApp_xl = require('../../assets/spaceApp/spaceApp-xl.webp');
-const portfolio_spaceApp_xs = require('../../assets/spaceApp/spaceApp-xs.webp');
-const portfolio_spaceApp = require('../../assets/spaceApp/spaceApp.webp');
+import portfolio_spaceApp_sm from '../../assets/spaceApp/spaceApp-sm.webp';
+import portfolio_spaceApp_xl from '../../assets/spaceApp/spaceApp-xl.webp';
+import portfolio_spaceApp_xs from '../../assets/spaceApp/spaceApp-xs.webp';
+import portfolio_spaceApp from '../../assets/spaceApp/spaceApp.webp';
 
-const builder_sm = require('../../assets/kurskatalog/builder-sm.webp');
-const builder_xl = require('../../assets/kurskatalog/builder-xl.webp');
-const builder_xs = require('../../assets/kurskatalog/builder-xs.webp');
-const builder = require('../../assets/kurskatalog/builder.webp');
+import builder_sm from '../../assets/kurskatalog/builder-sm.webp';
+import builder_xl from '../../assets/kurskatalog/builder-xl.webp';
+import builder_xs from '../../assets/kurskatalog/builder-xs.webp';
+import builder from '../../assets/kurskatalog/builder.webp';
 
 interface PortfolioProps {
   snap: string;
   visibilityRef: Ref<HTMLDivElement>;
 }
 
-function Portfolio({ visibilityRef, snap } : PortfolioProps) {
+const Portfolio = ({ visibilityRef, snap } : PortfolioProps) => {
+  const [projectChosen, setProjectChosen] = useState(false);
+
   return (
     <section ref={visibilityRef} id='portfolio' className={snap + ' mt-16 lg:mt-32 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}>
       <SectionHeader
-        className='lg:mb-16'
+        className='lg:mb-12'
         header='Portfolio'
         subHeader='My Recent Work'
       />
 
-      <div className='w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 print:grid-cols-3'>
+      {/* <button className={'bg-red-500 text-black p-10 '} 
+        title="hej" onClick={() => setProjectChosen(!projectChosen)}>CLOSE</button> */}
+      <div className={'w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 print:grid-cols-3 '
+          + (projectChosen ? "invisible" : "visible")}>
         <PortfolioCard
           header='The Periodic System in an interactive system'
           link='https://github.com/luigi989/periodic'

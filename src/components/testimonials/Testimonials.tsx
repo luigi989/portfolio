@@ -1,8 +1,5 @@
 import AvatarCard from './AvatarCard';
 // import Swiper core and required modules
-import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
-import { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -21,18 +18,18 @@ const Testimonials = ({ snap } : TestimonialsProps) => {
         <h5 className='text-center text-liLight dark:text-light font-medium '>Review from clients</h5>
         <h2 className='text-center text-liSec dark:text-primaryAlt font-medium text-3xl'>Testimonials</h2>
       </div>
-
+{/* 
       <Swiper className='w-4/5 lg:w-2/5 m-auto'
         modules={[Pagination]}
         spaceBetween={40}
         slidesPerView={1}
         pagination={{ clickable: true }}
       >
-        {/* <SwiperSlide><AvatarCard name='Ernst Achiever' text={text} path={Avatar1} /></SwiperSlide>
+        <SwiperSlide><AvatarCard name='Ernst Achiever' text={text} path={Avatar1} /></SwiperSlide>
         <SwiperSlide><AvatarCard name='Ernst Achiever' text={text} path={Avatar2} /></SwiperSlide>
         <SwiperSlide><AvatarCard name='Ernst Achiever' text={text} path={Avatar3} /></SwiperSlide>
-        <SwiperSlide><AvatarCard name='Ernst Achiever' text={text} path={Avatar4} /></SwiperSlide> */}
-      </Swiper>
+        <SwiperSlide><AvatarCard name='Ernst Achiever' text={text} path={Avatar4} /></SwiperSlide>
+      </Swiper> */}
     </section>
   )
 }
