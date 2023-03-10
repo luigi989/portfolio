@@ -1,5 +1,5 @@
-import Button from '../shared/Button';
-const CV = '../../assets/cv_eng.pdf';
+import LinkButton from '../shared/LinkButton';
+import CV from '../../assets/cv_eng.pdf';
 
 const CTA = () => {
   return (
@@ -10,16 +10,16 @@ const CTA = () => {
                       border-solid border-2 border-liSec
                       text-liSec hover:bg-liSec hover:text-liBg
                       transition ease-linear duration-300
-                      py-3 px-5 rounded-lg cursor-pointer text-center text-sm whitespace-nowrap md:text-lg md:whitespace-normal'
+                      md:py-3 py-4 px-5 rounded-lg cursor-pointer text-center text-sm whitespace-nowrap md:text-lg md:whitespace-normal'
           title='Download CV'>
           Download CV
         </button>
       </a>
-      <Button
+      <LinkButton
         link={"#contact"}
         title='Contact me'
       >
-        Let's talk</Button>
+        Let's talk</LinkButton>
     </div>
   )
 }

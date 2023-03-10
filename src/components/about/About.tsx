@@ -1,7 +1,7 @@
 import { Ref } from 'react';
 import { BsAward, BsCodeSlash } from 'react-icons/bs';
 import { VscFolderLibrary } from 'react-icons/vsc';
-import Button from '../shared/Button';
+import Button from '../shared/LinkButton';
 import SectionHeader from '../shared/SectionHeader';
 import AboutItem from './AboutItem';
 import profileImage2 from '../../assets/profile_image2/profileImage2.webp';
