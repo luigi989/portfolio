@@ -61,8 +61,8 @@ function App() {
   }, [inViewContact])
 
   return (
-    <div className={isDark ? 'bg-bgTexture bg-liBg text-black dark:bg-bg dark:text-white' :
-      'lightPattern bg-liBg text-black dark:bg-bg dark:text-white'}>
+    <div className={'bg-liBg text-black dark:bg-bg dark:text-white ' + 
+      (isDark ? 'bg-bgTexture' : 'lightPattern')}>
       <Header visibilityRef={observeHeader} snap='lg:snap-start' />
       <About visibilityRef={observeAbout} snap='lg:snap-start' />
       <Experience visibilityRef={observeExperience} snap='lg:snap-start' />

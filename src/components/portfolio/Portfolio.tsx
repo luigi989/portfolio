@@ -1,4 +1,7 @@
 import { Ref, useState } from 'react';
+import { useSetRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
+import { chosenProjectState } from '../../atoms/atoms';
 import SectionHeader from '../shared/SectionHeader';
 import PortfolioCard from './PortfolioCard';
 
@@ -36,6 +39,7 @@ import builder_sm from '../../assets/kurskatalog/builder-sm.webp';
 import builder_xl from '../../assets/kurskatalog/builder-xl.webp';
 import builder_xs from '../../assets/kurskatalog/builder-xs.webp';
 import builder from '../../assets/kurskatalog/builder.webp';
+import ProjectContainer from './ProjectContainer';
 
 interface PortfolioProps {
   snap: string;
@@ -43,24 +47,27 @@ interface PortfolioProps {
 }
 
 const Portfolio = ({ visibilityRef, snap } : PortfolioProps) => {
-  const [projectChosen, setProjectChosen] = useState(false);
+  // const [projectChosen, setProjectChosen] = useState(false);
+  const setProjectChosen = useSetRecoilState(chosenProjectState);
+  const projectChosen = useRecoilValue(chosenProjectState);
 
   return (
     <section ref={visibilityRef} id='portfolio' className={snap + ' mt-16 lg:mt-32 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}>
       <SectionHeader
-        className='lg:mb-12'
+        className='lg:mb-8'
         header='Portfolio'
         subHeader='My Recent Work'
       />
 
-      {/* <button className={'bg-red-500 text-black p-10 '} 
-        title="hej" onClick={() => setProjectChosen(!projectChosen)}>CLOSE</button> */}
+      {projectChosen !== ''  ? <ProjectContainer header='hej' onClick={() => setProjectChosen('')}/> : null}
+      
       <div className={'w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 print:grid-cols-3 '
-          + (projectChosen ? "invisible" : "visible")}>
+          + (projectChosen !== '' ? "invisible" : "visible")}>
         <PortfolioCard
           header='The Periodic System in an interactive system'
           link='https://github.com/luigi989/periodic'
           demoLink='https://periodic.luigiworks.tech'
+          onClick={() => setProjectChosen('periodic')}
           path={portfolio_periodic_sm}
           path1x={portfolio_periodic_xs}
           path2x={portfolio_periodic_sm}
@@ -71,6 +78,7 @@ const Portfolio = ({ visibilityRef, snap } : PortfolioProps) => {
           header='Kurskatalog'
           link='https://github.com/HawkieOne/kurskatalog-id'
           demoLink='https://kurskatalog.hawkie.me/'
+          onClick={() => setProjectChosen('kurskatalog')}
           path={builder_sm}
           path1x={builder_xs}
           path2x={builder_sm}
@@ -81,6 +89,7 @@ const Portfolio = ({ visibilityRef, snap } : PortfolioProps) => {
           header='Space-app'
           link='https://github.com/HawkieOne/space-app'
           demoLink='https://spaceapp.hawkie.me'
+          onClick={() => setProjectChosen('spaceapp')}
           path={portfolio_spaceApp_sm}
           path1x={portfolio_spaceApp_xs}
           path2x={portfolio_spaceApp_sm}
@@ -91,6 +100,7 @@ const Portfolio = ({ visibilityRef, snap } : PortfolioProps) => {
           header='SmallApps'
           link='https://github.com/luigi989/smallApps'
           demoLink='https://apps.luigiworks.tech'
+          onClick={() => setProjectChosen('apps')}
           path={portfolio_smallApps_sm}
           path1x={portfolio_smallApps_xs}
           path2x={portfolio_smallApps_sm}
@@ -101,6 +111,7 @@ const Portfolio = ({ visibilityRef, snap } : PortfolioProps) => {
           header='Ragnarok'
           link='https://github.com/luigi989/Ragnarok'
           demoLink='https://ragnarok.luigiworks.tech'
+          onClick={() => setProjectChosen('ragnarok')}
           path={portfolio_ragnarok_sm}
           path1x={portfolio_ragnarok_xs}
           path2x={portfolio_ragnarok_sm}
@@ -110,6 +121,7 @@ const Portfolio = ({ visibilityRef, snap } : PortfolioProps) => {
         <PortfolioCard
           header='Examples in HTML/CSS'
           link='https://github.com/luigi989/examples'
+          onClick={() => setProjectChosen('examples')}
           path={portfolio_examples_sm}
           path1x={portfolio_examples_xs}
           path2x={portfolio_examples_sm}
@@ -119,6 +131,7 @@ const Portfolio = ({ visibilityRef, snap } : PortfolioProps) => {
         <PortfolioCard
           header='Meal-Planner'
           link='https://github.com/HawkieOne/Meal-Planner'
+          onClick={() => setProjectChosen('mealPlanner')}
           path={portfolio_mealPlanner_sm}
           path1x={portfolio_mealPlanner_xs}
           path2x={portfolio_mealPlanner_sm}

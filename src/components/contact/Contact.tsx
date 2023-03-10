@@ -1,5 +1,5 @@
 import emailjs from '@emailjs/browser';
-import { useRef, useState, Ref } from 'react';
+import { useRef, useState, Ref, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 import { BsMessenger, BsWhatsapp } from 'react-icons/bs';
@@ -9,6 +9,7 @@ import Button from '../shared/Button';
 import ContactItem from './ContactItem';
 import Error from './Error';
 import SectionHeader from '../shared/SectionHeader';
+
 
 interface ContactProps {
   snap: string;
@@ -31,7 +32,7 @@ const Contact = ({ visibilityRef, snap }: ContactProps) => {
     notify();
     currentForm.reset();
   };
-
+      
   return (
     <section ref={visibilityRef} id='contact' className={snap + ' mb-10 lg:mb-0 mt-16 lg:mt-32 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}>
       <SectionHeader
