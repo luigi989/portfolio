@@ -4,6 +4,7 @@ import { useRecoilValue } from 'recoil';
 import { chosenProjectState } from '../../atoms/atoms';
 import SectionHeader from '../shared/SectionHeader';
 import PortfolioCard from './PortfolioCard';
+import ProjectContainer from './ProjectContainer';
 
 import portfolio_periodic_sm from '../../assets/periodic/periodic-sm.webp';
 import portfolio_periodic_xl from '../../assets/periodic/periodic-xl.webp';
@@ -39,7 +40,6 @@ import builder_sm from '../../assets/kurskatalog/builder-sm.webp';
 import builder_xl from '../../assets/kurskatalog/builder-xl.webp';
 import builder_xs from '../../assets/kurskatalog/builder-xs.webp';
 import builder from '../../assets/kurskatalog/builder.webp';
-import ProjectContainer from './ProjectContainer';
 
 interface PortfolioProps {
   snap: string;
@@ -47,7 +47,6 @@ interface PortfolioProps {
 }
 
 const Portfolio = ({ visibilityRef, snap } : PortfolioProps) => {
-  // const [projectChosen, setProjectChosen] = useState(false);
   const setProjectChosen = useSetRecoilState(chosenProjectState);
   const projectChosen = useRecoilValue(chosenProjectState);
 
