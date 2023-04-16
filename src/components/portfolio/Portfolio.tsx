@@ -40,6 +40,8 @@ import builder_xl from '../../assets/kurskatalog/builder-xl.webp';
 import builder_xs from '../../assets/kurskatalog/builder-xs.webp';
 import builder from '../../assets/kurskatalog/builder.webp';
 import ProjectContainer from './ProjectContainer';
+import { response } from 'express';
+import { log } from 'console';
 
 interface PortfolioProps {
   snap: string;
@@ -50,6 +52,17 @@ const Portfolio = ({ visibilityRef, snap } : PortfolioProps) => {
   // const [projectChosen, setProjectChosen] = useState(false);
   const setProjectChosen = useSetRecoilState(chosenProjectState);
   const projectChosen = useRecoilValue(chosenProjectState);
+
+  const getMarkdown = async (filename:string) => {
+    const response = await fetch("http://localhost:3001/periodic");
+    const json = await response.json();
+    console.log(json.data);
+  }
+
+  const onClick = (filename:string) => {
+    getMarkdown(filename);
+    setProjectChosen(filename);
+  } 
 
   return (
     <section ref={visibilityRef} id='portfolio' className={snap + ' mt-16 lg:mt-32 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}>
@@ -67,7 +80,7 @@ const Portfolio = ({ visibilityRef, snap } : PortfolioProps) => {
           header='The Periodic System in an interactive system'
           link='https://github.com/luigi989/periodic'
           demoLink='https://periodic.luigiworks.tech'
-          onClick={() => setProjectChosen('periodic')}
+          onClick={() => onClick("periodic")}
           path={portfolio_periodic_sm}
           path1x={portfolio_periodic_xs}
           path2x={portfolio_periodic_sm}
