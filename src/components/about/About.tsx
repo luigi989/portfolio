@@ -25,7 +25,7 @@ function About({ visibilityRef, snap }: AboutProps) {
       <div className='w-11/12 md:w-3/4 m-auto grid grid-cols-1 lg:grid-cols-2 gap-[10%] lg:gap-[15%] place-items-center'>
         <div className='w-3/4 md:w-1/2 lg:w-3/4 aspect-square rounded-[2rem] bg-gradient-to-tr from-transparent via-liSec dark:via-primaryAlt to-transparent
                         grid place-items-center print:w-1/3'>
-          <div className='rounded-[2rem] overflow-hidden rotate-12 hover:rotate-0 transition ease-linear duration-300'>
+          <div className='w-full h-full rounded-[2rem] overflow-hidden rotate-12 hover:rotate-0 transition ease-linear duration-300'>
             <img className='block w-full object-cover' alt={'About me'}
               src={profileImage2_sm}
               srcSet={`${profileImage2_xxl} 4x, ${profileImage2_xl} 3x, ${profileImage2_xl} 2x, ${profileImage2} 1x, `}

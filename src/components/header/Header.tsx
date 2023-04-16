@@ -48,11 +48,10 @@ const Header = ({ visibilityRef, snap } : HeaderProps) => {
             icon={<BsFacebook/>} 
           />
         </div>
-
-        <div className='bg-gradient-to-b from-liSec dark:from-primaryAlt md:w-[22rem] md:h-[30rem] mt-16 
-                        rounded-tl-[12rem] rounded-tr-[12rem] 
-                        mx-auto overflow-hidden px-1 pb-6 pt-20'>
-          <img className='block object-cover' alt='Profile image'
+        <div className='bg-gradient-to-b from-liSec dark:from-primaryAlt lg:w-2/6 w-3/4 h-4/6 mt-16 
+                        rounded-tl-[12rem] rounded-tr-[12rem] flex justify-center
+                        mx-auto overflow-hidden px-1 pt-20'>
+          <img className='block object-cover w-full h-full' alt='Profile image'
             src={profileImage_xs}
             srcSet={`${profileImage} 4x, ${profileImage_sm} 3x, ${profileImage_sm} 2x, ${profileImage_sm} 1x, `}
           />
