@@ -5,7 +5,14 @@ export const darkModeState = atom({
     default: true,
  });
 
- export const chosenProjectState = atom({
-    key: 'chosenProjectState',
-    default: '',
+ export const chosenProjectInfo = atom({
+   key: 'chosenProjectInfo',
+   default: {
+      title: '',
+      github_link: '',
+      live_demo: '',
+      tags: [],
+      description: '',
+      imgPath: ''
+   },
  })

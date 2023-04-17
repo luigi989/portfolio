@@ -1,66 +1,78 @@
-import { Ref, useState } from 'react';
+import { Ref } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { useRecoilValue } from 'recoil';
-import { chosenProjectState } from '../../atoms/atoms';
+import { chosenProjectInfo } from '../../atoms/atoms';
 import SectionHeader from '../shared/SectionHeader';
 import PortfolioCard from './PortfolioCard';
 import ProjectContainer from './ProjectContainer';
 
+import img_periodic_sm from '../../assets/periodic/periodic-sm.webp';
+import img_periodic_xl from '../../assets/periodic/periodic-xl.webp';
+import img_periodic_xs from '../../assets/periodic/periodic-xs.webp';
+import img_periodic from '../../assets/periodic/periodic.webp';
 
-import portfolio_periodic_sm from '../../assets/periodic/periodic-sm.webp';
-import portfolio_periodic_xl from '../../assets/periodic/periodic-xl.webp';
-import portfolio_periodic_xs from '../../assets/periodic/periodic-xs.webp';
-import portfolio_periodic from '../../assets/periodic/periodic.webp';
+import img_smallApps_sm from '../../assets/smallApps/smallApps-sm.webp';
+import img_smallApps_xl from '../../assets/smallApps/smallApps-xl.webp';
+import img_smallApps_xs from '../../assets/smallApps/smallApps-xs.webp';
+import img_smallApps from '../../assets/smallApps/smallApps.webp';
 
-import portfolio_smallApps_sm from '../../assets/smallApps/smallApps-sm.webp';
-import portfolio_smallApps_xl from '../../assets/smallApps/smallApps-xl.webp';
-import portfolio_smallApps_xs from '../../assets/smallApps/smallApps-xs.webp';
-import portfolio_smallApps from '../../assets/smallApps/smallApps.webp';
+import img_ragnarok_sm from '../../assets/ragnarok/ragnarok-sm.webp';
+import img_ragnarok_xl from '../../assets/ragnarok/ragnarok-xl.webp';
+import img_ragnarok_xs from '../../assets/ragnarok/ragnarok-xs.webp';
+import img_ragnarok from '../../assets/ragnarok/ragnarok.webp';
 
-import portfolio_ragnarok_sm from '../../assets/ragnarok/ragnarok-sm.webp';
-import portfolio_ragnarok_xl from '../../assets/ragnarok/ragnarok-xl.webp';
-import portfolio_ragnarok_xs from '../../assets/ragnarok/ragnarok-xs.webp';
-import portfolio_ragnarok from '../../assets/ragnarok/ragnarok.webp';
+import img_examples_sm from '../../assets/examples/examples-sm.webp';
+import img_examples_xl from '../../assets/examples/examples-xl.webp';
+import img_examples_xs from '../../assets/examples/examples-xs.webp';
+import img_examples from '../../assets/examples/examples.webp';
 
-import portfolio_examples_sm from '../../assets/examples/examples-sm.webp';
-import portfolio_examples_xl from '../../assets/examples/examples-xl.webp';
-import portfolio_examples_xs from '../../assets/examples/examples-xs.webp';
-import portfolio_examples from '../../assets/examples/examples.webp';
+import img_mealPlanner_sm from '../../assets/mealPlanner/mealPlanner-sm.webp';
+import img_mealPlanner_xl from '../../assets/mealPlanner/mealPlanner-xl.webp';
+import img_mealPlanner_xs from '../../assets/mealPlanner/mealPlanner-xs.webp';
+import img_mealPlanner from '../../assets/mealPlanner/mealPlanner.webp';
 
-import portfolio_mealPlanner_sm from '../../assets/mealPlanner/mealPlanner-sm.webp';
-import portfolio_mealPlanner_xl from '../../assets/mealPlanner/mealPlanner-xl.webp';
-import portfolio_mealPlanner_xs from '../../assets/mealPlanner/mealPlanner-xs.webp';
-import portfolio_mealPlanner from '../../assets/mealPlanner/mealPlanner.webp';
+import img_spaceapp_sm from '../../assets/spaceApp/spaceApp-sm.webp';
+import img_spaceapp_xl from '../../assets/spaceApp/spaceApp-xl.webp';
+import img_spaceapp_xs from '../../assets/spaceApp/spaceApp-xs.webp';
+import img_spaceapp from '../../assets/spaceApp/spaceApp.webp';
 
-import portfolio_spaceApp_sm from '../../assets/spaceApp/spaceApp-sm.webp';
-import portfolio_spaceApp_xl from '../../assets/spaceApp/spaceApp-xl.webp';
-import portfolio_spaceApp_xs from '../../assets/spaceApp/spaceApp-xs.webp';
-import portfolio_spaceApp from '../../assets/spaceApp/spaceApp.webp';
-
-import builder_sm from '../../assets/kurskatalog/builder-sm.webp';
-import builder_xl from '../../assets/kurskatalog/builder-xl.webp';
-import builder_xs from '../../assets/kurskatalog/builder-xs.webp';
-import builder from '../../assets/kurskatalog/builder.webp';
+import img_kurskatalog_sm from '../../assets/kurskatalog/builder-sm.webp';
+import img_kurskatalog_xl from '../../assets/kurskatalog/builder-xl.webp';
+import img_kurskatalog_xs from '../../assets/kurskatalog/builder-xs.webp';
+import img_kurskatalog from '../../assets/kurskatalog/builder.webp';
 
 interface PortfolioProps {
   snap: string;
   visibilityRef: Ref<HTMLDivElement>;
 }
 
-const Portfolio = ({ visibilityRef, snap } : PortfolioProps) => {
-  const setProjectChosen = useSetRecoilState(chosenProjectState);
-  const projectChosen = useRecoilValue(chosenProjectState);
+const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
+  const projectChosen = useRecoilValue(chosenProjectInfo);
+  const setChosenProjectInfo = useSetRecoilState(chosenProjectInfo);
 
-  const getMarkdown = async (filename:string) => {
-    const response = await fetch("http://localhost:3001/periodic");
+  const getMarkdown = async (filename: string, imgPath: string) => {
+    const response = await fetch("http://localhost:3001/" + filename);
     const json = await response.json();
-    console.log(json.data);
+
+    const data = json.data;
+    data["imgPath"] = imgPath;
+    setChosenProjectInfo(data);
   }
 
-  const onClick = (filename:string) => {
-    getMarkdown(filename);
-    setProjectChosen(filename);
-  } 
+  const onClick = (filename: string, imgPath: string) => {
+    getMarkdown(filename, imgPath);
+  }
+
+  const closeProject = () => {
+    setChosenProjectInfo({
+      title: '',
+      description: '',
+      tags: [],
+      github_link: '',
+      live_demo: '',
+      imgPath: ''
+    });
+  }
 
   return (
     <section ref={visibilityRef} id='portfolio' className={snap + ' mt-16 lg:mt-32 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}>
@@ -70,84 +82,84 @@ const Portfolio = ({ visibilityRef, snap } : PortfolioProps) => {
         subHeader='My Recent Work'
       />
 
-      {projectChosen !== ''  ? <ProjectContainer header='hej' onClick={() => setProjectChosen('')}/> : null}
-      
+      {projectChosen.title !== '' ? <ProjectContainer header='hej' onClick={() => closeProject()} /> : null}
+
       <div className={'w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 print:grid-cols-3 '
-          + (projectChosen !== '' ? "invisible" : "visible")}>
+        + (projectChosen.title !== '' ? "invisible" : "visible")}>
         <PortfolioCard
           header='The Periodic System in an interactive system'
           link='https://github.com/luigi989/periodic'
           demoLink='https://periodic.luigiworks.tech'
-          onClick={() => onClick("periodic")}
-          path={portfolio_periodic_sm}
-          path1x={portfolio_periodic_xs}
-          path2x={portfolio_periodic_sm}
-          path3x={portfolio_periodic}
-          path4x={portfolio_periodic_xl}
+          onClick={() => onClick("periodic", img_periodic_sm)}
+          path={img_periodic_sm}
+          path1x={img_periodic_xs}
+          path2x={img_periodic_sm}
+          path3x={img_periodic}
+          path4x={img_periodic_xl}
         />
         <PortfolioCard
           header='Kurskatalog'
           link='https://github.com/HawkieOne/kurskatalog-id'
           demoLink='https://kurskatalog.hawkie.me/'
-          onClick={() => setProjectChosen('kurskatalog')}
-          path={builder_sm}
-          path1x={builder_xs}
-          path2x={builder_sm}
-          path3x={builder}
-          path4x={builder_xl}
+          onClick={() => onClick('kurskatalog', img_kurskatalog_sm)}
+          path={img_kurskatalog_sm}
+          path1x={img_kurskatalog_xs}
+          path2x={img_kurskatalog_sm}
+          path3x={img_kurskatalog}
+          path4x={img_kurskatalog_xl}
         />
         <PortfolioCard
           header='Space-app'
           link='https://github.com/HawkieOne/space-app'
           demoLink='https://spaceapp.hawkie.me'
-          onClick={() => setProjectChosen('spaceapp')}
-          path={portfolio_spaceApp_sm}
-          path1x={portfolio_spaceApp_xs}
-          path2x={portfolio_spaceApp_sm}
-          path3x={portfolio_spaceApp}
-          path4x={portfolio_spaceApp_xl}
+          onClick={() => onClick('spaceapp', img_spaceapp_sm)}
+          path={img_spaceapp_sm}
+          path1x={img_spaceapp_xs}
+          path2x={img_spaceapp_sm}
+          path3x={img_spaceapp}
+          path4x={img_spaceapp_xl}
         />
         <PortfolioCard
           header='SmallApps'
           link='https://github.com/luigi989/smallApps'
           demoLink='https://apps.luigiworks.tech'
-          onClick={() => setProjectChosen('apps')}
-          path={portfolio_smallApps_sm}
-          path1x={portfolio_smallApps_xs}
-          path2x={portfolio_smallApps_sm}
-          path3x={portfolio_smallApps}
-          path4x={portfolio_smallApps_xl}
+          onClick={() => onClick('apps', img_smallApps_sm)}
+          path={img_smallApps_sm}
+          path1x={img_smallApps_xs}
+          path2x={img_smallApps_sm}
+          path3x={img_smallApps}
+          path4x={img_smallApps_xl}
         />
         <PortfolioCard
           header='Ragnarok'
           link='https://github.com/luigi989/Ragnarok'
           demoLink='https://ragnarok.luigiworks.tech'
-          onClick={() => setProjectChosen('ragnarok')}
-          path={portfolio_ragnarok_sm}
-          path1x={portfolio_ragnarok_xs}
-          path2x={portfolio_ragnarok_sm}
-          path3x={portfolio_ragnarok}
-          path4x={portfolio_ragnarok_xl}
+          onClick={() => onClick('ragnarok', img_ragnarok_sm)}
+          path={img_ragnarok_sm}
+          path1x={img_ragnarok_xs}
+          path2x={img_ragnarok_sm}
+          path3x={img_ragnarok}
+          path4x={img_ragnarok_xl}
         />
         <PortfolioCard
           header='Examples in HTML/CSS'
           link='https://github.com/luigi989/examples'
-          onClick={() => setProjectChosen('examples')}
-          path={portfolio_examples_sm}
-          path1x={portfolio_examples_xs}
-          path2x={portfolio_examples_sm}
-          path3x={portfolio_examples}
-          path4x={portfolio_examples_xl}
+          onClick={() => onClick('examples', img_examples_sm)}
+          path={img_examples_sm}
+          path1x={img_examples_xs}
+          path2x={img_examples_sm}
+          path3x={img_examples}
+          path4x={img_examples_xl}
         />
         <PortfolioCard
           header='Meal-Planner'
           link='https://github.com/HawkieOne/Meal-Planner'
-          onClick={() => setProjectChosen('mealPlanner')}
-          path={portfolio_mealPlanner_sm}
-          path1x={portfolio_mealPlanner_xs}
-          path2x={portfolio_mealPlanner_sm}
-          path3x={portfolio_mealPlanner}
-          path4x={portfolio_mealPlanner_xl}
+          onClick={() => onClick('mealPlanner', img_mealPlanner_sm)}
+          path={img_mealPlanner_sm}
+          path1x={img_mealPlanner_xs}
+          path2x={img_mealPlanner_sm}
+          path3x={img_mealPlanner}
+          path4x={img_mealPlanner_xl}
         />
       </div>
     </section>

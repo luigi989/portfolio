@@ -16,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <meta name="og:title" content={title} />
         <meta name="description" content={description} />
         <meta name="og:description" content={description} />
+        <link rel='icon' type='image/png' href='portfolio.svg' />
       </Helmet>
       <App />
     </HelmetProvider>
