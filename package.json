@@ -11,6 +11,8 @@
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@react-spring/types": "^9.7.2",
+    "@react-spring/web": "^9.7.2",
     "autoprefixer": "^10.4.13",
     "cors": "^2.8.5",
     "daisyui": "^2.51.3",
