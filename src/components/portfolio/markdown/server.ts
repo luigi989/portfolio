@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import { getMarkdown } from "./data-utils";
+import fs from 'graceful-fs';
 
 const app: Express = express();
 
@@ -14,6 +15,38 @@ app.get('/:filename', (req: Request, res: Response) => {
         console.log(result.data);
         res.status(200).send(result);
     } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
+app.get('all', (req: Request, res: Response) => {
+    console.log("here");
+    const dir = './';
+    try {
+        fs.readdir(dir, (err, files) => {
+            files.forEach(file => {
+                console.log("file: " + file);
+            })
+        })    
+        res.status(200).send();  
+    } catch (error) {
+        console.log("something went wrong");
+        res.status(500).send(error);
+    }
+});
+
+app.get('titles', (req: Request, res: Response) => {
+    console.log("here");
+    const dir = './';
+    try {
+        fs.readdir(dir, (err, files) => {
+            files.forEach(file => {
+                console.log("file: " + file);
+            })
+        })    
+        res.status(200).send();  
+    } catch (error) {
+        console.log("something went wrong");
         res.status(500).send(error);
     }
 });

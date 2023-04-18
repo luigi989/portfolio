@@ -11,10 +11,10 @@ import img_periodic_xl from '../../assets/periodic/periodic-xl.webp';
 import img_periodic_xs from '../../assets/periodic/periodic-xs.webp';
 import img_periodic from '../../assets/periodic/periodic.webp';
 
-import img_smallApps_sm from '../../assets/smallApps/smallApps-sm.webp';
-import img_smallApps_xl from '../../assets/smallApps/smallApps-xl.webp';
-import img_smallApps_xs from '../../assets/smallApps/smallApps-xs.webp';
-import img_smallApps from '../../assets/smallApps/smallApps.webp';
+import img_apps_sm from '../../assets/smallApps/smallApps-sm.webp';
+import img_apps_xl from '../../assets/smallApps/smallApps-xl.webp';
+import img_apps_xs from '../../assets/smallApps/smallApps-xs.webp';
+import img_apps from '../../assets/smallApps/smallApps.webp';
 
 import img_ragnarok_sm from '../../assets/ragnarok/ragnarok-sm.webp';
 import img_ragnarok_xl from '../../assets/ragnarok/ragnarok-xl.webp';
@@ -51,7 +51,8 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
   const setChosenProjectInfo = useSetRecoilState(chosenProjectInfo);
 
   const getMarkdown = async (filename: string, imgPath: string) => {
-    const response = await fetch("http://localhost:3001/" + filename);
+    // const response = await fetch("http://localhost:3001/" + filename);
+    const response = await fetch("http://localhost:3001/all");
     const json = await response.json();
 
     const data = json.data;
@@ -82,7 +83,33 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
         subHeader='My Recent Work'
       />
 
-      {projectChosen.title !== '' ? <ProjectContainer header='hej' onClick={() => closeProject()} /> : null}
+      {projectChosen.title !== '' &&
+        <div className='flex w-11/12 md:w-3/4 h-fit m-auto p-5'>
+          <ul className='p-4 bg-liSec dark:bg-bgAlt text-liBg rounded-l-2xl'>
+            <li className={'py-1 px-2 text-xl cursor-pointer ' +
+            'hover:bg-primary hover:text-black hover:rounded-md '}
+              onClick={() => onClick("periodic", img_periodic_sm)}>Periodic</li>
+            <li className='py-1 px-2 text-xl cursor-pointer
+            hover:bg-primary hover:text-black hover:rounded-md '
+              onClick={() => onClick("kurskatalog", img_kurskatalog_sm)}>Kurskatalog</li>
+            <li className='py-1 px-2 text-xl cursor-pointer
+            hover:bg-primary hover:text-black hover:rounded-md '
+              onClick={() => onClick("spaceapp", img_spaceapp_sm)}>SpacQ</li>
+            <li className='py-1 px-2 text-xl cursor-pointer
+            hover:bg-primary hover:text-black hover:rounded-md '
+              onClick={() => onClick("apps", img_apps_sm)}>Small apps</li>
+            <li className='py-1 px-2 text-xl cursor-pointer
+            hover:bg-primary hover:text-black hover:rounded-md '
+              onClick={() => onClick("ragnarok", img_ragnarok_sm)}>Ragnarok</li>
+            <li className='py-1 px-2 text-xl cursor-pointer
+            hover:bg-primary hover:text-black hover:rounded-md '
+              onClick={() => onClick("examples", img_examples_sm)}>Examples</li>
+            <li className='py-1 px-2 text-xl cursor-pointer
+            hover:bg-primary hover:text-black hover:rounded-md '
+              onClick={() => onClick("mealPlanner", img_mealPlanner_sm)}>Meal-Planner</li>
+          </ul>
+          <ProjectContainer onClick={() => closeProject()} />
+        </div>}
 
       <div className={'w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 print:grid-cols-3 '
         + (projectChosen.title !== '' ? "invisible" : "visible")}>
@@ -109,7 +136,7 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
           path4x={img_kurskatalog_xl}
         />
         <PortfolioCard
-          header='Space-app'
+          header='SpacQ'
           link='https://github.com/HawkieOne/space-app'
           demoLink='https://spaceapp.hawkie.me'
           onClick={() => onClick('spaceapp', img_spaceapp_sm)}
@@ -123,12 +150,12 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
           header='SmallApps'
           link='https://github.com/luigi989/smallApps'
           demoLink='https://apps.luigiworks.tech'
-          onClick={() => onClick('apps', img_smallApps_sm)}
-          path={img_smallApps_sm}
-          path1x={img_smallApps_xs}
-          path2x={img_smallApps_sm}
-          path3x={img_smallApps}
-          path4x={img_smallApps_xl}
+          onClick={() => onClick('apps', img_apps_sm)}
+          path={img_apps_sm}
+          path1x={img_apps_xs}
+          path2x={img_apps_sm}
+          path3x={img_apps}
+          path4x={img_apps_xl}
         />
         <PortfolioCard
           header='Ragnarok'

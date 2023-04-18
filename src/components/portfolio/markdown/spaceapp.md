@@ -1,5 +1,5 @@
 ---
-title: Space-app
+title: SpaceQ
 github_link: https://github.com/HawkieOne/space-app
 live_demo: https://spaceapp.hawkie.me
 tags: [NextJS, Typescript, TailwindCSS, Recoil]
