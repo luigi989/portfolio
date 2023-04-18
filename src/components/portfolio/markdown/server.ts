@@ -3,9 +3,40 @@ import cors from "cors";
 import { getMarkdown } from "./data-utils";
 import fs from 'graceful-fs';
 
-const app: Express = express();
+interface projectType {
+    [index: string]: {};
+}
 
+const app: Express = express();
 app.use(cors());
+
+app.get('/all', (req: Request, res: Response) => {
+    const dir = './';
+    const fileNames: string[] = [];
+    const data:projectType = {};
+    try {
+        fs.readdir(dir, (err, files) => {
+            files.forEach(file => {
+                const fileExtension = file.split('.').pop();
+                if(fileExtension == 'md') {
+                    fileNames.push(file.split('.')[0]);
+                }
+            });
+
+            fileNames.forEach(fileName => {
+                const result = getMarkdown('./' + fileName + '.md');
+                console.log('Fetched all content from ' + fileName);
+                
+                const file = fileName.split('.')[0];
+                data[file] = result;
+            });
+            console.log("Combined all fetched content");
+        })    
+        res.status(200).send(data);  
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
 
 app.get('/:filename', (req: Request, res: Response) => {
     try {
@@ -15,38 +46,6 @@ app.get('/:filename', (req: Request, res: Response) => {
         console.log(result.data);
         res.status(200).send(result);
     } catch (error) {
-        res.status(500).send(error);
-    }
-});
-
-app.get('all', (req: Request, res: Response) => {
-    console.log("here");
-    const dir = './';
-    try {
-        fs.readdir(dir, (err, files) => {
-            files.forEach(file => {
-                console.log("file: " + file);
-            })
-        })    
-        res.status(200).send();  
-    } catch (error) {
-        console.log("something went wrong");
-        res.status(500).send(error);
-    }
-});
-
-app.get('titles', (req: Request, res: Response) => {
-    console.log("here");
-    const dir = './';
-    try {
-        fs.readdir(dir, (err, files) => {
-            files.forEach(file => {
-                console.log("file: " + file);
-            })
-        })    
-        res.status(200).send();  
-    } catch (error) {
-        console.log("something went wrong");
         res.status(500).send(error);
     }
 });

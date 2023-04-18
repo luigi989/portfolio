@@ -1,4 +1,4 @@
-import { Ref } from 'react';
+import { Ref, useState } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { useRecoilValue } from 'recoil';
 import { chosenProjectInfo } from '../../atoms/atoms';
@@ -49,6 +49,7 @@ interface PortfolioProps {
 const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
   const projectChosen = useRecoilValue(chosenProjectInfo);
   const setChosenProjectInfo = useSetRecoilState(chosenProjectInfo);
+  const [projects, setProjects] = useState({});
 
   const getMarkdown = async (filename: string, imgPath: string) => {
     // const response = await fetch("http://localhost:3001/" + filename);
