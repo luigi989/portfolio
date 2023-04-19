@@ -3,17 +3,13 @@ import cors from "cors";
 import { getMarkdown } from "./data-utils";
 import fs from 'graceful-fs';
 
-interface projectType {
-    [index: string]: {};
-}
-
 const app: Express = express();
 app.use(cors());
 
 app.get('/all', (req: Request, res: Response) => {
     const dir = './';
     const fileNames: string[] = [];
-    const data:projectType = {};
+    const data:{[key:string]:string}[] = [];
     try {
         fs.readdir(dir, (err, files) => {
             files.forEach(file => {
@@ -25,14 +21,12 @@ app.get('/all', (req: Request, res: Response) => {
 
             fileNames.forEach(fileName => {
                 const result = getMarkdown('./' + fileName + '.md');
-                console.log('Fetched all content from ' + fileName);
-                
-                const file = fileName.split('.')[0];
-                data[file] = result;
+                console.log('Fetched all content from ' + fileName);                
+                data.push(result.data);
             });
-            console.log("Combined all fetched content");
+            console.log("Combined all fetched content");                        
+            res.status(200).send(data);  
         })    
-        res.status(200).send(data);  
     } catch (error) {
         res.status(500).send(error);
     }

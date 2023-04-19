@@ -11,8 +11,9 @@ export const darkModeState = atom({
       title: '',
       github_link: '',
       live_demo: '',
-      tags: [],
+      tags: [''],
       description: '',
-      imgPath: ''
+      link: '',
+      // imgPath: ''
    },
  })

@@ -2,7 +2,6 @@ import DemoButton from "./DemoButton";
 
 interface PortfolioCardProps {
     header: string;
-    link: string;
     demoLink?: string;
     path: string;
     onClick: () => void;
@@ -12,13 +11,13 @@ interface PortfolioCardProps {
     path4x: string;
 }
 
-const PortfolioCard = ({ header, link, demoLink, path, onClick, path1x, path2x, path3x, path4x }: PortfolioCardProps) => {
+const PortfolioCard = ({ header, demoLink, path, onClick, path1x, path2x, path3x, path4x }: PortfolioCardProps) => {
     return (
         <article className='p-5 bg-liSec dark:bg-bgAlt rounded-2xl flex flex-col'>
             <div className='rounded-2xl'>
                 <img className='rounded-2xl' alt='portfolio 1'
                     src={path}
-                    srcSet={`${path4x} 4x, ${path3x} 3x, ${path2x} 2x, ${path1x} 1x`} />
+                    srcSet={path4x + ' 4x,' + path3x +' 3x,' + path2x + ' 2x,' + path1x + ' 1x'} />
             </div>
 
             <h1 className='grow my-5 text-liBg dark:text-white'>{header}</h1>
