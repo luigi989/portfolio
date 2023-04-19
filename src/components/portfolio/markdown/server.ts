@@ -6,29 +6,42 @@ import fs from 'graceful-fs';
 const app: Express = express();
 app.use(cors());
 
+const log = (message: string) => {
+    const timeFormat = new Date().toLocaleTimeString(
+        'en-US', { hour12: false }
+    );
+    console.log(timeFormat + ": " + message);
+    console.log('\x1b[36m%s\x1b[0m', 'I am cyan');
+}
+
 app.get('/all', (req: Request, res: Response) => {
     const dir = './';
     const fileNames: string[] = [];
-    const data:{[key:string]:string}[] = [];
+    const data: { [key: string]: string }[] = [];
+
+    log('GET request recieved');
+
     try {
         fs.readdir(dir, (err, files) => {
             files.forEach(file => {
                 const fileExtension = file.split('.').pop();
-                if(fileExtension == 'md') {
+                if (fileExtension == 'md') {
                     fileNames.push(file.split('.')[0]);
                 }
             });
 
             fileNames.forEach(fileName => {
-                const result = getMarkdown('./' + fileName + '.md');
-                console.log('Fetched all content from ' + fileName);                
+                const file = fileName + '.md';
+                const result = getMarkdown('./' + file);
+                log('Fetched all content from ' + file);
                 data.push(result.data);
             });
-            console.log("Combined all fetched content");                        
-            res.status(200).send(data);  
-        })    
+            res.status(200).send(data);
+            log('Returned data');
+        })
     } catch (error) {
         res.status(500).send(error);
+        log("An error occured")
     }
 });
 

@@ -29,16 +29,16 @@ const ProjectContainer = ({ onClick }: ProjectContainerProps) => {
     return (
         <animated.div style={props} className="p-5 rounded-2xl md:rounded-r-2xl flex flex-col
         bg-liSec dark:bg-bgAlt text-liBg items-center justify-center space-y-6">
-            <h1 className='text-2xl text-primaryAlt'>{projectInfo.title}</h1>
+            <h1 className='text-2xl text-liLight dark:text-primaryAlt'>{projectInfo.title}</h1>
             <div className='flex flex-col-reverse md:flex-row space-x-4 justify-between'>
                 <div className='w-full md:w-1/2 flex flex-col justify-between'>
                     <p>{projectInfo.description}</p>
                     <div className='flex flex-col space-y-4'>
-                        <h2 className='text-xl text-primaryAlt'>Built with:</h2>
+                        <h2 className='text-xl text-liLight dark:text-primaryAlt'>Built with:</h2>
                         <ul>
                             {projectInfo.tags.map((tag) =>
                                 <li key={tag}>
-                                    <span className='text-primaryAlt'>{"\> "}</span>
+                                    <span className='dark:text-primaryAlt'>{"\> "}</span>
                                     {tag}
                                 </li>
                             )}

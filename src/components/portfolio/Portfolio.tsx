@@ -67,6 +67,7 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
 
   useEffect(() => {
     initProjects();
+    console.log("%cLog message", "color: orange");
   }, [])
 
   return (
@@ -80,13 +81,13 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
       />
 
       {projectChosen.title !== '' &&
-        <div className='flex w-11/12 md:w-3/4 h-fit m-auto p-5'>
-          <ul className='hidden md:visible p-4 bg-liSec dark:bg-bgAlt text-liBg rounded-l-2xl whitespace-nowrap'>
+        <div className='flex w-11/12 lg:w-3/4 h-fit m-auto p-5'>
+          <ul className='hidden lg:block p-4 bg-liSec dark:bg-bgAlt text-liBg rounded-l-2xl whitespace-nowrap'>
             {projects.map((project) =>
               <li onClick={() => onClick(project.link)}
                 className={'py-1 px-2 text-xl cursor-pointer ' +
-                  'hover:bg-primary hover:text-black rounded-md '
-                  + (projectChosen.title == project.title && 'bg-primary text-black')}>
+                  'dark:hover:bg-primary hover:bg-liBg hover:text-black rounded-md '
+                  + (projectChosen.title == project.title && 'dark:bg-primary bg-liBg text-black')}>
                 {project.title}</li>
             )}
           </ul>
@@ -94,7 +95,7 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
         </div>}
 
       <div className={'w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 print:grid-cols-3 '
-        + (projectChosen.title !== '' ? "hidden" : "visible")}>
+        + (projectChosen.title == '' ? "block" : "hidden")}>
         {projects.map((project) =>
           <PortfolioCard
             header={project.title}

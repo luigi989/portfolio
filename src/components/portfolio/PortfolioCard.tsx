@@ -21,7 +21,7 @@ const PortfolioCard = ({ header, demoLink, path, onClick, path1x, path2x, path3x
             </div>
 
             <h1 className='grow my-5 text-liBg dark:text-white'>{header}</h1>
-            <div className='flex gap-3 '>
+            <div className='flex gap-2'>
                 <button onClick={onClick} className='hover:bg-liPrimary hover:text-liSec
                     dark:hover:bg-primary dark:hover:text-bgAlt 
                     transition ease-linear duration-300
