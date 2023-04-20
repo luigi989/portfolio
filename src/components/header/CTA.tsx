@@ -1,5 +1,5 @@
 import LinkButton from '../shared/LinkButton';
-import CV from '../../assets/cv_eng.pdf';
+import CV from '/cv_eng.pdf';
 
 const CTA = () => {
   return (

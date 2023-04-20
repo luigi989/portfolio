@@ -4,10 +4,10 @@ import { VscFolderLibrary } from 'react-icons/vsc';
 import Button from '../shared/LinkButton';
 import SectionHeader from '../shared/SectionHeader';
 import AboutItem from './AboutItem';
-import profileImage2 from '../../assets/profile_image2/profileImage2.webp';
-import profileImage2_sm from '../../assets/profile_image2/profileImage2-sm.webp';
-import profileImage2_xl from '../../assets/profile_image2/profileImage2-xl.webp';
-import profileImage2_xxl from '../../assets/profile_image2/profileImage2-xxl.webp';
+import profileImage2 from '/profile_image2/profileImage2.webp';
+import profileImage2_sm from '/profile_image2/profileImage2-sm.webp';
+import profileImage2_xl from '/profile_image2/profileImage2-xl.webp';
+import profileImage2_xxl from '/profile_image2/profileImage2-xxl.webp';
 
 interface AboutProps {
   snap: string;

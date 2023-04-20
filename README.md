@@ -1,6 +1,6 @@
 ## :microscope: Portfolio
 
-![Header Image](src/assets/portfolio.webp)
+![Header Image](public/portfolio.webp)
 
 This is a website with I show my skills, experience, completed and ongoing projects. It is like a live portfolio. I try to keep everything up to date. All the listed projects have a github page and the completed projects have a live demo up and running. This website also is mobile friendly. The design used is based on a the following [video](https://www.youtube.com/watch?v=G-Cr00UYokU&t=10s)
 

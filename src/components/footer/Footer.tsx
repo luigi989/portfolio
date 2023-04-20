@@ -1,6 +1,6 @@
-import React from 'react';
 import { BsFacebook, BsGithub, BsLinkedin } from 'react-icons/bs';
 import IconButton from './IconButton';
+import { sections, socials } from '../../data/data';
 
 interface FooterProps {
   snap: string;
@@ -13,31 +13,26 @@ const Footer = ({ snap }: FooterProps) => {
       <p className='text-4xl font-medium mb-8 inline-block'>Ludvig Lindahl</p>
 
       <ul className='flex flex-col print:flex-row md:flex-row flex-wrap justify-center gap-6 md:gap-8 mt-0 mx-auto mb-6 md:mb-8'>
-        <li><a href='/#' className='hover:underline'>Home</a></li>
-        <li><a href='#about' className='hover:underline'>About</a></li>
-        <li><a href='#experience' className='hover:underline'>Experience</a></li>
-        <li><a href='#portfolio' className='hover:underline'>Portfolio</a></li>
-        <li><a href='#contact' className='hover:underline'>Contact</a></li>
+        {sections.map((section) =>
+          <li>
+            <a href={section.link}
+              title={'Go to ' + section.title}
+              aria-label={'Go to ' + section.title}
+              className='hover:underline'>{section.title}
+            </a>
+          </li>
+        )}
       </ul>
 
       <div className='flex justify-center gap-4 mb-4'>
-        <IconButton
-          link='https://www.linkedin.com/in/ludvig-lindahl/'
-          ariaLabel='Linkedin'
-          title='Linkedin'
-          icon={<BsLinkedin />} />
-
-        <IconButton
-          link='https://github.com/luigi989'
-          ariaLabel='Github'
-          title='Github'
-          icon={<BsGithub />} />
-
-        <IconButton
-          link='https://www.facebook.com/ludvig.lindahl.1'
-          ariaLabel='Facebook'
-          title='Facebook'
-          icon={<BsFacebook />} />
+        {socials.map((social) => 
+          <IconButton
+            link={social.link}
+            ariaLabel={social.title}
+            title={social.title}
+            icon={social.icon}
+          />
+        )}
       </div>
 
       <div className='mb-0 lg:mb-4'>

@@ -9,6 +9,7 @@ import { useSetRecoilState } from 'recoil';
 import { darkModeState } from '../../atoms/atoms';
 import NavItem from './NavItem';
 import SwapButton from './SwapButton';
+import { sections } from '../../data/data';
 
 const Nav = () => {
    const [navVisible, setNavVisible] = useState(false);
@@ -55,35 +56,14 @@ const Nav = () => {
          (navVisible ? "pointer-events-auto" : "pointer-events-none lg:pointer-events-auto")} >
          <nav className={"bg-liSec dark:bg-black w-max py-3 px-4 flex flex-col gap-5 lg:gap-3 " +
             "rounded-[3rem] backdrop-blur-lg " + (navVisible ? "visible" : "invisible lg:visible")}>
-            <NavItem
-               href='#'
-               title='Header'
-               ariaLabel='Go to Home section'
-               icon={<AiOutlineHome />} />
-
-            <NavItem
-               href='#about'
-               title='About me'
-               ariaLabel='Go to About section'
-               icon={<AiOutlineUser />} />
-
-            <NavItem
-               href='#experience'
-               title='Experience'
-               ariaLabel='Go to Experience section'
-               icon={<BiBook />} />
-
-            <NavItem
-               href='#portfolio'
-               title='Portfolio'
-               ariaLabel='Go to Portfolio section'
-               icon={<BsBriefcase />} />
-
-            <NavItem
-               href='#contact'
-               title='Contact me'
-               ariaLabel='Go to Contact section'
-               icon={<BiMessageSquareDetail />} />
+            {sections.map((section) => 
+               <NavItem 
+                  href={section.link}
+                  title={section.title}
+                  ariaLabel={section.title}
+                  icon={section.icon}
+               />
+            )}
          </nav>
 
          <SwapButton

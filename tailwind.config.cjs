@@ -25,7 +25,7 @@ module.exports = {
         primary: '#98971a',
       },
       backgroundImage: {
-        'bgTexture': "url('../src/assets/bg-texture.webp')",
+        'bgTexture': "url('/bg-texture.webp')",
       },
     },
   },

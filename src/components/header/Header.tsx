@@ -2,9 +2,10 @@ import { Ref } from 'react';
 import { BsLinkedin, BsGithub, BsFacebook } from 'react-icons/bs';
 import CTA from './CTA';
 import HeaderSocial from './HeaderSocial';
-import profileImage_xs from '../../assets/profile_image/profileImage-xs.webp';
-import profileImage_sm from '../../assets/profile_image/profileImage-sm.webp';
-import profileImage from '../../assets/profile_image/profileImage.webp';
+import profileImage_xs from '/profile_image/profileImage-xs.webp';
+import profileImage_sm from '/profile_image/profileImage-sm.webp';
+import profileImage from '/profile_image/profileImage.webp';
+import { socials } from '../../data/data';
 
 interface HeaderProps {
   snap: string;
@@ -33,20 +34,13 @@ const Header = ({ visibilityRef, snap } : HeaderProps) => {
         
         <div className="hidden lg:flex flex-col items-center gap-3 absolute left-0 bottom-12 bg-liBg p-1 dark:bg-transparent
                     after:content-[''] after:w-[1px] after:h-8 after:bg-liSec dark:after:bg-primaryAlt">
-          <HeaderSocial 
-            label='Linkedin' 
-            url='https://www.linkedin.com/in/ludvig-lindahl/' 
-            icon={<BsLinkedin/>} 
-          />
-          <HeaderSocial 
-            label='Github' 
-            url='https://github.com/luigi989/' 
-          icon={<BsGithub/>} />
-          <HeaderSocial 
-            label='Facebook' 
-            url='https://www.facebook.com/ludvig.lindahl.1' 
-            icon={<BsFacebook/>} 
-          />
+          {socials.map((social) =>
+            <HeaderSocial
+              label={social.title}
+              url={social.link}
+              icon={social.icon}
+            />
+          )}
         </div>
         <div className='bg-gradient-to-b from-liSec dark:from-primaryAlt lg:w-2/6 w-3/4 h-4/6 mt-16 
                         rounded-tl-[12rem] rounded-tr-[12rem] flex justify-center

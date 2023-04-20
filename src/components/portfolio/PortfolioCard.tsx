@@ -17,12 +17,15 @@ const PortfolioCard = ({ header, demoLink, path, onClick, path1x, path2x, path3x
             <div className='rounded-2xl'>
                 <img className='rounded-2xl' alt='portfolio 1'
                     src={path}
-                    srcSet={path4x + ' 4x,' + path3x +' 3x,' + path2x + ' 2x,' + path1x + ' 1x'} />
+                    srcSet={path4x + ' 4x,' + path3x + ' 3x,' + path2x + ' 2x,' + path1x + ' 1x'} />
             </div>
 
             <h1 className='grow my-5 text-liBg dark:text-white'>{header}</h1>
             <div className='flex gap-2'>
-                <button onClick={onClick} className='hover:bg-liPrimary hover:text-liSec
+                <button onClick={onClick}
+                    aria-label="Read more about project"
+                    title="Read more about project"
+                    className='hover:bg-liPrimary hover:text-liSec
                     dark:hover:bg-primary dark:hover:text-bgAlt 
                     transition ease-linear duration-300
                     w-max inline-block py-1 px-3 rounded-lg cursor-pointer border-solid border-[1px]

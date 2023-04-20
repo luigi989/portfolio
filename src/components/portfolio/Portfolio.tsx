@@ -2,6 +2,7 @@ import { Ref, useState, useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { useRecoilValue } from 'recoil';
 import { chosenProjectInfo } from '../../atoms/atoms';
+import { useSpring, animated } from '@react-spring/web'
 import SectionHeader from '../shared/SectionHeader';
 import PortfolioCard from './PortfolioCard';
 import ProjectContainer from './ProjectContainer';
@@ -70,6 +71,21 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
     console.log("%cLog message", "color: orange");
   }, [])
 
+  const [props, api] = useSpring(
+    () => ({
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+        delay: 0,
+    }),
+)
+
+// const handleClick = () => {
+//     api.start({
+//         from: { x: 0, },
+//         to: { x: 100, },
+//     })
+// }
+
   return (
     <section ref={visibilityRef} id='portfolio'
       className={snap + ' mt-16 lg:mt-32 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen'}
@@ -81,7 +97,7 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
       />
 
       {projectChosen.title !== '' &&
-        <div className='flex w-11/12 lg:w-3/4 h-fit m-auto p-5'>
+        <animated.div  className='flex w-11/12 lg:w-3/4 h-fit m-auto p-5'>
           <ul className='hidden lg:block p-4 bg-liSec dark:bg-bgAlt text-liBg rounded-l-2xl whitespace-nowrap'>
             {projects.map((project) =>
               <li onClick={() => onClick(project.link)}
@@ -92,7 +108,7 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
             )}
           </ul>
           <ProjectContainer onClick={() => closeProject()} />
-        </div>}
+        </animated.div>}
 
       <div className={'w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 print:grid-cols-3 '
         + (projectChosen.title == '' ? "block" : "hidden")}>

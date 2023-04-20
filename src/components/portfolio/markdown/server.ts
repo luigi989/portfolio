@@ -10,8 +10,8 @@ const log = (message: string) => {
     const timeFormat = new Date().toLocaleTimeString(
         'en-US', { hour12: false }
     );
-    console.log(timeFormat + ": " + message);
-    console.log('\x1b[36m%s\x1b[0m', 'I am cyan');
+    console.log(timeFormat + ': ' + message);
+    // console.log('\x1b[36m%s\x1b[0m', 'I am cyan');
 }
 
 app.get('/all', (req: Request, res: Response) => {
@@ -19,7 +19,7 @@ app.get('/all', (req: Request, res: Response) => {
     const fileNames: string[] = [];
     const data: { [key: string]: string }[] = [];
 
-    log('GET request recieved');
+    log('GET request from recieved');
 
     try {
         fs.readdir(dir, (err, files) => {
@@ -35,7 +35,7 @@ app.get('/all', (req: Request, res: Response) => {
                 const result = getMarkdown('./' + file);
                 log('Fetched all content from ' + file);
                 data.push(result.data);
-            });
+            });            
             res.status(200).send(data);
             log('Returned data');
         })
