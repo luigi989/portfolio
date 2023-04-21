@@ -17,7 +17,7 @@ const ProjectContainer = ({ onClick }: ProjectContainerProps) => {
             <div className='flex flex-col-reverse md:flex-row space-x-4 justify-between'>
                 <div className='w-full md:w-1/2 flex flex-col justify-between'>
                     <p>{projectInfo.description}</p>
-                    <div className='flex flex-col space-y-4'>
+                    <div className='flex flex-col py-4'>
                         <h2 className='text-xl text-liLight dark:text-primaryAlt'>Built with:</h2>
                         <ul>
                             {projectInfo.tags.map((tag) =>
@@ -36,7 +36,9 @@ const ProjectContainer = ({ onClick }: ProjectContainerProps) => {
                 <img className='w-3/4 md:w-1/2 rounded-2xl' src={'/' + projectInfo.link + '/' + projectInfo.link + '-sm.webp'} alt='Project image' />
             </div>
             <button onClick={onClick} title='Close project' aria-aria-label='Close project'
-            className='py-1 px-3 border-solid border-2 border-red-500 hover:text-black hover:bg-red-500 text-white rounded-md'>
+            className='py-1 px-3 border-solid border-2 border-red-500 
+            hover:text-black hover:bg-red-500 text-white rounded-md
+            transition ease-linear duration-300'>
                 Back
             </button>
         </div>

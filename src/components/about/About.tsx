@@ -1,7 +1,7 @@
 import { Ref } from 'react';
 import { BsAward, BsCodeSlash } from 'react-icons/bs';
 import { VscFolderLibrary } from 'react-icons/vsc';
-import Button from '../shared/LinkButton';
+import LinkButton from '../shared/LinkButton';
 import SectionHeader from '../shared/SectionHeader';
 import AboutItem from './AboutItem';
 import profileImage2 from '/profile_image2/profileImage2.webp';
@@ -62,15 +62,11 @@ function About({ visibilityRef, snap }: AboutProps) {
             Also planning to add more advanced functions like filtering elements by category and more.
           </p>
 
-          <Button 
-            link={"#contact"}
-            title='Contact me'
-          >
+          <LinkButton link={"#contact"} title='Contact me'>
             Let's talk
-          </Button>
+          </LinkButton>
         </div>
       </div>
-
     </section>
   )
 }

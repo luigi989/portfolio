@@ -77,7 +77,7 @@ const Nav = () => {
 
          <SwapButton
             title='Open/close menu'
-            ariaLabel='Menu switch'
+            ariaLabel='Open/close menu'
             mobile
             onClickP={(e) => { setNavVisible((e.target as HTMLInputElement).checked) }}
             icon1={<FiMenu className="swap-off fill-current w-6 h-6" />}

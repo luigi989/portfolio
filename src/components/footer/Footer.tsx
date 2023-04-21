@@ -1,4 +1,3 @@
-import { BsFacebook, BsGithub, BsLinkedin } from 'react-icons/bs';
 import IconButton from './IconButton';
 import { sections, socials } from '../../data/data';
 
@@ -10,7 +9,7 @@ const Footer = ({ snap }: FooterProps) => {
   return (
     <footer id='footer'
       className={snap + ' bg-liSec dark:bg-primaryAlt py-8 lg:py-12 px-0 text-center text-sm text-liBg dark:text-bg'}>
-      <p className='text-4xl font-medium mb-8 inline-block'>Ludvig Lindahl</p>
+      <p className='text-4xl font-medium mb-8'>Ludvig Lindahl</p>
 
       <ul className='flex flex-col print:flex-row md:flex-row flex-wrap justify-center gap-6 md:gap-8 mt-0 mx-auto mb-6 md:mb-8'>
         {sections.map((section) =>

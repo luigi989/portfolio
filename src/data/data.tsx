@@ -1,7 +1,8 @@
 import { BsFacebook, BsGithub, BsLinkedin } from 'react-icons/bs';
 import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
 import { BiBook, BiMessageSquareDetail } from 'react-icons/bi';
-import { BsBriefcase } from 'react-icons/bs';
+import { BsBriefcase, BsMessenger, BsWhatsapp } from 'react-icons/bs';
+import { FiMail } from 'react-icons/fi';
 
 export const sections =
     [
@@ -30,3 +31,24 @@ export const socials =
             icon: <BsFacebook />
         }
     ];
+
+    export const contacts = [
+        { 
+            title: 'Email',
+            subtitle: 'ludde.lindahl@gmail.com',
+            link: 'mailto:ludde.lindahl@gmail.com',
+            icon: <FiMail />
+        },
+        {
+            title: 'Messenger',
+            subtitle: 'Ludvig Lindahl',
+            link: 'https://m.me/ludvig.lindahl.1',
+            icon: <BsMessenger />
+        },
+        {
+            title: 'WhatsApp',
+            subtitle: '+46705789618',
+            link: 'https://wa.me/46705789618',
+            icon: <BsWhatsapp />
+        }
+    ]

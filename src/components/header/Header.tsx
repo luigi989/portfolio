@@ -1,5 +1,4 @@
 import { Ref } from 'react';
-import { BsLinkedin, BsGithub, BsFacebook } from 'react-icons/bs';
 import CTA from './CTA';
 import HeaderSocial from './HeaderSocial';
 import profileImage_xs from '/profile_image/profileImage-xs.webp';
@@ -12,8 +11,7 @@ interface HeaderProps {
   visibilityRef: Ref<HTMLDivElement>;
 }
 
-const Header = ({ visibilityRef, snap } : HeaderProps) => {
-
+const Header = ({ visibilityRef, snap }: HeaderProps) => {
   return (
     <header ref={visibilityRef} className={snap + ' h-fit md:h-[68vh] lg:h-screen w-3/4 m-auto pt-16 overflow-hidden print:h-screen'}>
       <div className='h-full w-11/12 md:w-3/4 m-auto text-center relative text-liSec dark:text-white'>
@@ -28,10 +26,10 @@ const Header = ({ visibilityRef, snap } : HeaderProps) => {
           href='#contact'
           title='Scroll down'
           className='hidden lg:block text-liSec hover:text-liLight dark:text-primaryAlt dark:hover:text-white 
-                                      p-1 bg-liBg dark:bg-transparent text-sm
-                                      absolute -right-9 bottom-20 rotate-90 font-light'>Scroll Down
+            p-1 bg-liBg dark:bg-transparent text-sm absolute -right-9 bottom-20 rotate-90 font-light'>
+            Scroll Down
         </a>
-        
+
         <div className="hidden lg:flex flex-col items-center gap-3 absolute left-0 bottom-12 bg-liBg p-1 dark:bg-transparent
                     after:content-[''] after:w-[1px] after:h-8 after:bg-liSec dark:after:bg-primaryAlt">
           {socials.map((social) =>

@@ -20,7 +20,7 @@ const PortfolioCard = ({ header, demoLink, path, onClick, path1x, path2x, path3x
                     srcSet={path4x + ' 4x,' + path3x + ' 3x,' + path2x + ' 2x,' + path1x + ' 1x'} />
             </div>
 
-            <h1 className='grow my-5 text-liBg dark:text-white'>{header}</h1>
+            <h1 className='grow my-5 text-xl text-liBg dark:text-white'>{header}</h1>
             <div className='flex gap-2'>
                 <button onClick={onClick}
                     aria-label="Read more about project"

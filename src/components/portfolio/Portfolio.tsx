@@ -97,11 +97,11 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
       />
 
       {projectChosen.title !== '' &&
-        <animated.div  className='flex w-11/12 lg:w-3/4 h-fit m-auto p-5'>
+        <animated.div className='flex w-11/12 lg:w-3/4 h-fit m-auto p-5'>
           <ul className='hidden lg:block p-4 bg-liSec dark:bg-bgAlt text-liBg rounded-l-2xl whitespace-nowrap'>
             {projects.map((project) =>
               <li onClick={() => onClick(project.link)}
-                className={'py-1 px-2 text-xl cursor-pointer ' +
+                className={'py-1 px-2 text-md cursor-pointer ' +
                   'dark:hover:bg-primary hover:bg-liBg hover:text-black rounded-md '
                   + (projectChosen.title == project.title && 'dark:bg-primary bg-liBg text-black')}>
                 {project.title}</li>
