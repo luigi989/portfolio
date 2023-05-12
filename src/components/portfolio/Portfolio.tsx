@@ -22,12 +22,12 @@ interface projectType {
 }
 
 const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
-  const projectChosen:projectType = useRecoilValue(chosenProjectInfo);
+  const projectChosen: projectType = useRecoilValue(chosenProjectInfo);
   const setChosenProjectInfo = useSetRecoilState(chosenProjectInfo);
   const [projects, setProjects] = useState<projectType[]>([]);
 
   const initProjects = async () => {
-    const response = await fetch("http://localhost:3001/all");
+    const response = await fetch("https://ludviglindahl.me/all");
     const json = await response.json();
     setProjects(json);
   }
@@ -38,7 +38,7 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
         setChosenProjectInfo(project);
       }
     });
-    
+
     const section = document.getElementById("portfolio");
     if (section != null) {
       section.scrollIntoView();
@@ -68,23 +68,22 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
 
   useEffect(() => {
     initProjects();
-    console.log("%cLog message", "color: orange");
   }, [])
 
   const [props, api] = useSpring(
     () => ({
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-        delay: 0,
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+      delay: 0,
     }),
-)
+  )
 
-// const handleClick = () => {
-//     api.start({
-//         from: { x: 0, },
-//         to: { x: 100, },
-//     })
-// }
+  // const handleClick = () => {
+  //     api.start({
+  //         from: { x: 0, },
+  //         to: { x: 100, },
+  //     })
+  // }
 
   return (
     <section ref={visibilityRef} id='portfolio'
@@ -110,21 +109,27 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
           <ProjectContainer onClick={() => closeProject()} />
         </animated.div>}
 
-      <div className={'w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 print:grid-cols-3 '
-        + (projectChosen.title == '' ? "block" : "hidden")}>
-        {projects.map((project) =>
-          <PortfolioCard
-            header={project.title}
-            demoLink={project.live_demo}
-            onClick={() => onClick(project.link)}
-            path={createImgURL(project.link, '-sm')}
-            path1x={createImgURL(project.link, '-xs')}
-            path2x={createImgURL(project.link, '-sm')}
-            path3x={createImgURL(project.link)}
-            path4x={createImgURL(project.link, '-xl')}
-          />
-        )}
-      </div>
+      {projects.length > 0 ?
+        <div className={'w-11/12 md:w-3/4 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 print:grid-cols-3 '
+          + (projectChosen.title == '' ? "block" : "hidden")}>
+          {projects.map((project) =>
+            <PortfolioCard
+              header={project.title}
+              demoLink={project.live_demo}
+              onClick={() => onClick(project.link)}
+              path={createImgURL(project.link, '-sm')}
+              path1x={createImgURL(project.link, '-xs')}
+              path2x={createImgURL(project.link, '-sm')}
+              path3x={createImgURL(project.link)}
+              path4x={createImgURL(project.link, '-xl')}
+            />
+          )}
+        </div> :
+        <div className='m-auto flex space-x-4 items-center justify-center bg-liBg dark:bg-transparent w-fit'>
+          <p className='text-liSec dark:text-primaryAlt text-xl'>Loading data</p>
+          <div className='w-5 h-5 rounded-full border-l-2 border-solid border-liSec dark:border-primaryAlt animate-spin' />
+        </div>
+      }
     </section>
   )
 }
