@@ -34,6 +34,7 @@ const Header = ({ visibilityRef, snap }: HeaderProps) => {
                     after:content-[''] after:w-[1px] after:h-8 after:bg-liSec dark:after:bg-primaryAlt">
           {socials.map((social) =>
             <HeaderSocial
+              key={social.title}
               label={social.title}
               url={social.link}
               icon={social.icon}

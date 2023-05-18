@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
-import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
-import { BiBook, BiMessageSquareDetail, BiMoon } from 'react-icons/bi';
-import { BsBriefcase } from 'react-icons/bs';
+import { BiMoon } from 'react-icons/bi';
 import { ImSun } from 'react-icons/im';
 import { FiMenu } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
@@ -58,6 +56,7 @@ const Nav = () => {
             "rounded-[3rem] backdrop-blur-lg " + (navVisible ? "visible" : "invisible lg:visible")}>
             {sections.map((section) => 
                <NavItem 
+                  key={section.title}
                   href={section.link}
                   title={section.title}
                   ariaLabel={section.title}

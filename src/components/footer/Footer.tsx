@@ -13,7 +13,7 @@ const Footer = ({ snap }: FooterProps) => {
 
       <ul className='flex flex-col print:flex-row md:flex-row flex-wrap justify-center gap-6 md:gap-8 mt-0 mx-auto mb-6 md:mb-8'>
         {sections.map((section) =>
-          <li>
+          <li key={section.title}>
             <a href={section.link}
               title={'Go to ' + section.title}
               aria-label={'Go to ' + section.title}
@@ -26,6 +26,7 @@ const Footer = ({ snap }: FooterProps) => {
       <div className='flex justify-center gap-4 mb-4'>
         {socials.map((social) => 
           <IconButton
+            key={social.title}
             link={social.link}
             ariaLabel={social.title}
             title={social.title}

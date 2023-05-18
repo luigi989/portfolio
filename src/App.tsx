@@ -1,7 +1,7 @@
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { useInView } from "react-cool-inview";
 import { useEffect } from 'react';
-import { darkModeState } from './atoms/atoms';
+import { darkModeState, actioveSection } from './atoms/atoms';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
 import Experience from './components/experience/Experience';
@@ -12,10 +12,12 @@ import Portfolio from './components/portfolio/Portfolio';
 
 function App() {
   const isDark = useRecoilValue(darkModeState);
+  const setActiveSection = useSetRecoilState(actioveSection);
+
 
   const useView = () => {
     const { observe, inView} = useInView({
-      threshold: 0.9,
+      threshold: 0.8,
       onChange: ({ inView, scrollDirection }) => {
       },
     })
@@ -32,30 +34,35 @@ function App() {
   useEffect(() => {
     if (inViewHeader) {
       window.history.replaceState({}, '', '#');
+      setActiveSection("Home");
     }
   }, [inViewHeader])
 
   useEffect(() => {
     if (inViewAbout) {
       window.history.replaceState({}, '', '#about');
+      setActiveSection("About");
     }
   }, [inViewAbout])
 
   useEffect(() => {
     if (inViewExperince) {
       window.history.replaceState({}, '', '#experience');
+      setActiveSection("Experience");
     }
   }, [inViewExperince])
 
   useEffect(() => {
     if (inViewPortfolio) {
       window.history.replaceState({}, '', '#portfolio');
+      setActiveSection("Portfolio");
     }
   }, [inViewPortfolio])
 
   useEffect(() => {
     if (inViewContact) {
       window.history.replaceState({}, '', '#contact');
+      setActiveSection("Contact");
     }
   }, [inViewContact])
 

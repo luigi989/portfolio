@@ -1,11 +1,16 @@
 import { atom } from "recoil";
 
 export const darkModeState = atom({
-    key: 'darkModeState',
-    default: true,
- });
+   key: 'darkModeState',
+   default: true,
+});
 
- export const chosenProjectInfo = atom({
+export const actioveSection = atom({
+   key: 'actioveSectionState',
+   default: '',
+});
+
+export const chosenProjectInfo = atom({
    key: 'chosenProjectInfo',
    default: {
       title: '',
@@ -16,4 +21,4 @@ export const darkModeState = atom({
       link: '',
       // imgPath: ''
    },
- })
+})

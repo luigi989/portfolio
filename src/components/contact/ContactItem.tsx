@@ -16,7 +16,7 @@ const ContactItem = ({header, contact, link, icon}: ContactItemProps) => {
         <small className='mb-4 text-xs text-liBg dark:text-light'>{contact}</small> 
         <a href={link} target='_blank' rel='noreferrer' 
           title={"Send message by " + header}
-          aria-aria-label={"Send message by " + header}
+          aria-label={"Send message by " + header}
           className='text-sm text-liLight hover:text-liBg dark:text-primary dark:hover:text-light'>Send a Message</a>
     </article>
   )
