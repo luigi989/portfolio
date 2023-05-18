@@ -17,7 +17,7 @@ function App() {
 
   const useView = () => {
     const { observe, inView} = useInView({
-      threshold: 0.8,
+      threshold: 0.7,
       onChange: ({ inView, scrollDirection }) => {
       },
     })
