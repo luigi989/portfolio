@@ -6,6 +6,7 @@ import { useSpring, animated } from '@react-spring/web'
 import SectionHeader from '../shared/SectionHeader';
 import PortfolioCard from './PortfolioCard';
 import ProjectContainer from './ProjectContainer';
+import { useTranslation } from 'react-i18next';
 
 interface PortfolioProps {
   snap: string;
@@ -22,6 +23,7 @@ interface projectType {
 }
 
 const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
+  const { t } = useTranslation();
   const projectChosen: projectType = useRecoilValue(chosenProjectInfo);
   const setChosenProjectInfo = useSetRecoilState(chosenProjectInfo);
   const [projects, setProjects] = useState<projectType[]>([]);
@@ -91,8 +93,8 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
     >
       <SectionHeader
         className='lg:mb-8'
-        header='Portfolio'
-        subHeader='My Recent Work'
+        header={t('portfolio.title')}
+        subHeader={t('portfolio.subtitle')}
       />
 
       {projectChosen.title !== '' &&
@@ -114,6 +116,7 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
           + (projectChosen.title == '' ? "block" : "hidden")}>
           {projects.map((project) =>
             <PortfolioCard
+              key={project.title}
               header={project.title}
               demoLink={project.live_demo}
               onClick={() => onClick(project.link)}
@@ -126,7 +129,7 @@ const Portfolio = ({ visibilityRef, snap }: PortfolioProps) => {
           )}
         </div> :
         <div className='m-auto flex space-x-4 items-center justify-center bg-liBg dark:bg-transparent w-fit'>
-          <p className='text-liSec dark:text-primaryAlt text-xl'>Loading data</p>
+          <p className='text-liSec dark:text-primaryAlt text-xl'>{t('portfolio.loading')}</p>
           <div className='w-5 h-5 rounded-full border-l-2 border-solid border-liSec dark:border-primaryAlt animate-spin' />
         </div>
       }

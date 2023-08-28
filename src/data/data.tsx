@@ -6,27 +6,27 @@ import { FiMail } from 'react-icons/fi';
 
 export const sections =
     [
-        { title: 'Home', link: '/#', icon: <AiOutlineHome/> },
-        { title: 'About', link: '#about', icon: <AiOutlineUser/> },
-        { title: 'Experience', link: '#experience', icon: <BiBook/>},
-        { title: 'Portfolio', link: '#portfolio', icon: <BsBriefcase/> },
-        { title: 'Contact', link: '#contact', icon: <BiMessageSquareDetail/> },
+        { title: 'sections.home', link: '/#', icon: <AiOutlineHome/> },
+        { title: 'sections.about', link: '#about', icon: <AiOutlineUser/> },
+        { title: 'sections.experience', link: '#experience', icon: <BiBook/>},
+        { title: 'sections.portfolio', link: '#portfolio', icon: <BsBriefcase/> },
+        { title: 'sections.contact', link: '#contact', icon: <BiMessageSquareDetail/> },
     ];
 
 export const socials = 
     [
         { 
-            title: 'Linkedin',
+            title: 'socials.linkedin',
             link: 'https://www.linkedin.com/in/ludvig-lindahl/',
             icon: <BsLinkedin />
         },
         {
-            title: 'Github',
+            title: 'socials.github',
             link: 'https://github.com/luigi989',
             icon: <BsGithub />
         },
         {
-            title: 'Facebook',
+            title: 'socials.facebook',
             link: 'https://www.facebook.com/ludvig.lindahl.1',
             icon: <BsFacebook />
         }
@@ -34,19 +34,19 @@ export const socials =
 
     export const contacts = [
         { 
-            title: 'Email',
+            title: 'contact.social.email',
             subtitle: 'ludde.lindahl@gmail.com',
             link: 'mailto:ludde.lindahl@gmail.com',
             icon: <FiMail />
         },
         {
-            title: 'Messenger',
+            title: 'contact.social.messenger',
             subtitle: 'Ludvig Lindahl',
             link: 'https://m.me/ludvig.lindahl.1',
             icon: <BsMessenger />
         },
         {
-            title: 'WhatsApp',
+            title: 'contact.social.whatsapp',
             subtitle: '+46705789618',
             link: 'https://wa.me/46705789618',
             icon: <BsWhatsapp />

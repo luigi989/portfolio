@@ -1,7 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import LinkButton from '../shared/LinkButton';
 import CV from '/cv_eng.pdf';
 
 const CTA = () => {
+  const { t } = useTranslation();
+
   return (
     <div className='mt-[37px] flex gap-5 justify-center'>
       <a className='bg-border-primary' href={CV} download>
@@ -12,11 +15,11 @@ const CTA = () => {
                       transition ease-linear duration-300
                       md:py-3 py-4 px-5 rounded-lg cursor-pointer text-center text-sm whitespace-nowrap md:text-lg md:whitespace-normal'
           title='Download CV'>
-          Download CV
+          {t('header.downloadCV')}
         </button>
       </a>
       <LinkButton link="#contact" title='Contact me'>
-        Let's talk
+        {t('contactButton.text')}
       </LinkButton>
     </div>
   )

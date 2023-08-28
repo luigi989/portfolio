@@ -9,11 +9,32 @@ import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import Nav from './components/nav/Nav';
 import Portfolio from './components/portfolio/Portfolio';
+import i18n from "i18next";
+import { useTranslation, initReactI18next } from "react-i18next";
+import locale_en from './locales/en.json';
+import locale_sv from './locales/sv.json';
+
+i18n.use(initReactI18next).init({
+  resources: {
+    en: {
+      translation: locale_en
+    },
+    sv: {
+      translation: locale_sv
+    }
+  },
+  lng: "en",
+  fallbackLng: "en",
+  interpolation: {
+    escapeValue: false,
+  }
+})
+
 
 function App() {
+  const { t } = useTranslation();
   const isDark = useRecoilValue(darkModeState);
   const setActiveSection = useSetRecoilState(actioveSection);
-
 
   const useView = () => {
     const { observe, inView} = useInView({
@@ -34,35 +55,35 @@ function App() {
   useEffect(() => {
     if (inViewHeader) {
       window.history.replaceState({}, '', '#');
-      setActiveSection("Home");
+      setActiveSection(t('sections.home'));
     }
   }, [inViewHeader])
 
   useEffect(() => {
     if (inViewAbout) {
       window.history.replaceState({}, '', '#about');
-      setActiveSection("About");
+      setActiveSection(t('sections.about'));
     }
   }, [inViewAbout])
 
   useEffect(() => {
     if (inViewExperince) {
       window.history.replaceState({}, '', '#experience');
-      setActiveSection("Experience");
+      setActiveSection(t('sections.experience'));
     }
   }, [inViewExperince])
 
   useEffect(() => {
     if (inViewPortfolio) {
       window.history.replaceState({}, '', '#portfolio');
-      setActiveSection("Portfolio");
+      setActiveSection(t('sections.portfolio'));
     }
   }, [inViewPortfolio])
 
   useEffect(() => {
     if (inViewContact) {
       window.history.replaceState({}, '', '#contact');
-      setActiveSection("Contact");
+      setActiveSection(t('sections.contact'));
     }
   }, [inViewContact])
 
@@ -81,3 +102,4 @@ function App() {
 }
 
 export default App;
+

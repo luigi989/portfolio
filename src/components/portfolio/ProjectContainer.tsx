@@ -2,13 +2,16 @@ import { useRecoilValue } from 'recoil';
 import { chosenProjectInfo } from '../../atoms/atoms';
 import GithubButton from './GithubButton';
 import DemoButton from './DemoButton';
+import { useTranslation } from 'react-i18next';
 
 interface ProjectContainerProps {
     onClick: () => void
 }
 
 const ProjectContainer = ({ onClick }: ProjectContainerProps) => {
+    const { t } = useTranslation();
     const projectInfo = useRecoilValue(chosenProjectInfo);
+    
 
     return (
         <div className="p-5 rounded-2xl md:rounded-none md:rounded-r-2xl flex flex-col
@@ -39,7 +42,7 @@ const ProjectContainer = ({ onClick }: ProjectContainerProps) => {
             className='py-1 px-3 border-solid border-2 border-red-500 
             hover:text-black hover:bg-red-500 text-white rounded-md
             transition ease-linear duration-300'>
-                Back
+                {t('portfolio.project.close')}
             </button>
         </div>
     )
