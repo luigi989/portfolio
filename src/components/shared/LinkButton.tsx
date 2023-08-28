@@ -15,9 +15,9 @@ export default function Button({ link, children, title }: ButtonProps) {
                 cursor-pointer rounded-lg
             border-solid border-2 dark:border-primary border-liSec
             text-liBg bg-liSec
-            hover:text-liSec hover:bg-liBg
+            hover:text-liLight hover:bg-liBg
             dark:text-bg dark:bg-primaryAlt
-            dark:hover:text-primary dark:hover:bg-bgAlt dark:focus:text-primary dark:focus':bg-bgAlt`}
+            dark:hover:text-primaryAlt dark:hover:bg-bgAlt dark:focus:text-primary dark:focus':bg-bgAlt`}
         >
             {children}
         </a >

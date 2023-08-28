@@ -11,18 +11,18 @@ module.exports = {
         "bg": '#282828',
         "bgAlt": '#1d2021',
         "primary": '#98971a',
-        "primaryAlt": '#98971a',
+        "primaryAlt": '#BCBC20',
         "light": '#ebdbb2',
 
         // Light mode
         "liBg": '#e5e5f7',
         "liBgAlt": '#e4e5f1',
         "liPrimary": '#d2d3db',
-        "liSec": "#484b6a",
-        "liLight": '#9394a5',
+        "liSec": "#444764",
+        "liLight": '#333333',
       },
       textColor: {
-        primary: '#98971a',
+        'primary': '#98971a',
       },
       backgroundImage: {
         'bgTexture': "url('/bg-texture.webp')",

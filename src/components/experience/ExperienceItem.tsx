@@ -10,7 +10,7 @@ const ExperienceItem = ({lang, grade}: ExperienceItemProps) => {
     <article className='flex gap-4'>
       <BsPatchCheckFill className='mt-[6px] text-liBg group-hover:text-liSec dark:text-primaryAlt dark:group-hover:text-primaryAlt' />
       <div>
-        <h1 className='text-liLight dark:text-white'>{lang}</h1>
+        <h1 className='text-liBg dark:text-white'>{lang}</h1>
         <small className='text-liBg dark:text-light'>{grade}</small>
       </div>
     </article>

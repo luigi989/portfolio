@@ -12,7 +12,7 @@ const AboutItem = ({header, text, icon}: AboutItemProps) => {
       <div className='flex justify-center m-auto text-liBg group-hover:text-liSec dark:text-primaryAlt text-2xl mb-4'>
         {icon}
       </div>
-      <h1 className='text-base text-liLight dark:text-white'>{header}</h1>
+      <h1 className='text-base text-liBg dark:text-white'>{header}</h1>
       <small className='text-xs text-liBg  dark:text-light'>{text}</small>
     </article>
   )

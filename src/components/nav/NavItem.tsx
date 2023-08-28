@@ -13,7 +13,7 @@ const NavItem = ({ href, title, ariaLabel, icon }: NavItemProps) => {
     
     return (
         <a className={'hover:text-liSec hover:bg-liPrimary hover:bg-opacity-80 ' +
-            'dark:hover:bg-opacity-60 dark:hover:bg-primaryAlt dark:hover:text-black ' +
+            'dark:hover:bg-opacity-80 dark:hover:bg-primaryAlt dark:hover:text-black ' +
             'p-[0.9rem] rounded-[50%] flex text-lg ' +
             'transition ease-linear duration-300 ' +
             (activeSection == title ? 'bg-liPrimary text-gray-700 dark:bg-primaryAlt dark:text-black' 

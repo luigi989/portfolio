@@ -20,12 +20,12 @@ const Contact = ({ visibilityRef, snap }: ContactProps) => {
 
       <div className='w-11/12 lg:w-3/5 m-auto flex flex-col md:flex-row gap-10 lg:gap-20'>
         <div className='flex flex-col gap-6 bg-liBg dark:bg-transparent print:flex-row print:justify-around'>
-          {contacts.map((contact) => 
-            <ContactItem          
+          {contacts.map((contact) =>
+            <ContactItem
               key={contact.title}
               header={contact.title}
               contact={contact.subtitle}
-              link={contact.link} 
+              link={contact.link}
               icon={contact.icon}
             />
           )}
