@@ -94,6 +94,7 @@ const Nav = () => {
       </nav>
 
       <SwapButton
+        className={navVisible ? "visible" : "invisible lg:visible"}
         title={t('nav.switchLang')}
         ariaLabel={t('nav.switchLang')}
         onClickP={(e) => {
@@ -102,7 +103,6 @@ const Nav = () => {
         icon1={<CgSweden className="swap-off fill-current w-6 h-6" />}
         icon2={<RiEnglishInput className="swap-on fill-current w-6 h-6" />}
       />
-
       <SwapButton
         className={navVisible ? "visible" : "invisible lg:visible"}
         title={t('nav.switchColor')}

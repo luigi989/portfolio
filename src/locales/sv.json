@@ -1,5 +1,6 @@
 {
     "name": "Ludvig Lindahl",
+    "profileImage": "Profilbild",
     "sections": {
         "home": "Hem",
         "about": "Om mig",
@@ -80,7 +81,8 @@
         "readMore": "Läs mer",
         "liveDemo": "Live demo",
         "project": {
-            "close": "Tillbaka"
+            "close": "Tillbaka",
+            "image": "Projectbild"
         }
     },
     "contact": {

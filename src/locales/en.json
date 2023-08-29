@@ -25,7 +25,8 @@
         "title": "Hello I'm Ludvig Lindahl",
         "subtitle": "Fullstack developer",
         "downloadCV": "Download CV",
-        "scrollDown": "Scroll down"
+        "scrollDown": "Scroll down",
+        "profileImage": "Profilbild"
     },
     "about": {
         "title": "About me",
@@ -80,7 +81,8 @@
         "readMore": "Read more",
         "liveDemo": "Live demo",
         "project": {
-            "close": "Back"
+            "close": "Back",
+            "image": "Project image"
         }
     },
     "contact": {

@@ -26,9 +26,6 @@ const ContactItem = ({ header, contact, link, icon }: ContactItemProps) => {
         target="_blank"
         rel="noreferrer"
         title={t("contact.sendLong") + " " + t("contact.by") + " " + header}
-        aria-label={
-          t("contact.sendLong") + " " + t("contact.by") + " " + header
-        }
         className="text-sm text-liBg hover:underline dark:text-primaryAlt dark:hover:text-light dark:hover:no-underline"
       >
         {t("contact.sendLong")}

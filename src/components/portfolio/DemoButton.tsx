@@ -11,8 +11,7 @@ const DemoButton = ({ link }: DemoButtonProps) => {
     <a
       target="_blank"
       rel="noreferrer"
-      aria-label="Open live demo"
-      title="Open live demo"
+      title={t("portfolio.liveDemo")}
       href={link}
     >
       <button

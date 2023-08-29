@@ -29,7 +29,7 @@ const PortfolioCard = ({
       <div className="rounded-2xl">
         <img
           className="rounded-2xl"
-          alt="portfolio 1"
+          alt={t('portfolio.project.image')}
           src={path}
           srcSet={
             path4x + " 4x," + path3x + " 3x," + path2x + " 2x," + path1x + " 1x"
@@ -41,8 +41,7 @@ const PortfolioCard = ({
       <div className="flex gap-2">
         <button
           onClick={onClick}
-          aria-label="Read more about project"
-          title="Read more about project"
+          title={t("portfolio.readMore")}
           className="hover:bg-liPrimary hover:text-liSec
                     dark:hover:bg-primary dark:hover:text-bgAlt 
                     transition ease-linear duration-300

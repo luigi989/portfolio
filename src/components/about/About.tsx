@@ -24,7 +24,10 @@ function About({ visibilityRef, snap }: AboutProps) {
       id="about"
       className={snap + " mt-28 h-fit lg:h-screen pt-4 lg:pt-8 print:h-screen"}
     >
-      <SectionHeader header="About me" subHeader="Get to know" />
+      <SectionHeader
+        header={t("about.title")}
+        subHeader={t("about.subtitle")}
+      />
 
       <div className="w-11/12 md:w-3/4 m-auto grid grid-cols-1 lg:grid-cols-2 gap-[10%] lg:gap-[15%] place-items-center">
         <div
@@ -34,7 +37,7 @@ function About({ visibilityRef, snap }: AboutProps) {
           <div className="w-full h-full rounded-[2rem] overflow-hidden rotate-12 hover:rotate-0 transition ease-linear duration-300">
             <img
               className="block w-full object-cover"
-              alt={"About me"}
+              alt={t('profileImage')}
               src={profileImage2_sm}
               srcSet={`${profileImage2_xxl} 4x, ${profileImage2_xl} 3x, ${profileImage2_xl} 2x, ${profileImage2} 1x, `}
             />
@@ -66,7 +69,7 @@ function About({ visibilityRef, snap }: AboutProps) {
             {t("about.description")}
           </p>
 
-          <LinkButton link={"#contact"} title="Contact me">
+          <LinkButton link={"#contact"} title={t('contactButton.aria')}>
             {t("contactButton.text")}
           </LinkButton>
         </div>
